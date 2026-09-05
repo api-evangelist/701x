@@ -1,0 +1,150 @@
+generated: '2026-09-05'
+method: derived
+source: openapi/701x-api-v1-openapi.json + https://login.701x.com/.well-known/openid-configuration
+summary: >-
+  Cross-cutting runtime semantics for the 701x API V1, derived from the published OpenAPI 3.0.1
+  contract and the company's OpenID Connect discovery document. The spec is a Swashbuckle
+  auto-generation off an ASP.NET Core controller surface: it is complete on shape (paths,
+  parameters, schemas) and empty on prose (no operation summaries or descriptions, and only 7 of
+  1,391 operations carry an operationId), so several conventions below are read from the shape of
+  the surface rather than from documentation the provider has published.
+authentication:
+  style: oauth2
+  flow: authorization_code
+  authorization_url: https://login.701x.com/connect/authorize
+  token_url: https://login.701x.com/connect/token
+  issuer: https://login.701x.com
+  required_scope: API701x
+  applied_to: >-
+    1158 of 1391 operations declare the oauth2 security requirement with scope API701x;
+    234 declare no security requirement in the contract.
+  detail: authentication/701x-authentication.yml
+idempotency:
+  coverage: none
+  mechanism: none
+  header: null
+  scope: []
+  evidence: >-
+    No Idempotency-Key (or equivalent) header parameter appears anywhere in the 1,391 operations —
+    the spec declares no header parameters at all. The single occurrence of the string
+    "idempotencyKey" is a readOnly response field on the StripeResponse schema, i.e. Stripe's own
+    key echoed back on checkout responses, not a client-supplied replay guard on 701x writes.
+  consequence: >-
+    899 mutating operations (567 POST, 183 PUT, 149 DELETE, 1 PATCH), including MassInsert /
+    MassUpdate / MassDelete bulk endpoints, have no documented replay protection. A retried bulk
+    animal insert after a timeout is not safe.
+reversibility:
+  grade: documented
+  credit: 0.4
+  rationale: >-
+    Reversal operations exist for two write surfaces and are visible in the contract, but 701x
+    publishes no developer documentation, so no reversal WINDOW is stated anywhere. Nothing here
+    asserts a time limit, because none was found.
+  surfaces:
+  - surface: Service subscriptions
+    write: POST /ServiceSubscription, PUT /ServiceSubscription/{id}
+    reversal: POST /ServiceSubscription/Cancel/{id}, POST /ServiceSubscription/CancelSubscriptionLineItems
+    re_enable: POST /ServiceSubscription/Resume/{id}, POST /ServiceSubscription/ResumeSubscriptionLineItems
+    operation_id: null
+    window: null
+    window_source: null
+  - surface: Company share (herd data sharing invitations)
+    write: POST /CompanyShare
+    reversal: POST /CompanyShare/Cancel/{id}
+    operation_id: null
+    window: null
+    window_source: null
+  - surface: Animal, tag, farm, medication and all other records
+    write: POST / PUT / MassInsert / MassUpdate
+    reversal: none
+    note: >-
+      DELETE and MassDelete exist on most resources; no Restore, Undo, Unarchive or Reverse
+      operation is published for any of them. A few schemas carry an isArchived flag, which
+      suggests soft deletion internally, but no restore endpoint is exposed.
+  - surface: Stripe checkout
+    write: POST /Stripe/ProcessCheckOut
+    reversal: none exposed
+    note: Refunds are handled in Stripe, not through a published 701x operation.
+dry_run_mode:
+  supported: false
+  evidence: No preview/simulate/validate-only parameter or endpoint appears in the contract.
+pagination:
+  style: offset-limit (query parameters)
+  params:
+    limit: top
+    offset: offset
+    fetch: fetch
+    sort: orderBy
+  prevalence: top on 226 operations, offset on 164, fetch on 161, orderBy on 158
+  response_fields: >-
+    Not declared — collection responses are typed as arrays of the resource schema with no
+    envelope, so no total-count or next-cursor field is published.
+  cursor: false
+filtering:
+  style: >-
+    Per-resource "*DataByFilter" / "*ByFilter" GET endpoints that accept the resource's own fields
+    as query parameters (e.g. /Animal/AnimalDataByFilter takes CompanyId, FarmId, Status, GroupId,
+    TagId, Sex, Breed, CattleNumber and dozens more).
+  tenancy: >-
+    CompanyId is the tenancy key and appears as a filter parameter across the surface; FarmId
+    narrows to a single ranch operation.
+bulk_operations:
+  supported: true
+  pattern: MassInsert / MassUpdate / MassDelete on most resources, plus Animal/MassMergeRepoint and Animal/MassUpdateLocation
+  note: Bulk endpoints share the same no-idempotency exposure as single writes.
+field_expansion:
+  supported: false
+metadata:
+  supported: false
+  note: No generic metadata bag; records carry typed columns plus createdByUserId / lastUpdatedByUserId audit fields.
+request_id_tracing:
+  supported: false
+  evidence: No X-Request-Id / correlation-id header is declared in the contract.
+versioning:
+  scheme: path-independent document version, "v1", carried in info.version and the Swagger route (/swagger/v1/swagger.json)
+  in_url: false
+  note: Operation paths are unversioned (/Animal, /Tag); only the spec document is labelled v1.
+  detail: lifecycle/701x-lifecycle.yml
+error_envelope:
+  format: none (not RFC 9457)
+  media_types: [text/plain, application/json, text/json]
+  shape: >-
+    Declared error responses carry either no content at all (401, 403, 503) or a bare JSON string
+    (400 on the seven TagDataFile upload operations). There is no problem+json body, no error code
+    field, and no machine-readable error registry.
+  detail: errors/701x-problem-types.yml
+rate_limit_signaling:
+  documented: false
+  headers: []
+  status_on_exhaustion: null
+  note: >-
+    No 429 response is declared on any of the 1,391 operations and no rate-limit headers appear in
+    the contract. See rate-limits/701x-rate-limits.yml.
+content_types:
+  request: application/json (plus multipart/form-data on the TagDataFile upload operations)
+  response: [text/plain, application/json, text/json]
+streaming:
+  supported: true
+  style: server-sent events (HTTP GET, no AsyncAPI published)
+  endpoints:
+  - GET /AnimalLog/GetAllSSE
+  - GET /AnimalLogControllerAdmin/GetAllSSE
+  - GET /Company/GetAllSSE
+  - GET /Company/GetAllChangesSSE
+  - GET /Company/FullPullSSE
+  - GET /LogMaster/GetAllSSE
+  - GET /LogMasterControllerAdmin/GetAllSSE
+  note: >-
+    Seven operations are named *SSE and take a companyId query parameter, which is the shape of a
+    per-tenant server-sent-event change feed for animal logs, company records and the master log.
+    The contract declares them as ordinary 200 responses with no media type and no event schema,
+    so the event payloads are undocumented. No AsyncAPI document and no outbound webhook catalog
+    is published; the single /webhook path in the contract is an INBOUND Stripe receiver
+    (tag: StripeWebHook), not a consumer-facing webhook.
+cross_links:
+  authentication: authentication/701x-authentication.yml
+  scopes: scopes/701x-scopes.yml
+  errors: errors/701x-problem-types.yml
+  lifecycle: lifecycle/701x-lifecycle.yml
+  rate_limits: rate-limits/701x-rate-limits.yml
+  data_model: data-model/701x-data-model.yml

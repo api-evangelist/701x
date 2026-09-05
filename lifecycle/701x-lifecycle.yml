@@ -1,0 +1,67 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://api.701x.com/swagger/v1/swagger.json (200), https://status.701x.com/ (200 -> 302
+  /auth/login), https://www.701x.com/ (200), https://www.701x.com/blog (200) — probed 2026-09-05
+summary: >-
+  701x runs no public developer program, so there is no versioning policy, deprecation policy, SLA
+  or public changelog to record. The only lifecycle signal the company publishes is the version
+  label on the OpenAPI document itself and a status host that exists but is login-gated. This is a
+  measured absence, not an unattempted one.
+versioning:
+  scheme: document-level label only
+  current_version: v1
+  evidence: >-
+    info.version is "v1" and the spec is served at /swagger/v1/swagger.json. Operation paths carry
+    no version segment (/Animal, /Tag, /Farm), so there is no in-URL version an integrator can pin
+    to and no second version published alongside v1.
+  policy_published: false
+  policy_url: null
+deprecation:
+  policy_published: false
+  policy_url: null
+  sunset_header: unknown
+  deprecation_header: unknown
+  rfc8594: false
+  deprecated_operations: 0
+  evidence: >-
+    Zero of the 1,391 operations carry `deprecated: true`, and no deprecation or sunset policy page
+    exists on 701x.com. The absence of deprecated operations here means the spec never marks them,
+    not that nothing has been retired.
+status_page:
+  exists: true
+  url: https://status.701x.com/
+  public: false
+  http_status: 200
+  detail: >-
+    status.701x.com resolves and answers 200, but the response is a meta-refresh redirect to
+    https://status.701x.com/auth/login — the status page is behind a login and cannot be read by a
+    prospective integrator or by an agent. No StatusPage pointer is emitted in apis.yml for this
+    reason: the surface exists but is not a public status page.
+  checked: '2026-09-05'
+sla:
+  published: false
+  url: null
+changelog:
+  published: false
+  url: null
+  note: >-
+    The company blog at https://www.701x.com/blog is product and ranching news, not a dated API
+    changelog. No release-notes surface was found.
+support:
+  url: https://www.701x.com/faq
+  email_domain: 701x.com
+  note: General customer support only; no developer support channel was found.
+observations:
+- >-
+  The API is publicly readable but undocumented. The Swagger UI at https://api.701x.com/ renders a
+  complete 1,391-operation contract with no summaries, no descriptions, and 7 operationIds — the
+  raw output of an ASP.NET Core Swashbuckle generator that appears never to have been curated for
+  an external audience.
+- >-
+  app.701x.com resolves by CNAME into a 701x-named Azure App Service
+  (livestockaiappclient20210318100135.azurewebsites.net) but currently returns an unrelated
+  third-party page — an Indonesian-language gambling portal login titled "ASIA200 Login", served by
+  nginx/1.28.0 with Last-Modified 2026-02-23. This is the signature of a dangling-DNS or abandoned
+  app-service takeover on a company subdomain. Recorded as an observation with evidence; no
+  apis.yml pointer references this host. Probed 2026-09-05, HTTP 200.

@@ -1,0 +1,85 @@
+generated: '2026-09-05'
+method: derived
+source: openapi/701x-api-v1-openapi.json (4xx/5xx response declarations across 1,391 operations)
+format: none
+summary: >-
+  701x does not publish an error reference, and its OpenAPI declares almost no error surface. Of
+  1,391 operations, every one declares a 200; 1,158 declare 401 and 403; seven declare 400; four
+  declare 503. There is no RFC 9457 application/problem+json media type, no error-code registry,
+  and no error schema of any kind — the only typed error body in the contract is a bare JSON
+  string on the file-upload operations. Nothing here is invented: the sparseness IS the finding.
+envelope:
+  media_types: [text/plain, application/json, text/json]
+  schema: none declared for any 4xx/5xx response
+  code_field: null
+  message_field: null
+  trace_id_field: null
+coverage:
+  operations: 1391
+  with_401: 1158
+  with_403: 1158
+  with_400: 7
+  with_404: 0
+  with_409: 0
+  with_422: 0
+  with_429: 0
+  with_500: 0
+  with_503: 4
+problem_types:
+- status: 401
+  title: Unauthorized
+  declared_on: 1158 operations
+  content: none declared
+  cause: >-
+    No bearer token presented, or the token issued by https://login.701x.com has expired or was
+    not issued for the API701x scope.
+  remediation: >-
+    Obtain a fresh access token from the authorization_code or refresh_token grant at
+    https://login.701x.com/connect/token with scope API701x, then retry.
+  source: openapi/701x-api-v1-openapi.json
+- status: 403
+  title: Forbidden
+  declared_on: 1158 operations
+  content: none declared
+  cause: >-
+    Token is valid but the caller lacks rights to the requested tenant or record. The surface is
+    split into *ControllerAdmin and *ControllerBasic variants of most resources, and the admin
+    variants are the common source of this status for a non-admin principal.
+  remediation: >-
+    Call the *ControllerBasic variant of the resource, or ensure the principal is an administrator
+    on the CompanyId being addressed.
+  source: openapi/701x-api-v1-openapi.json
+- status: 400
+  title: Bad Request
+  declared_on: >-
+    7 operations, all file uploads — /TagDataFile/upload, /TagDataFile/UploadTagEventsFile,
+    /TagDataFile/UploadFileWithoutHeader, /TagDataFile/UploadFileHighSpeedWithoutHeader,
+    /TagDataFile/UploadFileDiagnostics, /TagDataFile/UploadFileOnBehalf and
+    /TimeNearDeviceBasic/upload.
+  content: 'bare JSON string (schema: {type: string}) in text/plain, application/json and text/json'
+  cause: Malformed or unparseable telemetry upload payload.
+  remediation: Correct the uploaded tag-data file format; the response string carries the reason.
+  source: openapi/701x-api-v1-openapi.json
+- status: 503
+  title: Server Error
+  declared_on: >-
+    4 telemetry upload operations — /TagDataFile/UploadTagEventsFile,
+    /TagDataFile/UploadFileWithoutHeader, /TagDataFile/UploadFileDiagnostics and
+    /TagDataFile/UploadFileOnBehalf.
+  content: none declared
+  cause: Ingest pipeline unavailable.
+  remediation: >-
+    Retry with backoff. Note that no idempotency mechanism is published (see
+    conventions/701x-conventions.yml), so a retried upload may be ingested twice.
+  source: openapi/701x-api-v1-openapi.json
+gaps:
+- >-
+  No 404 is declared on any of the ~400 /{id} GET, PUT and DELETE operations, so an agent cannot
+  tell from the contract how a missing record is reported.
+- >-
+  No 409 or 422 is declared anywhere, so validation and conflict semantics on 899 write operations
+  are undocumented.
+- No 429 is declared, so rate-limit exhaustion behaviour is unknown.
+- >-
+  No error body schema exists. An agent has no machine-readable field to branch on and must
+  parse a free-text string.

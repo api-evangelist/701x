@@ -1,0 +1,62 @@
+generated: '2026-09-05'
+method: derived
+source: mcp/701x-mcp-tools-list.json + openapi/701x-api-v1-openapi.json
+summary: >-
+  701x has both a live MCP endpoint and a large first-party OpenAPI, and they do not overlap at
+  all. The MCP endpoint is the Wix Site MCP bolted to the marketing site; the OpenAPI is the
+  Autonomous Rancher platform API. Zero of the nine MCP tools binds to any of the 1,391 REST
+  operations, so the crosswalk records a complete divergence rather than a mapping. This is the
+  finding: an agent that connects to the advertised 701x MCP endpoint can read the website and
+  nothing else, while the entire cattle-management surface remains REST-and-OAuth only.
+surfaces:
+  openapi:
+    file: openapi/701x-api-v1-openapi.json
+    base_url: https://api.701x.com
+    operations: 1391
+    gated: true
+    gate: OAuth 2.0 authorization code against https://login.701x.com, scope API701x
+  mcp:
+    url: https://www.701x.com/_api/mcp
+    gated: false
+    authorship: platform (Wix Site MCP)
+  graphql: none
+crosswalk: []
+mcp_only:
+- tool: GetBusinessDetails
+  reason: Wix site metadata; no REST equivalent in the 701x API.
+- tool: SearchInSite
+  reason: Full-text search over marketing-site content; the 701x API has no site-search operation.
+- tool: SearchSiteApiDocs
+  reason: Wix platform documentation search; unrelated to the 701x API.
+- tool: GenerateVisitorToken
+  reason: Wix visitor session issuance; 701x API tokens come from login.701x.com instead.
+- tool: CallWixSiteAPI
+  reason: Generic Wix platform API caller; cannot address api.701x.com.
+- tool: ExecuteWixAPI
+  reason: Generic Wix code execution against the website.
+- tool: ReadFullDocsArticle
+  reason: Wix developer-docs reader.
+- tool: ReadFullDocsMethodSchema
+  reason: Wix developer-docs reader.
+- tool: BrowseWixRESTDocsMenu
+  reason: Wix developer-docs reader.
+rest_only:
+  note: >-
+    All 1,391 OpenAPI operations are REST-only — no MCP tool exposes any of them. Listed here by
+    resource family rather than by operation, because the divergence is total.
+  resource_families:
+  - Animal and animal data (birth, wean, year, carcass, ultrasound, DNA, EPD, PAP, scrotal, calving, check-in, turn-out, comments, attachments, logs)
+  - Animal groups, owners, associations and breed-association sync
+  - Company, company users, company animals, company tags, sharing, transfers, purchases and sales
+  - Farm, pasture, points of interest, virtual fences and geo
+  - Tag inventory, tag data, tag events, tag alerts, cell strength and telemetry ingest
+  - Medication, medication purchase and treatment records
+  - Cart, cart products, cart packages, Stripe checkout and service subscriptions
+  - Users, contacts, feedback, notifications and reporting
+coverage:
+  mcp_tools: 9
+  mcp_tools_bound_to_rest: 0
+  rest_operations: 1391
+  rest_operations_exposed_as_tools: 0
+  overlap_ratio: 0.0
+confidence: high

@@ -1,0 +1,28 @@
+generated: '2026-09-05'
+method: generated
+source: openapi/701x-api-v1-openapi.json + conventions/701x-conventions.yml + errors/701x-problem-types.yml
+api: 701x API V1
+base_url: https://api.701x.com
+note: >-
+  Packaged operating instructions for the three marquee flows of the 701x API V1. Every path and
+  parameter named in these skills was read out of the published contract; none was invented. The
+  contract supplies no operation summaries and only 7 operationIds across 1,391 operations, so the
+  skills address operations by HTTP method and path.
+skills:
+- name: 701x-herd-inventory
+  file: 701x-herd-inventory.md
+  summary: Authenticate and page a company's cattle inventory, with group, farm and tag filters.
+  operations: 5
+- name: 701x-record-calving
+  file: 701x-record-calving.md
+  summary: Record, amend and bulk-load calving-book entries, with the read-back-before-retry rule.
+  operations: 8
+- name: 701x-tag-telemetry
+  file: 701x-tag-telemetry.md
+  summary: Read GPS, activity, battery and water telemetry, the SSE change feed, and upload raw tag files.
+  operations: 10
+cross_cutting_rules:
+- Request scope API701x, not the api1 scope the contract documents.
+- No idempotency mechanism exists — read back before retrying any write.
+- No 404, 409, 422 or 429 is declared anywhere; do not branch on them.
+- Collection responses are bare arrays with no total, link or cursor.

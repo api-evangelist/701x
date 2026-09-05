@@ -1,0 +1,61 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the 701x API V1
+  version: 1.0.0
+x-provenance:
+  generated: '2026-09-05'
+  method: derived
+  source: openapi/701x-api-v1-openapi.json
+  extends: openapi/701x-api-v1-openapi.json
+  note: >-
+    Non-destructive Overlay 1.0.0 over the verbatim 701x contract. Every action below adds
+    information API Evangelist established by probing 701x's own hosts on 2026-09-05 — the base
+    URL the spec omits, the OpenID Connect issuer, and the fact that the enforced scope differs
+    from the documented one. Nothing here invents an operation, a summary, a schema or a
+    behaviour, because the source spec supplies none and none may be manufactured.
+actions:
+- target: $.info
+  description: >-
+    Record the API's real base URL, its human entry point and the provenance of this profile. The
+    published spec carries no servers block at all.
+  update:
+    description: >-
+      REST API behind the 701x Autonomous Rancher cattle-management platform. Served from
+      https://api.701x.com with a public Swagger UI at the host root. The published document is
+      raw Swashbuckle output: 1,391 operations carry no summaries, no descriptions and (with seven
+      exceptions) no operationIds. Authentication is OAuth 2.0 authorization code against 701x's
+      own OpenID Connect provider at https://login.701x.com; 1,158 operations require the scope
+      API701x.
+    x-api-evangelist-profile: https://github.com/api-evangelist/701x
+- target: $
+  description: >-
+    Add the servers block the published document omits. The host is the one the spec is served
+    from and the one the Swagger UI calls; it is not inferred from the marketing domain.
+  update:
+    servers:
+    - url: https://api.701x.com
+      description: Production (source of the published Swagger document, verified 2026-09-05)
+- target: $.components.securitySchemes.oauth2
+  description: >-
+    Correct the scope description. The spec documents a single scope "api1" labelled
+    "Demo API - full access", but every secured operation requires "API701x" instead, and
+    scopes_supported at the issuer does not list API701x at all.
+  update:
+    description: >-
+      OAuth 2.0 authorization code against https://login.701x.com. NOTE: the scope actually
+      enforced by 1,158 operations is API701x, which is not the scope declared in this flow's
+      scopes map and is not listed in the issuer's scopes_supported. PKCE (S256) is supported.
+    x-openid-connect-discovery: https://login.701x.com/.well-known/openid-configuration
+    x-enforced-scope: API701x
+- target: $.components
+  description: >-
+    Declare the OpenID Connect scheme the issuer supports but the contract never names, so a
+    client can discover it from the document.
+  update:
+    securitySchemes:
+      openIdConnect:
+        type: openIdConnect
+        openIdConnectUrl: https://login.701x.com/.well-known/openid-configuration
+        description: >-
+          Added by API Evangelist from the provider's own discovery document (HTTP 200,
+          2026-09-05). Not present in the published contract.

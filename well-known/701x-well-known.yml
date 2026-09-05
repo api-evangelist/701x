@@ -1,0 +1,116 @@
+generated: '2026-09-05'
+method: probed
+source: live GET of the named /.well-known/ paths on every host this record knows
+note: >-
+  Only login.701x.com serves a real well-known document — an OpenID Connect discovery document
+  from the company's own IdentityServer, which is the same authorization server the 701x API V1
+  OpenAPI names in its oauth2 securityScheme. The apex and www hosts run on Wix, which answers
+  every /.well-known/ path with an HTTP 400 error page rather than a 404. marketplace.701x.com and
+  mobile.701x.com are Azure Static Web Apps whose SPA catch-all returns HTTP 200 with an HTML
+  shell for every path, so their 200s are NOT documents and are recorded as misses. No
+  security.txt, api-catalog, oauth-protected-resource, ai-plugin.json or agent card was found on
+  any host.
+hosts:
+- host: login.701x.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: 701x-openid-configuration.json
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: api.701x.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: www.701x.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 400
+  - path: /.well-known/openid-configuration
+    status: 400
+  - path: /.well-known/oauth-authorization-server
+    status: 400
+  - path: /.well-known/api-catalog
+    status: 400
+  - path: /.well-known/ai-plugin.json
+    status: 400
+  - path: /.well-known/agent-card.json
+    status: 400
+  - path: /.well-known/agent.json
+    status: 400
+- host: 701x.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 400
+  - path: /.well-known/openid-configuration
+    status: 400
+  - path: /.well-known/oauth-authorization-server
+    status: 400
+  - path: /.well-known/api-catalog
+    status: 400
+  - path: /.well-known/agent-card.json
+    status: 400
+  - path: /.well-known/agent.json
+    status: 400
+- host: app.701x.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: status.701x.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: marketplace.701x.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: SPA catch-all returned an HTML shell, not a document — counted as a miss.
+  - path: /.well-known/agent-card.json
+    status: 200
+    note: SPA catch-all returned an HTML shell, not a document — counted as a miss.
+- host: mobile.701x.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: SPA catch-all returned an HTML shell, not a document — counted as a miss.
+  - path: /.well-known/agent-card.json
+    status: 200
+    note: SPA catch-all returned an HTML shell, not a document — counted as a miss.

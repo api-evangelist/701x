@@ -1,18 +1,79 @@
 aid: 701x
 name: 701x
-description: '701x is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  701x, Inc. is a Fargo, North Dakota agricultural technology company building an end-to-end
+  technology stack for beef cattle producers: solar-powered GPS smart ear tags (xTpro), wireless
+  Bluetooth smart tags (xTlite), base stations and water sensors, paired with the Autonomous
+  Rancher herd-management software and mobile apps. The platform keeps a digital calving book,
+  animal inventory, interactive pasture map, health and activity alerts, virtual fencing, DNA and
+  EPD records, medication and treatment logs, and two-way registration/performance sync with beef
+  breed associations (DigitalBeef). 701x operates a first-party REST API at api.701x.com — a live,
+  publicly readable Swagger/OpenAPI 3.0.1 contract with roughly 1,391 operations across animals,
+  tags, farms, companies, carts, subscriptions and telemetry — secured by its own OpenID Connect
+  identity server at login.701x.com.
+image: https://static.wixstatic.com/media/e5dff8_9adde8e3db064641a957841a43c4d745%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/e5dff8_9adde8e3db064641a957841a43c4d745%7Emv2.jpg
 url: https://raw.githubusercontent.com/api-evangelist/701x/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-09-05'
 modified: '2026-09-05'
+position: Producing
 tags:
 - Company
-apis: []
+- Agriculture
+- AgTech
+- Livestock
+- Cattle Management
+- Ranch Management
+- Animal Health
+- IoT
+- GPS Tracking
+- Traceability
+- Beef Production
+apis:
+- name: 701x API V1
+  description: >-
+    First-party REST API behind the 701x Autonomous Rancher platform and mobile apps. Publicly
+    readable OpenAPI 3.0.1 contract served from a live Swagger UI at the API host root, covering
+    animal records (birth, wean, year, carcass, ultrasound, DNA, EPD, calving, check-in, turn-out),
+    herd groups and locations, farms, pastures, points of interest and virtual fences, smart-tag
+    inventory and telemetry ingest, companies, users, sharing and transfers, medications and
+    treatments, carts, orders, Stripe-backed checkout and service subscriptions. Secured with
+    OAuth 2.0 / OpenID Connect against login.701x.com.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  image: https://static.wixstatic.com/media/e5dff8_9adde8e3db064641a957841a43c4d745%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/e5dff8_9adde8e3db064641a957841a43c4d745%7Emv2.jpg
+  tags:
+  - Agriculture
+  - AgTech
+  - Livestock
+  - Cattle Management
+  - Ranch Management
+  - Animal Health
+  - IoT
+  - GPS Tracking
+  - Traceability
+  - Beef Production
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-api-v1-openapi.json
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Overlay
+    url: overlays/701x-api-v1-overlay.yaml
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +81,51 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://equityzen.com/company/701x
+  url: https://www.701x.com/
+- type: APIReference
+  url: https://api.701x.com/
+- type: GettingStarted
+  url: https://www.701x.com/gettingstarted
+- type: Support
+  url: https://www.701x.com/faq
+- type: Blog
+  url: https://www.701x.com/blog
+- type: BlogRSS
+  url: https://www.701x.com/blog-feed.xml
+- type: SignUp
+  url: https://www.701x.com/start-free-trial
+- type: Login
+  url: https://login.701x.com/
+- type: TermsOfService
+  url: https://login.701x.com/terms
+- type: PrivacyPolicy
+  url: https://login.701x.com/privacy
+- type: LLMsTxt
+  url: llms/701x-llms.txt
+- type: MCPServer
+  url: mcp/701x-mcp.yml
+- type: ToolCrosswalk
+  url: mcp/701x-tool-crosswalk.yml
+- type: WellKnown
+  url: well-known/701x-well-known.yml
+- type: Authentication
+  url: authentication/701x-authentication.yml
+- type: OAuthScopes
+  url: scopes/701x-scopes.yml
+- type: Conformance
+  url: conformance/701x-conformance.yml
+- type: Lifecycle
+  url: lifecycle/701x-lifecycle.yml
+- type: DomainSecurity
+  url: security/701x-domain-security.yml
+- type: RateLimits
+  url: rate-limits/701x-rate-limits.yml
+- type: Plans
+  url: plans/701x-plans-pricing.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-09-05'
+  status: enriched
+  artifacts_added: 22
+  pass: local-v3

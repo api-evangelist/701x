@@ -1,0 +1,37 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://www.701x.com/gettingstarted (200), https://www.701x.com/software (200),
+  https://marketplace.701x.com/ (200, client-rendered), https://www.701x.com/start-free-trial (200)
+  — probed 2026-09-05
+plan_count: 0
+currency: USD
+note: >-
+  701x publishes no plan or price table anywhere a machine — or a person without an account — can
+  read. Hardware and software are sold through marketplace.701x.com, an Azure Static Web App whose
+  catalogue and prices are rendered client-side and are not present in the served HTML; the
+  marketing site carries no pricing page (https://www.701x.com/pricing returns 404). The only
+  published commercial term is a 30-day free trial of the herd-management software, and the site
+  otherwise routes buyers to email, phone or a scheduled sales call. plan_count is 0 because that
+  is the true measurement, not because pricing was not looked for.
+plans: []
+trial:
+  offered: true
+  length_days: 30
+  terms: 30-day free trial of the 701x herd management software
+  signup_url: https://www.701x.com/start-free-trial
+  source: https://www.701x.com/gettingstarted
+commercial_model:
+  hardware: >-
+    Smart ear tags (xTpro GPS, xTlite Bluetooth), base stations, water sensors, applicators, wands
+    and mounts, sold through marketplace.701x.com. The API's /Stripe/CalculateShippingCost*
+    operations enumerate these product lines.
+  software: Subscription (the contract exposes a ServiceSubscription resource with cancel/resume and billing events)
+  billing_processor: Stripe (16 /Stripe/* operations plus an inbound /webhook receiver)
+  contact_sales: true
+api_pricing:
+  published: false
+  note: >-
+    No API plan, quota, key issuance path or developer pricing is published. Access to
+    api.701x.com is via an OAuth client on the company's own identity server, which implies
+    accounts are provisioned rather than self-served.

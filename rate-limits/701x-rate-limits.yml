@@ -1,0 +1,26 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  openapi/701x-api-v1-openapi.json + https://www.701x.com/ (no developer documentation exists) —
+  checked 2026-09-05
+limit_count: 0
+note: >-
+  701x documents no rate limits. There is no developer portal, no API reference beyond the raw
+  Swagger UI, and no throttling policy page. The contract itself is silent: not one of the 1,391
+  operations declares a 429 response, and no RateLimit-*, X-RateLimit-* or Retry-After header
+  appears as a declared response header anywhere in the spec — the document declares no response
+  headers at all. An honest zero, recorded rather than omitted.
+limits: []
+response_headers:
+  observed: []
+  documented: []
+  note: >-
+    Headers could not be observed on a live unauthenticated response either: every API operation
+    requires an OAuth token from login.701x.com, so an anonymous probe returns 401 before any
+    rate-limit accounting would apply.
+status_on_exhaustion: null
+retry_guidance:
+  published: false
+  note: >-
+    With no idempotency mechanism (conventions/701x-conventions.yml) and no documented backoff
+    signal, a client that retries a failed bulk write has no safe strategy published to it.

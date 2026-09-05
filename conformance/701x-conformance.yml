@@ -1,0 +1,111 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  https://login.701x.com/.well-known/openid-configuration (200) +
+  openapi/701x-api-v1-openapi.json
+summary: >-
+  Conformance assertions for 701x, drawn from the contract and from the company's own OpenID
+  Connect discovery document. 701x conforms to OAuth 2.0 and OpenID Connect Discovery through a
+  self-hosted IdentityServer. It does not conform to RFC 9457, and the beef-cattle market's own
+  interchange standards are absent from the contract even though the product integrates with breed
+  associations.
+conformance:
+- id: oauth2
+  name: OAuth 2.0 (RFC 6749)
+  conforms: true
+  evidence: >-
+    components.securitySchemes.oauth2 declares an authorizationCode flow with authorizationUrl
+    https://login.701x.com/connect/authorize and tokenUrl https://login.701x.com/connect/token;
+    1,158 operations require it with scope API701x.
+  source: openapi/701x-api-v1-openapi.json
+- id: oidc
+  name: OpenID Connect Discovery 1.0
+  conforms: true
+  evidence: >-
+    https://login.701x.com/.well-known/openid-configuration returns 200 with issuer, jwks_uri,
+    authorization_endpoint, token_endpoint, userinfo_endpoint, end_session_endpoint,
+    revocation_endpoint, introspection_endpoint and device_authorization_endpoint.
+  source: https://login.701x.com/.well-known/openid-configuration
+- id: oauth2-device-grant
+  name: OAuth 2.0 Device Authorization Grant (RFC 8628)
+  conforms: true
+  evidence: >-
+    grant_types_supported includes urn:ietf:params:oauth:grant-type:device_code and a
+    device_authorization_endpoint is published.
+  source: https://login.701x.com/.well-known/openid-configuration
+- id: oauth2-token-revocation
+  name: OAuth 2.0 Token Revocation (RFC 7009)
+  conforms: true
+  evidence: revocation_endpoint https://login.701x.com/connect/revocation is published in discovery.
+  source: https://login.701x.com/.well-known/openid-configuration
+- id: oauth2-introspection
+  name: OAuth 2.0 Token Introspection (RFC 7662)
+  conforms: true
+  evidence: introspection_endpoint https://login.701x.com/connect/introspect is published in discovery.
+  source: https://login.701x.com/.well-known/openid-configuration
+- id: openapi
+  name: OpenAPI Specification 3.0.1
+  conforms: true
+  evidence: >-
+    https://api.701x.com/swagger/v1/swagger.json parses as OpenAPI 3.0.1 with 1,191 paths, 1,391
+    operations and 172 component schemas.
+  source: openapi/701x-api-v1-openapi.json
+- id: rfc9457
+  name: RFC 9457 Problem Details for HTTP APIs
+  conforms: false
+  evidence: >-
+    No application/problem+json media type and no error schema appear anywhere in the contract;
+    the only typed error body is a bare JSON string.
+  source: errors/701x-problem-types.yml
+- id: pagination
+  name: Standard pagination signalling
+  conforms: partial
+  evidence: >-
+    Offset/limit query parameters (top, offset, fetch, orderBy) are present on ~226 collection
+    operations, but no total-count, link or cursor field is declared on any response.
+  source: conventions/701x-conventions.yml
+- id: idempotency
+  name: Idempotent write semantics
+  conforms: false
+  evidence: >-
+    No Idempotency-Key header parameter exists on any of the 899 mutating operations.
+  source: conventions/701x-conventions.yml
+- id: oauth2-pkce
+  name: PKCE (RFC 7636)
+  conforms: true
+  evidence: >-
+    code_challenge_methods_supported is published in the discovery document alongside the
+    authorization_code grant.
+  source: https://login.701x.com/.well-known/openid-configuration
+domain_standards:
+  market: Beef cattle production, livestock traceability and animal identification
+  searched:
+  - id: iso-11784-11785
+    name: ISO 11784/11785 RFID animal identification
+    conforms: unknown
+    evidence: >-
+      The contract carries managementRFID, usdaNumber, internationalNumber and EID tag fields on
+      Animal_Master, which are the data slots these schemes populate, but nothing in the spec
+      declares a conformance class, a check-digit rule or a country-code scheme. Recorded as
+      unknown rather than asserted.
+    source: openapi/701x-api-v1-openapi.json
+  - id: icar
+    name: ICAR animal-data interchange guidelines
+    conforms: false
+    evidence: No ICAR message type, schema or reference appears in the contract or on the site.
+  - id: agrigateway-adapt
+    name: AgGateway ADAPT / agricultural data interchange
+    conforms: false
+    evidence: No ADAPT or AgGateway artifact appears in the contract or on the site.
+  note: >-
+    701x integrates with beef breed associations (DigitalBeef) and exposes AnimalAssociation,
+    Association and AssociationUser resources plus registration numbers and EPD records, so an
+    interchange format almost certainly exists between 701x and the associations. It is not
+    declared in the public contract, so no domain-standard conformance is asserted here.
+    REWARD-ONLY: nothing is penalised for this.
+certifications:
+  published: []
+  note: >-
+    No trust center, SOC 2, ISO 27001, PCI or other certification page was found on any 701x host
+    (see security/701x-vulnerability-disclosure and trust-center probes, which returned no hits).
+    No Compliance pointer is emitted.

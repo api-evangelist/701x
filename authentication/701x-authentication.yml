@@ -1,0 +1,100 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  https://login.701x.com/.well-known/openid-configuration (HTTP 200, fetched 2026-09-05) +
+  openapi/701x-api-v1-openapi.json
+summary:
+  types:
+  - oauth2
+  - openIdConnect
+  oauth2_flows:
+  - authorizationCode
+  primary: OAuth 2.0 authorization code against the company's own IdentityServer at login.701x.com
+  api_keys: false
+  basic_auth: false
+  mtls: false
+  note: >-
+    701x publishes no authentication documentation. Everything below is read from the contract's
+    securityScheme and from the company's own OpenID Connect discovery document, both of which are
+    anonymous and public.
+schemes:
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://login.701x.com/connect/authorize
+    tokenUrl: https://login.701x.com/connect/token
+    scopes: 1
+    declared_scopes:
+      api1: Demo API - full access
+  applied_to: >-
+    1158 of 1391 operations require [oauth2: [API701x]]; the remaining 234 declare no security
+    requirement in the contract.
+  sources:
+  - openapi/701x-api-v1-openapi.json
+- name: openIdConnect
+  type: openIdConnect
+  openIdConnectUrl: https://login.701x.com/.well-known/openid-configuration
+  note: >-
+    Not declared in the OpenAPI, but the same issuer the oauth2 scheme points at publishes a full
+    OIDC discovery document, so OIDC is available to clients that want id_tokens and userinfo.
+  sources:
+  - https://login.701x.com/.well-known/openid-configuration
+authorization_server:
+  issuer: https://login.701x.com
+  discovery: https://login.701x.com/.well-known/openid-configuration
+  jwks_uri: https://login.701x.com/.well-known/openid-configuration/jwks
+  software: self-hosted (Duende/IdentityServer-shaped endpoint layout under /connect/*)
+  endpoints:
+    authorization: https://login.701x.com/connect/authorize
+    token: https://login.701x.com/connect/token
+    userinfo: https://login.701x.com/connect/userinfo
+    end_session: https://login.701x.com/connect/endsession
+    revocation: https://login.701x.com/connect/revocation
+    introspection: https://login.701x.com/connect/introspect
+    device_authorization: https://login.701x.com/connect/deviceauthorization
+    check_session_iframe: https://login.701x.com/connect/checksession
+  grant_types_supported:
+  - authorization_code
+  - client_credentials
+  - refresh_token
+  - implicit
+  - password
+  - urn:ietf:params:oauth:grant-type:device_code
+  response_types_supported:
+  - code
+  - token
+  - id_token
+  - id_token token
+  - code id_token
+  - code token
+  - code id_token token
+  code_challenge_methods_supported:
+  - plain
+  - S256
+  scopes_supported:
+  - openid
+  - profile
+  - email
+  - api1
+  - offline_access
+  claims_supported_count: 18
+  logout:
+    frontchannel: true
+    backchannel: true
+findings:
+- >-
+  The scope the API actually enforces (API701x) is NOT in the authorization server's
+  scopes_supported list, and the scope the securityScheme documents (api1, described as
+  "Demo API - full access") is not the one any operation requires. A client following the
+  published contract literally would request the wrong scope.
+- >-
+  The authorization server advertises the implicit and resource-owner-password grants, both
+  discouraged by OAuth 2.0 Security Best Current Practice (RFC 9700).
+- >-
+  PKCE is supported, but "plain" is offered alongside S256; S256 should be preferred by clients.
+- No API-key, HTTP basic or mutual-TLS authentication path exists on this API.
+cross_links:
+  scopes: scopes/701x-scopes.yml
+  conventions: conventions/701x-conventions.yml
+  well_known: well-known/701x-well-known.yml

@@ -1,0 +1,64 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  openapi/701x-api-v1-openapi.json (securitySchemes + per-operation security requirements) +
+  https://login.701x.com/.well-known/openid-configuration (HTTP 200, fetched 2026-09-05)
+docs: null
+docs_note: >-
+  701x publishes no scopes or permissions reference page. The scope set below is what the contract
+  and the authorization server's own discovery document actually declare — nothing is inferred.
+schemes:
+- name: oauth2
+  source: openapi/701x-api-v1-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://login.701x.com/connect/authorize
+    tokenUrl: https://login.701x.com/connect/token
+granularity: coarse
+granularity_note: >-
+  There is exactly one API scope for the entire 1,391-operation surface. A token that can read a
+  herd inventory can also mass-delete animals, cancel subscriptions and run every admin
+  controller. There is no read/write split, no per-resource scope, and no way for an integrator or
+  an agent to hold least privilege.
+scopes:
+- scope: API701x
+  description: >-
+    The scope the API enforces. Required by 1,158 of 1,391 operations across every resource
+    family. Not described anywhere by the provider and not listed in the authorization server's
+    scopes_supported.
+  flows:
+  - authorizationCode
+  operations: 1158
+  sources:
+  - openapi/701x-api-v1-openapi.json
+- scope: api1
+  description: >-
+    "Demo API - full access" — the only scope described in the OpenAPI securityScheme, and one of
+    the five scopes the authorization server advertises. No operation in the contract requires it.
+  flows:
+  - authorizationCode
+  operations: 0
+  sources:
+  - openapi/701x-api-v1-openapi.json
+  - https://login.701x.com/.well-known/openid-configuration
+- scope: openid
+  description: OpenID Connect base scope; returns an id_token.
+  sources:
+  - https://login.701x.com/.well-known/openid-configuration
+- scope: profile
+  description: Standard OIDC profile claims (name, family_name, given_name, picture, locale, and role).
+  sources:
+  - https://login.701x.com/.well-known/openid-configuration
+- scope: email
+  description: Standard OIDC email and email_verified claims.
+  sources:
+  - https://login.701x.com/.well-known/openid-configuration
+- scope: offline_access
+  description: Issues a refresh token for long-lived access.
+  sources:
+  - https://login.701x.com/.well-known/openid-configuration
+findings:
+- >-
+  Scope mismatch: the enforced scope (API701x) is absent from scopes_supported, while the
+  documented scope (api1) is enforced by nothing. Integrators must discover API701x by reading the
+  per-operation security requirements in the spec.

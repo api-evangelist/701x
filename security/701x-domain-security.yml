@@ -1,0 +1,22 @@
+generated: '2026-09-05'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.701x.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 15 00:57:07 2026 GMT
+  hsts: true
+  hsts_max_age: 31556952
+- host: api.701x.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec  9 23:59:59 2026 GMT
+  hsts: null
+domains:
+- domain: 701x.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

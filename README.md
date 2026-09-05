@@ -64,5 +64,24 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-701x is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://equityzen.com/company/701x
+701x, Inc. (Fargo, North Dakota) builds an end-to-end technology stack for beef cattle
+producers: solar-powered GPS smart ear tags (xTpro), wireless Bluetooth smart tags (xTlite), base
+stations and water sensors, paired with the Autonomous Rancher herd-management software and
+mobile apps.
+
+**What this profile found (2026-09-05).** 701x operates a first-party REST API at
+`https://api.701x.com` with a **publicly readable Swagger UI at the host root** and an OpenAPI
+3.0.1 document at `https://api.701x.com/swagger/v1/swagger.json` — 1,191 paths, 1,391 operations,
+172 schemas. It is secured by OAuth 2.0 / OpenID Connect against the company's own identity
+server at `https://login.701x.com`, which publishes a complete OIDC discovery document.
+
+There is **no developer program**: no portal, no API reference beyond the raw Swagger UI, no
+changelog, no rate-limit or pricing documentation, and no SDKs in any package registry. The
+contract itself is uncurated Swashbuckle output — no operation summaries or descriptions, and 7
+operationIds across 1,391 operations — and the scope it enforces (`API701x`) is not the scope it
+documents (`api1`).
+
+- Website: https://www.701x.com/
+- API + Swagger UI: https://api.701x.com/
+- Identity: https://login.701x.com/.well-known/openid-configuration
+- Secondary-market listing this record was harvested from: https://equityzen.com/company/701x
