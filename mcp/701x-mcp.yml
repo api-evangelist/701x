@@ -2,13 +2,12 @@ generated: '2026-09-05'
 method: probed
 source: https://www.701x.com/_api/mcp (JSON-RPC tools/list, HTTP 200, 2026-09-05)
 name: 701x Site MCP (Wix-provided)
-summary: >-
-  701x serves a live, anonymous MCP endpoint at https://www.701x.com/_api/mcp, advertised in its
-  own /llms.txt. It is the standard Wix Site MCP shipped with the Wix-hosted marketing site — the
-  tool set is Wix's, not 701x's, and every tool operates on public website content or on the Wix
-  platform APIs. NONE of the nine tools reaches the 701x cattle platform: there is no MCP tool for
-  animals, herds, tags, farms, telemetry or any other operation in the 701x API V1 OpenAPI. Recorded
-  here because it is a real, reachable agent surface on a 701x host — not because 701x authored it.
+summary: '701x serves a live, anonymous MCP endpoint at https://www.701x.com/_api/mcp, advertised in its
+  own /llms.txt. It is the standard Wix Site MCP shipped with the Wix-hosted marketing site — the tool
+  set is Wix''s, not 701x''s, and every tool operates on public website content or on the Wix platform
+  APIs. NONE of the nine tools reaches the 701x cattle platform: there is no MCP tool for animals, herds,
+  tags, farms, telemetry or any other operation in the 701x API V1 OpenAPI. Recorded here because it is
+  a real, reachable agent surface on a 701x host — not because 701x authored it.'
 authorship: platform
 platform: Wix Site MCP
 deployment:
@@ -16,6 +15,11 @@ deployment:
   endpoint: https://www.701x.com/_api/mcp
   auth: none
   verified: probed
+  probe_prior: (never probed)
+  probe: live
+  probe_why: live
+  checked: '2026-09-11'
+  source: claimed-backlog re-probe 2026-09-11
 transport: streamable-http / JSON-RPC 2.0
 tools_source: mcp/701x-mcp-tools-list.json
 tool_count: 9
@@ -25,33 +29,47 @@ tools:
   inputs: []
 - name: SearchInSite
   description: Searches the public 701x website for information.
-  inputs: [searchTerm]
+  inputs:
+  - searchTerm
 - name: SearchSiteApiDocs
   description: Retrieves API documentation for the Wix business solutions installed on this site.
-  inputs: [searchTerm]
+  inputs:
+  - searchTerm
 - name: GenerateVisitorToken
   description: Creates a visitor session and returns a visitor access token for the site.
   inputs: []
 - name: CallWixSiteAPI
   description: Calls Wix site API methods on a visitor's behalf (query site data, start a purchase).
-  inputs: [visitorToken, url, method, body]
+  inputs:
+  - visitorToken
+  - url
+  - method
+  - body
 - name: ExecuteWixAPI
   description: Executes Wix API code against the site.
-  inputs: [code, reason, hasMutations, sourceDocUrls, visitorToken]
+  inputs:
+  - code
+  - reason
+  - hasMutations
+  - sourceDocUrls
+  - visitorToken
 - name: ReadFullDocsArticle
   description: Fetches a complete article from the Wix developer documentation portal.
-  inputs: [articleUrl]
+  inputs:
+  - articleUrl
 - name: ReadFullDocsMethodSchema
   description: Fetches the full schema for a Wix API method.
-  inputs: [articleUrl, reason]
+  inputs:
+  - articleUrl
+  - reason
 - name: BrowseWixRESTDocsMenu
   description: Browses the Wix REST documentation menu.
-  inputs: [menuUrl, reason]
+  inputs:
+  - menuUrl
+  - reason
 notes:
-- >-
-  No first-party 701x MCP server was found. Probes for a hosted server on api.701x.com,
-  app.701x.com, mobile.701x.com and marketplace.701x.com returned 404 or an SPA shell, and no
-  npm/PyPI package publishing a 701x MCP server exists in any registry searched.
-- >-
-  The advertised endpoint is unauthenticated and, per the Wix llms.txt, exposes only public site
-  information. Agents should not expect access to herd, animal or tag data through it.
+- No first-party 701x MCP server was found. Probes for a hosted server on api.701x.com, app.701x.com,
+  mobile.701x.com and marketplace.701x.com returned 404 or an SPA shell, and no npm/PyPI package publishing
+  a 701x MCP server exists in any registry searched.
+- The advertised endpoint is unauthenticated and, per the Wix llms.txt, exposes only public site information.
+  Agents should not expect access to herd, animal or tag data through it.
