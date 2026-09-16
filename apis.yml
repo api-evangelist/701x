@@ -32,36 +32,5011 @@ tags:
 - Traceability
 - Beef Production
 apis:
-- name: 701x API V1
-  description: >-
-    First-party REST API behind the 701x Autonomous Rancher platform and mobile apps. Publicly
-    readable OpenAPI 3.0.1 contract served from a live Swagger UI at the API host root, covering
-    animal records (birth, wean, year, carcass, ultrasound, DNA, EPD, calving, check-in, turn-out),
-    herd groups and locations, farms, pastures, points of interest and virtual fences, smart-tag
-    inventory and telemetry ingest, companies, users, sharing and transfers, medications and
-    treatments, carts, orders, Stripe-backed checkout and service subscriptions. Secured with
-    OAuth 2.0 / OpenID Connect against login.701x.com.
+- aid: 701x:701x-animal-api
+  name: 701x Animal API
+  description: The Animal API from 701x — 9 operation(s) for animal.
   humanURL: https://api.701x.com/
   baseURL: https://api.701x.com
-  image: https://static.wixstatic.com/media/e5dff8_9adde8e3db064641a957841a43c4d745%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/e5dff8_9adde8e3db064641a957841a43c4d745%7Emv2.jpg
   tags:
-  - Agriculture
-  - AgTech
-  - Livestock
-  - Cattle Management
-  - Ranch Management
-  - Animal Health
-  - IoT
-  - GPS Tracking
-  - Traceability
-  - Beef Production
+  - Animal
   properties:
   - type: OpenAPI
-    url: openapi/701x-api-v1-openapi.json
+    url: openapi/701x-animal-api-openapi.yml
   - type: APIReference
     url: https://api.701x.com/
-  - type: Overlay
-    url: overlays/701x-api-v1-overlay.yaml
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalassociation-api
+  name: 701x Animal Association API
+  description: The AnimalAssociation API from 701x — 3 operation(s) for animalassociation.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalAssociation
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalassociation-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalassociationcontrollerbasic-api
+  name: 701x Animal Association Controller Basic API
+  description: >-
+    The AnimalAssociationControllerBasic API from 701x — 2 operation(s) for animalassociationcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalAssociationControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalassociationcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalattachment-api
+  name: 701x Animal Attachment API
+  description: The AnimalAttachment API from 701x — 6 operation(s) for animalattachment.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalAttachment
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalattachment-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalattachmentcontrolleradmin-api
+  name: 701x Animal Attachment Controller Admin API
+  description: >-
+    The AnimalAttachmentControllerAdmin API from 701x — 6 operation(s) for animalattachmentcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalAttachmentControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalattachmentcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalcalving-api
+  name: 701x Animal Calving API
+  description: The AnimalCalving API from 701x — 6 operation(s) for animalcalving.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalCalving
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalcalving-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalcalvingcontrolleradmin-api
+  name: 701x Animal Calving Controller Admin API
+  description: >-
+    The AnimalCalvingControllerAdmin API from 701x — 6 operation(s) for animalcalvingcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalCalvingControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalcalvingcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalcheckin-api
+  name: 701x Animal Check In API
+  description: The AnimalCheckIn API from 701x — 7 operation(s) for animalcheckin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalCheckIn
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalcheckin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalcheckincontrolleradmin-api
+  name: 701x Animal Check In Controller Admin API
+  description: >-
+    The AnimalCheckInControllerAdmin API from 701x — 7 operation(s) for animalcheckincontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalCheckInControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalcheckincontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalcheckincontrollerbasic-api
+  name: 701x Animal Check In Controller Basic API
+  description: >-
+    The AnimalCheckInControllerBasic API from 701x — 7 operation(s) for animalcheckincontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalCheckInControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalcheckincontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalcomment-api
+  name: 701x Animal Comment API
+  description: The AnimalComment API from 701x — 6 operation(s) for animalcomment.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalComment
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalcomment-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalcommentcontrolleradmin-api
+  name: 701x Animal Comment Controller Admin API
+  description: >-
+    The AnimalCommentControllerAdmin API from 701x — 6 operation(s) for animalcommentcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalCommentControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalcommentcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalcontrolleradmin-api
+  name: 701x Animal Controller Admin API
+  description: The AnimalControllerAdmin API from 701x — 7 operation(s) for animalcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalcontrollerbasic-api
+  name: 701x Animal Controller Basic API
+  description: The AnimalControllerBasic API from 701x — 7 operation(s) for animalcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animaldatabirth-api
+  name: 701x Animal Data Birth API
+  description: The AnimalDataBirth API from 701x — 5 operation(s) for animaldatabirth.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalDataBirth
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animaldatabirth-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animaldatabirthcontrollerbasic-api
+  name: 701x Animal Data Birth Controller Basic API
+  description: >-
+    The AnimalDataBirthControllerBasic API from 701x — 6 operation(s) for animaldatabirthcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalDataBirthControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animaldatabirthcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animaldatacarcass-api
+  name: 701x Animal Data Carcass API
+  description: The AnimalDataCarcass API from 701x — 5 operation(s) for animaldatacarcass.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalDataCarcass
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animaldatacarcass-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animaldatacarcasscontrollerbasic-api
+  name: 701x Animal Data Carcass Controller Basic API
+  description: >-
+    The AnimalDataCarcassControllerBasic API from 701x — 6 operation(s) for animaldatacarcasscontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalDataCarcassControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animaldatacarcasscontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animaldataowner-api
+  name: 701x Animal Data Owner API
+  description: The AnimalDataOwner API from 701x — 4 operation(s) for animaldataowner.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalDataOwner
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animaldataowner-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animaldataownercontrollerbasic-api
+  name: 701x Animal Data Owner Controller Basic API
+  description: >-
+    The AnimalDataOwnerControllerBasic API from 701x — 6 operation(s) for animaldataownercontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalDataOwnerControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animaldataownercontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animaldataultrasound-api
+  name: 701x Animal Data Ultrasound API
+  description: The AnimalDataUltrasound API from 701x — 5 operation(s) for animaldataultrasound.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalDataUltrasound
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animaldataultrasound-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animaldataultrasoundcontrollerbasic-api
+  name: 701x Animal Data Ultrasound Controller Basic API
+  description: >-
+    The AnimalDataUltrasoundControllerBasic API from 701x — 6 operation(s) for animaldataultrasoundcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalDataUltrasoundControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animaldataultrasoundcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animaldatawean-api
+  name: 701x Animal Data Wean API
+  description: The AnimalDataWean API from 701x — 5 operation(s) for animaldatawean.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalDataWean
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animaldatawean-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animaldataweancontrollerbasic-api
+  name: 701x Animal Data Wean Controller Basic API
+  description: >-
+    The AnimalDataWeanControllerBasic API from 701x — 6 operation(s) for animaldataweancontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalDataWeanControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animaldataweancontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animaldatayear-api
+  name: 701x Animal Data Year API
+  description: The AnimalDataYear API from 701x — 5 operation(s) for animaldatayear.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalDataYear
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animaldatayear-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animaldatayearcontrollerbasic-api
+  name: 701x Animal Data Year Controller Basic API
+  description: >-
+    The AnimalDataYearControllerBasic API from 701x — 6 operation(s) for animaldatayearcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalDataYearControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animaldatayearcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animaldna-api
+  name: 701x Animal DNA API
+  description: The AnimalDNA API from 701x — 4 operation(s) for animaldna.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalDNA
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animaldna-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalepd-api
+  name: 701x Animal EPD API
+  description: The AnimalEPD API from 701x — 7 operation(s) for animalepd.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalEPD
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalepd-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalepdcontrolleradmin-api
+  name: 701x Animal EPD Controller Admin API
+  description: >-
+    The AnimalEPDControllerAdmin API from 701x — 6 operation(s) for animalepdcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalEPDControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalepdcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalepdcontrollerbasic-api
+  name: 701x Animal EPD Controller Basic API
+  description: >-
+    The AnimalEPDControllerBasic API from 701x — 6 operation(s) for animalepdcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalEPDControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalepdcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalgroup-api
+  name: 701x Animal Group API
+  description: The AnimalGroup API from 701x — 6 operation(s) for animalgroup.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalGroup
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalgroup-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalgroupcontrolleradmin-api
+  name: 701x Animal Group Controller Admin API
+  description: >-
+    The AnimalGroupControllerAdmin API from 701x — 6 operation(s) for animalgroupcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalGroupControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalgroupcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animallog-api
+  name: 701x Animal Log API
+  description: The AnimalLog API from 701x — 9 operation(s) for animallog.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalLog
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animallog-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animallogcontrolleradmin-api
+  name: 701x Animal Log Controller Admin API
+  description: >-
+    The AnimalLogControllerAdmin API from 701x — 8 operation(s) for animallogcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalLogControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animallogcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalowner-api
+  name: 701x Animal Owner API
+  description: The AnimalOwner API from 701x — 3 operation(s) for animalowner.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalOwner
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalowner-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalpap-api
+  name: 701x Animal PAP API
+  description: The AnimalPAP API from 701x — 3 operation(s) for animalpap.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalPAP
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalpap-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalscrotal-api
+  name: 701x Animal Scrotal API
+  description: The AnimalScrotal API from 701x — 3 operation(s) for animalscrotal.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalScrotal
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalscrotal-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalturnout-api
+  name: 701x Animal Turn Out API
+  description: The AnimalTurnOut API from 701x — 6 operation(s) for animalturnout.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalTurnOut
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalturnout-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-animalturnoutcontrolleradmin-api
+  name: 701x Animal Turn Out Controller Admin API
+  description: >-
+    The AnimalTurnOutControllerAdmin API from 701x — 6 operation(s) for animalturnoutcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AnimalTurnOutControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-animalturnoutcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-association-api
+  name: 701x Association API
+  description: The Association API from 701x — 4 operation(s) for association.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Association
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-association-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-associationuser-api
+  name: 701x Association User API
+  description: The AssociationUser API from 701x — 8 operation(s) for associationuser.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AssociationUser
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-associationuser-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-attachment-api
+  name: 701x Attachment API
+  description: The Attachment API from 701x — 7 operation(s) for attachment.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Attachment
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-attachment-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-attachmentcontrolleradmin-api
+  name: 701x Attachment Controller Admin API
+  description: >-
+    The AttachmentControllerAdmin API from 701x — 7 operation(s) for attachmentcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - AttachmentControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-attachmentcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-cart-api
+  name: 701x Cart API
+  description: The Cart API from 701x — 10 operation(s) for cart.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Cart
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-cart-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-cartcontrolleradmin-api
+  name: 701x Cart Controller Admin API
+  description: The CartControllerAdmin API from 701x — 9 operation(s) for cartcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CartControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-cartcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-cartcontrollerbasic-api
+  name: 701x Cart Controller Basic API
+  description: The CartControllerBasic API from 701x — 3 operation(s) for cartcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CartControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-cartcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-cartpackage-api
+  name: 701x Cart Package API
+  description: The CartPackage API from 701x — 8 operation(s) for cartpackage.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CartPackage
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-cartpackage-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-cartpackagecontrolleradmin-api
+  name: 701x Cart Package Controller Admin API
+  description: >-
+    The CartPackageControllerAdmin API from 701x — 5 operation(s) for cartpackagecontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CartPackageControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-cartpackagecontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-cartproduct-api
+  name: 701x Cart Product API
+  description: The CartProduct API from 701x — 8 operation(s) for cartproduct.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CartProduct
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-cartproduct-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-cartproductcontrolleradmin-api
+  name: 701x Cart Product Controller Admin API
+  description: >-
+    The CartProductControllerAdmin API from 701x — 4 operation(s) for cartproductcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CartProductControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-cartproductcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-cartproductcontrollerbasic-api
+  name: 701x Cart Product Controller Basic API
+  description: >-
+    The CartProductControllerBasic API from 701x — 1 operation(s) for cartproductcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CartProductControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-cartproductcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-cell-api
+  name: 701x Cell API
+  description: The Cell API from 701x — 3 operation(s) for cell.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Cell
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-cell-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-cellcontrolleradmin-api
+  name: 701x Cell Controller Admin API
+  description: The CellControllerAdmin API from 701x — 3 operation(s) for cellcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CellControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-cellcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-cellstrength-api
+  name: 701x Cell Strength API
+  description: The CellStrength API from 701x — 3 operation(s) for cellstrength.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CellStrength
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-cellstrength-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-cellstrengthcontrolleradmin-api
+  name: 701x Cell Strength Controller Admin API
+  description: >-
+    The CellStrengthControllerAdmin API from 701x — 3 operation(s) for cellstrengthcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CellStrengthControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-cellstrengthcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-comment-api
+  name: 701x Comment API
+  description: The Comment API from 701x — 6 operation(s) for comment.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Comment
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-comment-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-commentcontrolleradmin-api
+  name: 701x Comment Controller Admin API
+  description: The CommentControllerAdmin API from 701x — 6 operation(s) for commentcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CommentControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-commentcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-commentmastercontrollerbasic-api
+  name: 701x Comment Master Controller Basic API
+  description: >-
+    The CommentMasterControllerBasic API from 701x — 4 operation(s) for commentmastercontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CommentMasterControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-commentmastercontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-company-api
+  name: 701x Company API
+  description: The Company API from 701x — 8 operation(s) for company.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Company
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-company-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companyanimal-api
+  name: 701x Company Animal API
+  description: The CompanyAnimal API from 701x — 10 operation(s) for companyanimal.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyAnimal
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companyanimal-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companyanimalcontrolleradmin-api
+  name: 701x Company Animal Controller Admin API
+  description: >-
+    The CompanyAnimalControllerAdmin API from 701x — 10 operation(s) for companyanimalcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyAnimalControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companyanimalcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companyassociation-api
+  name: 701x Company Association API
+  description: The CompanyAssociation API from 701x — 3 operation(s) for companyassociation.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyAssociation
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companyassociation-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companyassociationcontrollerbasic-api
+  name: 701x Company Association Controller Basic API
+  description: >-
+    The CompanyAssociationControllerBasic API from 701x — 3 operation(s) for companyassociationcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyAssociationControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companyassociationcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companyassociationtokencontrollerbasic-api
+  name: 701x Company Association Token Controller Basic API
+  description: >-
+    The CompanyAssociationTokenControllerBasic API from 701x — 2 operation(s) for companyassociationtokencontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyAssociationTokenControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companyassociationtokencontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companycontrolleradmin-api
+  name: 701x Company Controller Admin API
+  description: The CompanyControllerAdmin API from 701x — 4 operation(s) for companycontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companycontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companycontrollerbasic-api
+  name: 701x Company Controller Basic API
+  description: The CompanyControllerBasic API from 701x — 2 operation(s) for companycontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companycontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companyitem-api
+  name: 701x Company Item API
+  description: The CompanyItem API from 701x — 9 operation(s) for companyitem.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyItem
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companyitem-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companyitemcontrolleradmin-api
+  name: 701x Company Item Controller Admin API
+  description: >-
+    The CompanyItemControllerAdmin API from 701x — 8 operation(s) for companyitemcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyItemControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companyitemcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companypurchase-api
+  name: 701x Company Purchase API
+  description: The CompanyPurchase API from 701x — 8 operation(s) for companypurchase.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyPurchase
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companypurchase-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companypurchasecontrolleradmin-api
+  name: 701x Company Purchase Controller Admin API
+  description: >-
+    The CompanyPurchaseControllerAdmin API from 701x — 5 operation(s) for companypurchasecontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyPurchaseControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companypurchasecontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companysale-api
+  name: 701x Company Sale API
+  description: The CompanySale API from 701x — 8 operation(s) for companysale.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanySale
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companysale-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companysalecontrolleradmin-api
+  name: 701x Company Sale Controller Admin API
+  description: >-
+    The CompanySaleControllerAdmin API from 701x — 5 operation(s) for companysalecontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanySaleControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companysalecontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companyshare-api
+  name: 701x Company Share API
+  description: The CompanyShare API from 701x — 17 operation(s) for companyshare.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyShare
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companyshare-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companytag-api
+  name: 701x Company Tag API
+  description: The CompanyTag API from 701x — 10 operation(s) for companytag.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyTag
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companytag-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companytagcontrolleradmin-api
+  name: 701x Company Tag Controller Admin API
+  description: >-
+    The CompanyTagControllerAdmin API from 701x — 10 operation(s) for companytagcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyTagControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companytagcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companytransfer-api
+  name: 701x Company Transfer API
+  description: The CompanyTransfer API from 701x — 12 operation(s) for companytransfer.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyTransfer
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companytransfer-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companytransfercontrolleradmin-api
+  name: 701x Company Transfer Controller Admin API
+  description: >-
+    The CompanyTransferControllerAdmin API from 701x — 6 operation(s) for companytransfercontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyTransferControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companytransfercontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companyuser-api
+  name: 701x Company User API
+  description: The CompanyUser API from 701x — 10 operation(s) for companyuser.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyUser
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companyuser-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companyusercontrolleradmin-api
+  name: 701x Company User Controller Admin API
+  description: >-
+    The CompanyUserControllerAdmin API from 701x — 11 operation(s) for companyusercontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyUserControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companyusercontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-companyusercontrollerbasic-api
+  name: 701x Company User Controller Basic API
+  description: >-
+    The CompanyUserControllerBasic API from 701x — 1 operation(s) for companyusercontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CompanyUserControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-companyusercontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-contact-api
+  name: 701x Contact API
+  description: The Contact API from 701x — 6 operation(s) for contact.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Contact
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-contact-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-contactaddress-api
+  name: 701x Contact Address API
+  description: The ContactAddress API from 701x — 3 operation(s) for contactaddress.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - ContactAddress
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-contactaddress-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-contactaddresscontrollerbasic-api
+  name: 701x Contact Address Controller Basic API
+  description: >-
+    The ContactAddressControllerBasic API from 701x — 3 operation(s) for contactaddresscontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - ContactAddressControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-contactaddresscontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-contactcontrolleradmin-api
+  name: 701x Contact Controller Admin API
+  description: The ContactControllerAdmin API from 701x — 6 operation(s) for contactcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - ContactControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-contactcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-contactcontrollerbasic-api
+  name: 701x Contact Controller Basic API
+  description: The ContactControllerBasic API from 701x — 6 operation(s) for contactcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - ContactControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-contactcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-contactmembership-api
+  name: 701x Contact Membership API
+  description: The ContactMembership API from 701x — 6 operation(s) for contactmembership.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - ContactMembership
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-contactmembership-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-cowcalfcontrollerbasic-api
+  name: 701x Cow Calf Controller Basic API
+  description: The CowCalfControllerBasic API from 701x — 1 operation(s) for cowcalfcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - CowCalfControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-cowcalfcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-customization-api
+  name: 701x Customization API
+  description: The Customization API from 701x — 1 operation(s) for customization.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Customization
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-customization-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-discount-api
+  name: 701x Discount API
+  description: The Discount API from 701x — 3 operation(s) for discount.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Discount
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-discount-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-embryo-api
+  name: 701x Embryo API
+  description: The Embryo API from 701x — 6 operation(s) for embryo.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Embryo
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-embryo-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-embryocanisterstorage-api
+  name: 701x Embryo Canister Storage API
+  description: The EmbryoCanisterStorage API from 701x — 6 operation(s) for embryocanisterstorage.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - EmbryoCanisterStorage
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-embryocanisterstorage-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-embryocanisterstoragecontrollerbasic-api
+  name: 701x Embryo Canister Storage Controller Basic API
+  description: >-
+    The EmbryoCanisterStorageControllerBasic API from 701x — 4 operation(s) for embryocanisterstoragecontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - EmbryoCanisterStorageControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-embryocanisterstoragecontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-embryocollection-api
+  name: 701x Embryo Collection API
+  description: The EmbryoCollection API from 701x — 6 operation(s) for embryocollection.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - EmbryoCollection
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-embryocollection-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-embryocollectioncontrollerbasic-api
+  name: 701x Embryo Collection Controller Basic API
+  description: >-
+    The EmbryoCollectionControllerBasic API from 701x — 5 operation(s) for embryocollectioncontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - EmbryoCollectionControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-embryocollectioncontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-embryocontrollerbasic-api
+  name: 701x Embryo Controller Basic API
+  description: The EmbryoControllerBasic API from 701x — 5 operation(s) for embryocontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - EmbryoControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-embryocontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-embryotank-api
+  name: 701x Embryo Tank API
+  description: The EmbryoTank API from 701x — 6 operation(s) for embryotank.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - EmbryoTank
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-embryotank-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-embryotankcontrolleradmin-api
+  name: 701x Embryo Tank Controller Admin API
+  description: >-
+    The EmbryoTankControllerAdmin API from 701x — 8 operation(s) for embryotankcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - EmbryoTankControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-embryotankcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-embryotankcontrollerbasic-api
+  name: 701x Embryo Tank Controller Basic API
+  description: >-
+    The EmbryoTankControllerBasic API from 701x — 5 operation(s) for embryotankcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - EmbryoTankControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-embryotankcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-embryotankpurchase-api
+  name: 701x Embryo Tank Purchase API
+  description: The EmbryoTankPurchase API from 701x — 6 operation(s) for embryotankpurchase.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - EmbryoTankPurchase
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-embryotankpurchase-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-embryotankpurchasecontrolleradmin-api
+  name: 701x Embryo Tank Purchase Controller Admin API
+  description: >-
+    The EmbryoTankPurchaseControllerAdmin API from 701x — 8 operation(s) for embryotankpurchasecontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - EmbryoTankPurchaseControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-embryotankpurchasecontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-embryotankpurchasecontrollerbasic-api
+  name: 701x Embryo Tank Purchase Controller Basic API
+  description: >-
+    The EmbryoTankPurchaseControllerBasic API from 701x — 5 operation(s) for embryotankpurchasecontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - EmbryoTankPurchaseControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-embryotankpurchasecontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-embryotankstorage-api
+  name: 701x Embryo Tank Storage API
+  description: The EmbryoTankStorage API from 701x — 6 operation(s) for embryotankstorage.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - EmbryoTankStorage
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-embryotankstorage-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-embryotankstoragecontrollerbasic-api
+  name: 701x Embryo Tank Storage Controller Basic API
+  description: >-
+    The EmbryoTankStorageControllerBasic API from 701x — 4 operation(s) for embryotankstoragecontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - EmbryoTankStorageControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-embryotankstoragecontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farm-api
+  name: 701x Farm API
+  description: The Farm API from 701x — 6 operation(s) for farm.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Farm
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farm-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmcontrolleradmin-api
+  name: 701x Farm Controller Admin API
+  description: The FarmControllerAdmin API from 701x — 8 operation(s) for farmcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmcontrollerbasic-api
+  name: 701x Farm Controller Basic API
+  description: The FarmControllerBasic API from 701x — 2 operation(s) for farmcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmpointofinterest-api
+  name: 701x Farm Point Of Interest API
+  description: The FarmPointOfInterest API from 701x — 6 operation(s) for farmpointofinterest.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmPointOfInterest
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmpointofinterest-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmpointofinterestcontrolleradmin-api
+  name: 701x Farm Point Of Interest Controller Admin API
+  description: >-
+    The FarmPointOfInterestControllerAdmin API from 701x — 8 operation(s) for farmpointofinterestcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmPointOfInterestControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmpointofinterestcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmpointofinterestcontrollerbasic-api
+  name: 701x Farm Point Of Interest Controller Basic API
+  description: >-
+    The FarmPointOfInterestControllerBasic API from 701x — 2 operation(s) for farmpointofinterestcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmPointOfInterestControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmpointofinterestcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmpointofinterestpoint-api
+  name: 701x Farm Point Of Interest Point API
+  description: >-
+    The FarmPointOfInterestPoint API from 701x — 6 operation(s) for farmpointofinterestpoint.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmPointOfInterestPoint
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmpointofinterestpoint-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmpointofinterestpointcontrolleradmin-api
+  name: 701x Farm Point Of Interest Point Controller Admin API
+  description: >-
+    The FarmPointOfInterestPointControllerAdmin API from 701x — 8 operation(s) for farmpointofinterestpointcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmPointOfInterestPointControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmpointofinterestpointcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmvirtualfence-api
+  name: 701x Farm Virtual Fence API
+  description: The FarmVirtualFence API from 701x — 6 operation(s) for farmvirtualfence.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmVirtualFence
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmvirtualfence-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmvirtualfencecontrolleradmin-api
+  name: 701x Farm Virtual Fence Controller Admin API
+  description: >-
+    The FarmVirtualFenceControllerAdmin API from 701x — 9 operation(s) for farmvirtualfencecontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmVirtualFenceControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmvirtualfencecontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmvirtualfencecontrollerbasic-api
+  name: 701x Farm Virtual Fence Controller Basic API
+  description: >-
+    The FarmVirtualFenceControllerBasic API from 701x — 3 operation(s) for farmvirtualfencecontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmVirtualFenceControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmvirtualfencecontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmvirtualfencegeo-api
+  name: 701x Farm Virtual Fence Geo API
+  description: The FarmVirtualFenceGeo API from 701x — 7 operation(s) for farmvirtualfencegeo.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmVirtualFenceGeo
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmvirtualfencegeo-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmvirtualfencegeocontrolleradmin-api
+  name: 701x Farm Virtual Fence Geo Controller Admin API
+  description: >-
+    The FarmVirtualFenceGeoControllerAdmin API from 701x — 8 operation(s) for farmvirtualfencegeocontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmVirtualFenceGeoControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmvirtualfencegeocontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmvirtualfencegeocontrollerbasic-api
+  name: 701x Farm Virtual Fence Geo Controller Basic API
+  description: >-
+    The FarmVirtualFenceGeoControllerBasic API from 701x — 2 operation(s) for farmvirtualfencegeocontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmVirtualFenceGeoControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmvirtualfencegeocontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmvirtualfencepoint-api
+  name: 701x Farm Virtual Fence Point API
+  description: The FarmVirtualFencePoint API from 701x — 6 operation(s) for farmvirtualfencepoint.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmVirtualFencePoint
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmvirtualfencepoint-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmvirtualfencepointcontrolleradmin-api
+  name: 701x Farm Virtual Fence Point Controller Admin API
+  description: >-
+    The FarmVirtualFencePointControllerAdmin API from 701x — 8 operation(s) for farmvirtualfencepointcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmVirtualFencePointControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmvirtualfencepointcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-farmvirtualfencepointcontrollerbasic-api
+  name: 701x Farm Virtual Fence Point Controller Basic API
+  description: >-
+    The FarmVirtualFencePointControllerBasic API from 701x — 1 operation(s) for farmvirtualfencepointcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FarmVirtualFencePointControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-farmvirtualfencepointcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-feedback-api
+  name: 701x Feedback API
+  description: The Feedback API from 701x — 6 operation(s) for feedback.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Feedback
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-feedback-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-feedbackcontrolleradmin-api
+  name: 701x Feedback Controller Admin API
+  description: The FeedbackControllerAdmin API from 701x — 9 operation(s) for feedbackcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - FeedbackControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-feedbackcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-group-api
+  name: 701x Group API
+  description: The Group API from 701x — 6 operation(s) for group.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Group
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-group-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-groupcontrolleradmin-api
+  name: 701x Group Controller Admin API
+  description: The GroupControllerAdmin API from 701x — 8 operation(s) for groupcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - GroupControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-groupcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-invoice-api
+  name: 701x Invoice API
+  description: The Invoice API from 701x — 2 operation(s) for invoice.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Invoice
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-invoice-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-logmaster-api
+  name: 701x Log Master API
+  description: The LogMaster API from 701x — 10 operation(s) for logmaster.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - LogMaster
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-logmaster-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-logmastercontrolleradmin-api
+  name: 701x Log Master Controller Admin API
+  description: >-
+    The LogMasterControllerAdmin API from 701x — 10 operation(s) for logmastercontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - LogMasterControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-logmastercontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-logmastercontrollerbasic-api
+  name: 701x Log Master Controller Basic API
+  description: >-
+    The LogMasterControllerBasic API from 701x — 3 operation(s) for logmastercontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - LogMasterControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-logmastercontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-medication-api
+  name: 701x Medication API
+  description: The Medication API from 701x — 10 operation(s) for medication.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Medication
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-medication-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-medicationcontrolleradmin-api
+  name: 701x Medication Controller Admin API
+  description: >-
+    The MedicationControllerAdmin API from 701x — 8 operation(s) for medicationcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - MedicationControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-medicationcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-medicationpurchase-api
+  name: 701x Medication Purchase API
+  description: The MedicationPurchase API from 701x — 10 operation(s) for medicationpurchase.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - MedicationPurchase
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-medicationpurchase-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-medicationpurchasecontrolleradmin-api
+  name: 701x Medication Purchase Controller Admin API
+  description: >-
+    The MedicationPurchaseControllerAdmin API from 701x — 8 operation(s) for medicationpurchasecontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - MedicationPurchaseControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-medicationpurchasecontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-package-api
+  name: 701x Package API
+  description: The Package API from 701x — 3 operation(s) for package.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Package
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-package-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-packagecontrolleradmin-api
+  name: 701x Package Controller Admin API
+  description: The PackageControllerAdmin API from 701x — 3 operation(s) for packagecontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - PackageControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-packagecontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-packageproduct-api
+  name: 701x Package Product API
+  description: The PackageProduct API from 701x — 3 operation(s) for packageproduct.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - PackageProduct
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-packageproduct-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-packageproductcontrolleradmin-api
+  name: 701x Package Product Controller Admin API
+  description: >-
+    The PackageProductControllerAdmin API from 701x — 4 operation(s) for packageproductcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - PackageProductControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-packageproductcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-patchnote-api
+  name: 701x Patch Note API
+  description: The PatchNote API from 701x — 6 operation(s) for patchnote.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - PatchNote
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-patchnote-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-patchnotecontrolleradmin-api
+  name: 701x Patch Note Controller Admin API
+  description: >-
+    The PatchNoteControllerAdmin API from 701x — 7 operation(s) for patchnotecontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - PatchNoteControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-patchnotecontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-plannedaction-api
+  name: 701x Planned Action API
+  description: The PlannedAction API from 701x — 3 operation(s) for plannedaction.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - PlannedAction
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-plannedaction-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-product-api
+  name: 701x Product API
+  description: The Product API from 701x — 3 operation(s) for product.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Product
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-product-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-productcontrolleradmin-api
+  name: 701x Product Controller Admin API
+  description: The ProductControllerAdmin API from 701x — 5 operation(s) for productcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - ProductControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-productcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-productmedia-api
+  name: 701x Product Media API
+  description: The ProductMedia API from 701x — 1 operation(s) for productmedia.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - ProductMedia
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-productmedia-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-productmediacontrolleradmin-api
+  name: 701x Product Media Controller Admin API
+  description: >-
+    The ProductMediaControllerAdmin API from 701x — 5 operation(s) for productmediacontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - ProductMediaControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-productmediacontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-productoption-api
+  name: 701x Product Option API
+  description: The ProductOption API from 701x — 1 operation(s) for productoption.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - ProductOption
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-productoption-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-productoptioncontrolleradmin-api
+  name: 701x Product Option Controller Admin API
+  description: >-
+    The ProductOptionControllerAdmin API from 701x — 5 operation(s) for productoptioncontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - ProductOptionControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-productoptioncontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-productrecommendation-api
+  name: 701x Product Recommendation API
+  description: The ProductRecommendation API from 701x — 1 operation(s) for productrecommendation.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - ProductRecommendation
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-productrecommendation-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-productrecommendationscontrolleradmin-api
+  name: 701x Product Recommendations Controller Admin API
+  description: >-
+    The ProductRecommendationsControllerAdmin API from 701x — 5 operation(s) for productrecommendationscontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - ProductRecommendationsControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-productrecommendationscontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-promotion-api
+  name: 701x Promotion API
+  description: The Promotion API from 701x — 3 operation(s) for promotion.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Promotion
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-promotion-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-ranchseason-api
+  name: 701x Ranch Season API
+  description: The RanchSeason API from 701x — 6 operation(s) for ranchseason.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - RanchSeason
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-ranchseason-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-rollcall-api
+  name: 701x Roll Call API
+  description: The RollCall API from 701x — 6 operation(s) for rollcall.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - RollCall
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-rollcall-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-rollcallanimal-api
+  name: 701x Roll Call Animal API
+  description: The RollCallAnimal API from 701x — 6 operation(s) for rollcallanimal.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - RollCallAnimal
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-rollcallanimal-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-rollcallanimalcontrolleradmin-api
+  name: 701x Roll Call Animal Controller Admin API
+  description: >-
+    The RollCallAnimalControllerAdmin API from 701x — 7 operation(s) for rollcallanimalcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - RollCallAnimalControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-rollcallanimalcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-rollcallanimalcontrollerbasic-api
+  name: 701x Roll Call Animal Controller Basic API
+  description: >-
+    The RollCallAnimalControllerBasic API from 701x — 2 operation(s) for rollcallanimalcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - RollCallAnimalControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-rollcallanimalcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-rollcallcontrolleradmin-api
+  name: 701x Roll Call Controller Admin API
+  description: The RollCallControllerAdmin API from 701x — 6 operation(s) for rollcallcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - RollCallControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-rollcallcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-rollcallcontrollerbasic-api
+  name: 701x Roll Call Controller Basic API
+  description: The RollCallControllerBasic API from 701x — 2 operation(s) for rollcallcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - RollCallControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-rollcallcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-rollcallpath-api
+  name: 701x Roll Call Path API
+  description: The RollCallPath API from 701x — 6 operation(s) for rollcallpath.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - RollCallPath
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-rollcallpath-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-rollcallpathcontrolleradmin-api
+  name: 701x Roll Call Path Controller Admin API
+  description: >-
+    The RollCallPathControllerAdmin API from 701x — 6 operation(s) for rollcallpathcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - RollCallPathControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-rollcallpathcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-rollcallpathcontrollerbasic-api
+  name: 701x Roll Call Path Controller Basic API
+  description: >-
+    The RollCallPathControllerBasic API from 701x — 3 operation(s) for rollcallpathcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - RollCallPathControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-rollcallpathcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-saleday-api
+  name: 701x Sale Day API
+  description: The SaleDay API from 701x — 6 operation(s) for saleday.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SaleDay
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-saleday-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-saledayanimal-api
+  name: 701x Sale Day Animal API
+  description: The SaleDayAnimal API from 701x — 6 operation(s) for saledayanimal.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SaleDayAnimal
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-saledayanimal-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-saledaycategory-api
+  name: 701x Sale Day Category API
+  description: The SaleDayCategory API from 701x — 6 operation(s) for saledaycategory.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SaleDayCategory
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-saledaycategory-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-saledaylot-api
+  name: 701x Sale Day Lot API
+  description: The SaleDayLot API from 701x — 6 operation(s) for saledaylot.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SaleDayLot
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-saledaylot-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-saledaylotanimal-api
+  name: 701x Sale Day Lot Animal API
+  description: The SaleDayLotAnimal API from 701x — 6 operation(s) for saledaylotanimal.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SaleDayLotAnimal
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-saledaylotanimal-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-saledayregistration-api
+  name: 701x Sale Day Registration API
+  description: The SaleDayRegistration API from 701x — 6 operation(s) for saledayregistration.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SaleDayRegistration
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-saledayregistration-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-season-api
+  name: 701x Season API
+  description: The Season API from 701x — 7 operation(s) for season.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Season
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-season-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-seasoncontrolleradmin-api
+  name: 701x Season Controller Admin API
+  description: The SeasonControllerAdmin API from 701x — 8 operation(s) for seasoncontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SeasonControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-seasoncontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-seasoncontrollerbasic-api
+  name: 701x Season Controller Basic API
+  description: The SeasonControllerBasic API from 701x — 1 operation(s) for seasoncontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SeasonControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-seasoncontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-semontank-api
+  name: 701x Semon Tank API
+  description: The SemonTank API from 701x — 7 operation(s) for semontank.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SemonTank
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-semontank-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-semontankcontrolleradmin-api
+  name: 701x Semon Tank Controller Admin API
+  description: >-
+    The SemonTankControllerAdmin API from 701x — 8 operation(s) for semontankcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SemonTankControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-semontankcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-semontankcontrollerbasic-api
+  name: 701x Semon Tank Controller Basic API
+  description: >-
+    The SemonTankControllerBasic API from 701x — 5 operation(s) for semontankcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SemonTankControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-semontankcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-semontankpurchase-api
+  name: 701x Semon Tank Purchase API
+  description: The SemonTankPurchase API from 701x — 6 operation(s) for semontankpurchase.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SemonTankPurchase
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-semontankpurchase-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-semontankpurchasecontrolleradmin-api
+  name: 701x Semon Tank Purchase Controller Admin API
+  description: >-
+    The SemonTankPurchaseControllerAdmin API from 701x — 8 operation(s) for semontankpurchasecontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SemonTankPurchaseControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-semontankpurchasecontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-semontankpurchasecontrollerbasic-api
+  name: 701x Semon Tank Purchase Controller Basic API
+  description: >-
+    The SemonTankPurchaseControllerBasic API from 701x — 5 operation(s) for semontankpurchasecontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SemonTankPurchaseControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-semontankpurchasecontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-servicesubscription-api
+  name: 701x Service Subscription API
+  description: The ServiceSubscription API from 701x — 10 operation(s) for servicesubscription.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - ServiceSubscription
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-servicesubscription-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-statsadmin-api
+  name: 701x Stats Admin API
+  description: The StatsAdmin API from 701x — 8 operation(s) for statsadmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - StatsAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-statsadmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-stripe-api
+  name: 701x Stripe API
+  description: The Stripe API from 701x — 16 operation(s) for stripe.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Stripe
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-stripe-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-stripewebhook-api
+  name: 701x Stripe Web Hook API
+  description: The StripeWebHook API from 701x — 1 operation(s) for stripewebhook.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - StripeWebHook
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-stripewebhook-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-subscriptionbackfillcontrolleradmin-api
+  name: 701x Subscription Backfill Controller Admin API
+  description: >-
+    The SubscriptionBackfillControllerAdmin API from 701x — 1 operation(s) for subscriptionbackfillcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - SubscriptionBackfillControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-subscriptionbackfillcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-tag-api
+  name: 701x Tag API
+  description: The Tag API from 701x — 10 operation(s) for tag.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Tag
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-tag-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-tagalertscontrolleradmin-api
+  name: 701x Tag Alerts Controller Admin API
+  description: >-
+    The TagAlertsControllerAdmin API from 701x — 2 operation(s) for tagalertscontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TagAlertsControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-tagalertscontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-tagcontrolleradmin-api
+  name: 701x Tag Controller Admin API
+  description: The TagControllerAdmin API from 701x — 14 operation(s) for tagcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TagControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-tagcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-tagcontrollerbasic-api
+  name: 701x Tag Controller Basic API
+  description: The TagControllerBasic API from 701x — 13 operation(s) for tagcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TagControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-tagcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-tagdata-api
+  name: 701x Tag Data API
+  description: The TagData API from 701x — 16 operation(s) for tagdata.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TagData
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-tagdata-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-tagdatacontrolleradmin-api
+  name: 701x Tag Data Controller Admin API
+  description: The TagDataControllerAdmin API from 701x — 16 operation(s) for tagdatacontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TagDataControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-tagdatacontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-tagdatacontrollerbasic-api
+  name: 701x Tag Data Controller Basic API
+  description: The TagDataControllerBasic API from 701x — 5 operation(s) for tagdatacontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TagDataControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-tagdatacontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-tagdatafile-api
+  name: 701x Tag Data File API
+  description: The TagDataFile API from 701x — 6 operation(s) for tagdatafile.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TagDataFile
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-tagdatafile-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-tagdatahighspeedcontrollerbasic-api
+  name: 701x Tag Data High Speed Controller Basic API
+  description: >-
+    The TagDataHighSpeedControllerBasic API from 701x — 1 operation(s) for tagdatahighspeedcontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TagDataHighSpeedControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-tagdatahighspeedcontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-tagdiagnostics-api
+  name: 701x Tag Diagnostics API
+  description: The TagDiagnostics API from 701x — 1 operation(s) for tagdiagnostics.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TagDiagnostics
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-tagdiagnostics-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-tagdiagnosticscontrolleradmin-api
+  name: 701x Tag Diagnostics Controller Admin API
+  description: >-
+    The TagDiagnosticsControllerAdmin API from 701x — 5 operation(s) for tagdiagnosticscontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TagDiagnosticsControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-tagdiagnosticscontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-tagdiagnosticscontrollerbasic-api
+  name: 701x Tag Diagnostics Controller Basic API
+  description: >-
+    The TagDiagnosticsControllerBasic API from 701x — 5 operation(s) for tagdiagnosticscontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TagDiagnosticsControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-tagdiagnosticscontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-task-api
+  name: 701x Task API
+  description: The Task API from 701x — 6 operation(s) for task.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Task
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-task-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-taskcontrolleradmin-api
+  name: 701x Task Controller Admin API
+  description: The TaskControllerAdmin API from 701x — 8 operation(s) for taskcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TaskControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-taskcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-timeneardeviceadmin-api
+  name: 701x Time Near Device Admin API
+  description: The TimeNearDeviceAdmin API from 701x — 2 operation(s) for timeneardeviceadmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TimeNearDeviceAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-timeneardeviceadmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-timeneardevicebasic-api
+  name: 701x Time Near Device Basic API
+  description: The TimeNearDeviceBasic API from 701x — 1 operation(s) for timeneardevicebasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TimeNearDeviceBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-timeneardevicebasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-timeneardevicecustomer-api
+  name: 701x Time Near Device Customer API
+  description: The TimeNearDeviceCustomer API from 701x — 2 operation(s) for timeneardevicecustomer.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TimeNearDeviceCustomer
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-timeneardevicecustomer-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-turnout-api
+  name: 701x Turnout API
+  description: The Turnout API from 701x — 6 operation(s) for turnout.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Turnout
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-turnout-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-turnoutcontrolleradmin-api
+  name: 701x Turnout Controller Admin API
+  description: The TurnoutControllerAdmin API from 701x — 8 operation(s) for turnoutcontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - TurnoutControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-turnoutcontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-user-api
+  name: 701x User API
+  description: The User API from 701x — 7 operation(s) for user.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-user-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-usercontrolleradmin-api
+  name: 701x User Controller Admin API
+  description: The UserControllerAdmin API from 701x — 8 operation(s) for usercontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - UserControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-usercontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-usercontrollerbasic-api
+  name: 701x User Controller Basic API
+  description: The UserControllerBasic API from 701x — 1 operation(s) for usercontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - UserControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-usercontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-version-api
+  name: 701x Version API
+  description: The Version API from 701x — 2 operation(s) for version.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Version
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-version-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-versioncontrolleradmin-api
+  name: 701x Version Controller Admin API
+  description: The VersionControllerAdmin API from 701x — 5 operation(s) for versioncontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - VersionControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-versioncontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-wocontrolleradmin-api
+  name: 701x WO Controller Admin API
+  description: The WOControllerAdmin API from 701x — 5 operation(s) for wocontrolleradmin.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - WOControllerAdmin
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-wocontrolleradmin-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-wocontrollerbasic-api
+  name: 701x WO Controller Basic API
+  description: The WOControllerBasic API from 701x — 5 operation(s) for wocontrollerbasic.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - WOControllerBasic
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-wocontrollerbasic-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-workqueue-api
+  name: 701x Work Queue API
+  description: The WorkQueue API from 701x — 5 operation(s) for workqueue.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - WorkQueue
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-workqueue-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-workqueueanimal-api
+  name: 701x Work Queue Animal API
+  description: The WorkQueueAnimal API from 701x — 3 operation(s) for workqueueanimal.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - WorkQueueAnimal
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-workqueueanimal-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
   - type: Authentication
     url: authentication/701x-authentication.yml
   - type: OAuthScopes
@@ -80,6 +5055,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Overlay
+  url: overlays/701x-api-v1-overlay.yaml
 - type: Website
   url: https://www.701x.com/
 - type: APIReference
