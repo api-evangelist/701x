@@ -3473,30 +3473,6 @@ apis:
     url: data-model/701x-data-model.yml
   - type: OpenIDConnect
     url: https://login.701x.com/.well-known/openid-configuration
-- aid: 701x:701x-productmedia-api
-  name: 701x Product Media API
-  description: The ProductMedia API from 701x — 1 operation(s) for productmedia.
-  humanURL: https://api.701x.com/
-  baseURL: https://api.701x.com
-  tags:
-  - ProductMedia
-  properties:
-  - type: OpenAPI
-    url: openapi/701x-productmedia-api-openapi.yml
-  - type: APIReference
-    url: https://api.701x.com/
-  - type: Authentication
-    url: authentication/701x-authentication.yml
-  - type: OAuthScopes
-    url: scopes/701x-scopes.yml
-  - type: Conventions
-    url: conventions/701x-conventions.yml
-  - type: ErrorCatalog
-    url: errors/701x-problem-types.yml
-  - type: DataModel
-    url: data-model/701x-data-model.yml
-  - type: OpenIDConnect
-    url: https://login.701x.com/.well-known/openid-configuration
 - aid: 701x:701x-productmediacontrolleradmin-api
   name: 701x Product Media Controller Admin API
   description: >-
@@ -5001,16 +4977,16 @@ apis:
     url: data-model/701x-data-model.yml
   - type: OpenIDConnect
     url: https://login.701x.com/.well-known/openid-configuration
-- aid: 701x:701x-workqueue-api
-  name: 701x Work Queue API
-  description: The WorkQueue API from 701x — 5 operation(s) for workqueue.
+- aid: 701x:701x-workqueueanimal-api
+  name: 701x Work Queue Animal API
+  description: The WorkQueueAnimal API from 701x — 3 operation(s) for workqueueanimal.
   humanURL: https://api.701x.com/
   baseURL: https://api.701x.com
   tags:
-  - WorkQueue
+  - WorkQueueAnimal
   properties:
   - type: OpenAPI
-    url: openapi/701x-workqueue-api-openapi.yml
+    url: openapi/701x-workqueueanimal-api-openapi.yml
   - type: APIReference
     url: https://api.701x.com/
   - type: Authentication
@@ -5025,16 +5001,40 @@ apis:
     url: data-model/701x-data-model.yml
   - type: OpenIDConnect
     url: https://login.701x.com/.well-known/openid-configuration
-- aid: 701x:701x-workqueueanimal-api
-  name: 701x Work Queue Animal API
-  description: The WorkQueueAnimal API from 701x — 3 operation(s) for workqueueanimal.
+- aid: 701x:701x-product-media-api
+  name: 701x Product Media API
+  description: The Product Media API from 701x — 1 operation(s) for product media.
   humanURL: https://api.701x.com/
   baseURL: https://api.701x.com
   tags:
-  - WorkQueueAnimal
+  - Product Media
   properties:
   - type: OpenAPI
-    url: openapi/701x-workqueueanimal-api-openapi.yml
+    url: openapi/701x-product-media-api-openapi.yml
+  - type: APIReference
+    url: https://api.701x.com/
+  - type: Authentication
+    url: authentication/701x-authentication.yml
+  - type: OAuthScopes
+    url: scopes/701x-scopes.yml
+  - type: Conventions
+    url: conventions/701x-conventions.yml
+  - type: ErrorCatalog
+    url: errors/701x-problem-types.yml
+  - type: DataModel
+    url: data-model/701x-data-model.yml
+  - type: OpenIDConnect
+    url: https://login.701x.com/.well-known/openid-configuration
+- aid: 701x:701x-work-queue-api
+  name: 701x Work Queue API
+  description: The Work Queue API from 701x — 5 operation(s) for work queue.
+  humanURL: https://api.701x.com/
+  baseURL: https://api.701x.com
+  tags:
+  - Work Queue
+  properties:
+  - type: OpenAPI
+    url: openapi/701x-work-queue-api-openapi.yml
   - type: APIReference
     url: https://api.701x.com/
   - type: Authentication
