@@ -19,6 +19,9 @@ specificationVersion: '0.20'
 created: '2026-09-05'
 modified: '2026-09-05'
 position: Producing
+x-docs-platform: swagger-ui
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-09-17
 tags:
 - Company
 - Agriculture
@@ -991,6 +994,8 @@ apis:
   humanURL: https://api.701x.com/
   baseURL: https://api.701x.com
   tags:
+  - Associations
+  tags_raw:
   - Association
   properties:
   - type: OpenAPI
@@ -2184,6 +2189,8 @@ apis:
   humanURL: https://api.701x.com/
   baseURL: https://api.701x.com
   tags:
+  - Discounts
+  tags_raw:
   - Discount
   properties:
   - type: OpenAPI
@@ -3065,6 +3072,8 @@ apis:
   humanURL: https://api.701x.com/
   baseURL: https://api.701x.com
   tags:
+  - Invoices
+  tags_raw:
   - Invoice
   properties:
   - type: OpenAPI
