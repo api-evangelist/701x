@@ -1,0 +1,300 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Tag Data File API
+  description: 701x API
+  version: v1
+tags:
+- name: TagDataFile
+paths:
+  /TagDataFile/upload:
+    post:
+      tags:
+      - TagDataFile
+      operationId: upload
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type:
+                  - string
+                  - 'null'
+                  format: binary
+            encoding:
+              file:
+                style: form
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+      summary: Upload
+      x-summary-source: derived
+  /TagDataFile/UploadTagEventsFile:
+    post:
+      tags:
+      - TagDataFile
+      operationId: UploadTagEventsFile
+      parameters:
+      - name: TagId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: version
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          default: ''
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type:
+                  - string
+                  - 'null'
+                  format: binary
+            encoding:
+              file:
+                style: form
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '503':
+          description: Server Error
+      summary: Upload tag events file
+      x-summary-source: derived
+  /TagDataFile/UploadFileWithoutHeader:
+    post:
+      tags:
+      - TagDataFile
+      operationId: UploadFileWithoutHeader
+      parameters:
+      - name: TagId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: version
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          default: ''
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type:
+                  - string
+                  - 'null'
+                  format: binary
+            encoding:
+              file:
+                style: form
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '503':
+          description: Server Error
+      summary: Upload file without header
+      x-summary-source: derived
+  /TagDataFile/UploadFileHighSpeedWithoutHeader:
+    post:
+      tags:
+      - TagDataFile
+      operationId: UploadFileHighSpeedWithoutHeader
+      parameters:
+      - name: TagId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type:
+                  - string
+                  - 'null'
+                  format: binary
+            encoding:
+              file:
+                style: form
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+      summary: Upload file high speed without header
+      x-summary-source: derived
+  /TagDataFile/UploadFileDiagnostics:
+    post:
+      tags:
+      - TagDataFile
+      operationId: UploadFileDiagnostics
+      parameters:
+      - name: TagId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: version
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          default: ''
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type:
+                  - string
+                  - 'null'
+                  format: binary
+            encoding:
+              file:
+                style: form
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '503':
+          description: Server Error
+      summary: Upload file diagnostics
+      x-summary-source: derived
+  /TagDataFile/UploadFileOnBehalf:
+    post:
+      tags:
+      - TagDataFile
+      operationId: UploadFileOnBehalf
+      parameters:
+      - name: TagId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: version
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          default: ''
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type:
+                  - string
+                  - 'null'
+                  format: binary
+            encoding:
+              file:
+                style: form
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '503':
+          description: Server Error
+      summary: Upload file on behalf
+      x-summary-source: derived
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

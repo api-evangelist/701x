@@ -1,0 +1,134 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Invoice API
+  description: 701x API
+  version: v1
+tags:
+- name: Invoice
+paths:
+  /Invoice/{id}:
+    post:
+      tags:
+      - Invoice
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: includeMedications
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create invoice by id
+      x-summary-source: derived
+      operationId: postInvoiceById
+      x-operation-id-source: derived
+    get:
+      tags:
+      - Invoice
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get invoice by id
+      x-summary-source: derived
+      operationId: getInvoiceById
+      x-operation-id-source: derived
+  /Invoice/BulkPost:
+    post:
+      tags:
+      - Invoice
+      parameters:
+      - name: IncludeMedications
+        in: query
+        schema:
+          type: boolean
+      - name: CombinedFileName
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create invoice bulk post
+      x-summary-source: derived
+      operationId: postInvoiceBulkPost
+      x-operation-id-source: derived
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

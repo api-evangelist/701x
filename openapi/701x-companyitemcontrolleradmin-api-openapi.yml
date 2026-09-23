@@ -1,0 +1,672 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Company Item Controller Admin API
+  description: 701x API
+  version: v1
+tags:
+- name: CompanyItemControllerAdmin
+paths:
+  /CompanyItemControllerAdmin/Get:
+    get:
+      tags:
+      - CompanyItemControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: CompanyTransferId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: CompanySaleId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: CompanyPurchaseId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Item'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Item'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Item'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get company item controller admin get
+      x-summary-source: derived
+      operationId: getCompanyItemControllerAdminGet
+      x-operation-id-source: derived
+  /CompanyItemControllerAdmin/Get/{id}:
+    get:
+      tags:
+      - CompanyItemControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_Item'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_Item'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_Item'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get company item controller admin get by id
+      x-summary-source: derived
+      operationId: getCompanyItemControllerAdminGetById
+      x-operation-id-source: derived
+  /CompanyItemControllerAdmin/Post:
+    post:
+      tags:
+      - CompanyItemControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Company_Item'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company_Item'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Company_Item'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Company_Item'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_Item'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_Item'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_Item'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create company item controller admin post
+      x-summary-source: derived
+      operationId: postCompanyItemControllerAdminPost
+      x-operation-id-source: derived
+  /CompanyItemControllerAdmin/Put/{id}:
+    put:
+      tags:
+      - CompanyItemControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Company_Item'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company_Item'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Company_Item'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Company_Item'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_Item'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_Item'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_Item'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace company item controller admin put by id
+      x-summary-source: derived
+      operationId: putCompanyItemControllerAdminPutById
+      x-operation-id-source: derived
+  /CompanyItemControllerAdmin/Delete/{id}:
+    delete:
+      tags:
+      - CompanyItemControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_Item'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_Item'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_Item'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Delete company item controller admin delete by id
+      x-summary-source: derived
+      operationId: deleteCompanyItemControllerAdminDeleteById
+      x-operation-id-source: derived
+  /CompanyItemControllerAdmin/MassInsert:
+    post:
+      tags:
+      - CompanyItemControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Company_Item'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Company_Item'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Company_Item'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Company_Item'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Item'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Item'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Item'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create company item controller admin mass insert
+      x-summary-source: derived
+      operationId: postCompanyItemControllerAdminMassInsert
+      x-operation-id-source: derived
+  /CompanyItemControllerAdmin/MassUpdate:
+    post:
+      tags:
+      - CompanyItemControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Company_Item'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Company_Item'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Company_Item'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Company_Item'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Item'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Item'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Item'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create company item controller admin mass update
+      x-summary-source: derived
+      operationId: postCompanyItemControllerAdminMassUpdate
+      x-operation-id-source: derived
+  /CompanyItemControllerAdmin/MassDelete:
+    post:
+      tags:
+      - CompanyItemControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Company_Item'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Company_Item'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Company_Item'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Company_Item'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Item'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Item'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Item'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create company item controller admin mass delete
+      x-summary-source: derived
+      operationId: postCompanyItemControllerAdminMassDelete
+      x-operation-id-source: derived
+components:
+  schemas:
+    Company_Item:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companySaleId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyTransferId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        transferDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        cartId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cartProductId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        stripeProductId:
+          type:
+          - string
+          - 'null'
+        stripePricingId:
+          type:
+          - string
+          - 'null'
+        semonTankId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        semonTankPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        embryoTankId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        embryoTankPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        medicationId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        medicationPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        unitPrice:
+          type: number
+          format: double
+        totalPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        quantity:
+          type: integer
+          format: int32
+        filledQuantity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        measurement:
+          type:
+          - string
+          - 'null'
+        manufacturer:
+          type:
+          - string
+          - 'null'
+        lotNumber:
+          type:
+          - string
+          - 'null'
+        serialNumber:
+          type:
+          - string
+          - 'null'
+        expirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

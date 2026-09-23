@@ -1,0 +1,281 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Company User Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: CompanyUserControllerBasic
+paths:
+  /CompanyUserControllerBasic/GetAllCompanyUserDataByFilter:
+    get:
+      tags:
+      - CompanyUserControllerBasic
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: UserId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: email
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+      summary: Get company user controller basic get all company user data by filter
+      x-summary-source: derived
+      operationId: getCompanyUserControllerBasicGetAllCompanyUserDataByFilter
+      x-operation-id-source: derived
+components:
+  schemas:
+    Company_User:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        email:
+          type:
+          - string
+          - 'null'
+        invitedToCompany:
+          type:
+          - string
+          - 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        defaultLoadScreen:
+          type:
+          - string
+          - 'null'
+        defaultRanch:
+          type:
+          - string
+          - 'null'
+        defaultGroup:
+          type:
+          - string
+          - 'null'
+        defaultFence:
+          type:
+          - string
+          - 'null'
+        defaultBreed:
+          type:
+          - string
+          - 'null'
+        defaultBreedDisplay:
+          type:
+          - string
+          - 'null'
+        defaultColor:
+          type:
+          - string
+          - 'null'
+        defaultVisualTagColor:
+          type:
+          - string
+          - 'null'
+        defaultVisualTagLocation:
+          type:
+          - string
+          - 'null'
+        defaultEstimatedAge:
+          type:
+          - string
+          - 'null'
+        defaultAnimalSort:
+          type:
+          - string
+          - 'null'
+        defaultAssociationCode:
+          type:
+          - string
+          - 'null'
+        defaultAssociationId:
+          type:
+          - string
+          - 'null'
+        starredReports:
+          type:
+          - string
+          - 'null'
+        permissionLevel:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        companyCode:
+          type:
+          - string
+          - 'null'
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        userFirstName:
+          type:
+          - string
+          - 'null'
+        userLastName:
+          type:
+          - string
+          - 'null'
+        userOrganization:
+          type:
+          - string
+          - 'null'
+        userTitle:
+          type:
+          - string
+          - 'null'
+        userEmail:
+          type:
+          - string
+          - 'null'
+        userPhone:
+          type:
+          - string
+          - 'null'
+        userInActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

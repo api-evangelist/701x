@@ -1,0 +1,314 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Animal PAP API
+  description: 701x API
+  version: v1
+tags:
+- name: AnimalPAP
+paths:
+  /AnimalPAP/AnimalPAPDataByFilter:
+    get:
+      tags:
+      - AnimalPAP
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: isShared
+        in: query
+        schema:
+          type: boolean
+          default: false
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_PAP'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_PAP'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_PAP'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get animal pap animal pap data by filter
+      x-summary-source: derived
+      operationId: getAnimalPAPAnimalPAPDataByFilter
+      x-operation-id-source: derived
+  /AnimalPAP/{id}:
+    get:
+      tags:
+      - AnimalPAP
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_PAP'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_PAP'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_PAP'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get animal pap by id
+      x-summary-source: derived
+      operationId: getAnimalPAPById
+      x-operation-id-source: derived
+  /AnimalPAP/MassUpdate:
+    post:
+      tags:
+      - AnimalPAP
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_PAP'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_PAP'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_PAP'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_PAP'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_PAP'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_PAP'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_PAP'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal pap mass update
+      x-summary-source: derived
+      operationId: postAnimalPAPMassUpdate
+      x-operation-id-source: derived
+components:
+  schemas:
+    Animal_PAP:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type: string
+          format: uuid
+        animalId:
+          type: string
+          format: uuid
+        process:
+          type:
+          - string
+          - 'null'
+        comments:
+          type:
+          - string
+          - 'null'
+        technicianId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        technicianName:
+          type:
+          - string
+          - 'null'
+        score:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        elevation:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        systolic:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        diastolic:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        collectionDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByUserName:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByUserName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isShared:
+          type:
+          - boolean
+          - 'null'
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

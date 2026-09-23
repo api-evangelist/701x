@@ -1,0 +1,498 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Farm Point Of Interest Point Controller Admin…
+  description: 701x API
+  version: v1
+tags:
+- name: FarmPointOfInterestPointControllerAdmin
+paths:
+  /FarmPointOfInterestPointControllerAdmin/Get/{id}:
+    get:
+      tags:
+      - FarmPointOfInterestPointControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get farm point of interest point controller admin get by id
+      x-summary-source: derived
+      operationId: getFarmPointOfInterestPointControllerAdminGetById
+      x-operation-id-source: derived
+  /FarmPointOfInterestPointControllerAdmin/GetByFilter:
+    get:
+      tags:
+      - FarmPointOfInterestPointControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: FarmPointOfInterestId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get farm point of interest point controller admin get by filter
+      x-summary-source: derived
+      operationId: getFarmPointOfInterestPointControllerAdminGetByFilter
+      x-operation-id-source: derived
+  /FarmPointOfInterestPointControllerAdmin/Post:
+    post:
+      tags:
+      - FarmPointOfInterestPointControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create farm point of interest point controller admin post
+      x-summary-source: derived
+      operationId: postFarmPointOfInterestPointControllerAdminPost
+      x-operation-id-source: derived
+  /FarmPointOfInterestPointControllerAdmin/Put/{id}:
+    put:
+      tags:
+      - FarmPointOfInterestPointControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace farm point of interest point controller admin put by id
+      x-summary-source: derived
+      operationId: putFarmPointOfInterestPointControllerAdminPutById
+      x-operation-id-source: derived
+  /FarmPointOfInterestPointControllerAdmin/Delete/{id}:
+    delete:
+      tags:
+      - FarmPointOfInterestPointControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Delete farm point of interest point controller admin delete by id
+      x-summary-source: derived
+      operationId: deleteFarmPointOfInterestPointControllerAdminDeleteById
+      x-operation-id-source: derived
+  /FarmPointOfInterestPointControllerAdmin/MassInsert:
+    post:
+      tags:
+      - FarmPointOfInterestPointControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create farm point of interest point controller admin mass insert
+      x-summary-source: derived
+      operationId: postFarmPointOfInterestPointControllerAdminMassInsert
+      x-operation-id-source: derived
+  /FarmPointOfInterestPointControllerAdmin/MassUpdate:
+    post:
+      tags:
+      - FarmPointOfInterestPointControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create farm point of interest point controller admin mass update
+      x-summary-source: derived
+      operationId: postFarmPointOfInterestPointControllerAdminMassUpdate
+      x-operation-id-source: derived
+  /FarmPointOfInterestPointControllerAdmin/MassDelete:
+    post:
+      tags:
+      - FarmPointOfInterestPointControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Farm_PointOfInterest_Point'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create farm point of interest point controller admin mass delete
+      x-summary-source: derived
+      operationId: postFarmPointOfInterestPointControllerAdminMassDelete
+      x-operation-id-source: derived
+components:
+  schemas:
+    Farm_PointOfInterest_Point:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        type:
+          type:
+          - string
+          - 'null'
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        sequence:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

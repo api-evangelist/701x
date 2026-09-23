@@ -1,0 +1,187 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Season Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: SeasonControllerBasic
+paths:
+  /SeasonControllerBasic/AutoGenerateSeasons:
+    post:
+      tags:
+      - SeasonControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AutoGenSeasonsArgs'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AutoGenSeasonsArgs'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AutoGenSeasonsArgs'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AutoGenSeasonsArgs'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Season_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Season_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Season_Master'
+      summary: Create season controller basic auto generate seasons
+      x-summary-source: derived
+      operationId: postSeasonControllerBasicAutoGenerateSeasons
+      x-operation-id-source: derived
+components:
+  schemas:
+    Season_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        description:
+          type:
+          - string
+          - 'null'
+        fromDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        toDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        calvingFromDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        calvingToDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AutoGenSeasonsArgs:
+      type: object
+      properties:
+        companyId:
+          type: string
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        minDateSpan:
+          type: integer
+          format: int32
+        yearsBack:
+          type: integer
+          format: int32
+        yearsAhead:
+          type: integer
+          format: int32
+        save:
+          type: boolean
+        adjustDates:
+          type: boolean
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

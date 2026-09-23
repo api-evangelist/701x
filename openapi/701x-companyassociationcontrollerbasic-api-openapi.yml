@@ -1,0 +1,264 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Company Association Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: CompanyAssociationControllerBasic
+paths:
+  /CompanyAssociationControllerBasic/{id}:
+    get:
+      tags:
+      - CompanyAssociationControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_Association'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_Association'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_Association'
+      summary: Get company association controller basic by id
+      x-summary-source: derived
+      operationId: getCompanyAssociationControllerBasicById
+      x-operation-id-source: derived
+  /CompanyAssociationControllerBasic/GetByFilter:
+    get:
+      tags:
+      - CompanyAssociationControllerBasic
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: onlinePlatform
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: Association
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: AssociationId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: MemberId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Association'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Association'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Association'
+      summary: Get company association controller basic get by filter
+      x-summary-source: derived
+      operationId: getCompanyAssociationControllerBasicGetByFilter
+      x-operation-id-source: derived
+  /CompanyAssociationControllerBasic/Put/{id}:
+    put:
+      tags:
+      - CompanyAssociationControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Company_Association'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company_Association'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Company_Association'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Company_Association'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_Association'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_Association'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_Association'
+      summary: Replace company association controller basic put by id
+      x-summary-source: derived
+      operationId: putCompanyAssociationControllerBasicPutById
+      x-operation-id-source: derived
+components:
+  schemas:
+    Company_Association:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        onlinePlatform:
+          type:
+          - string
+          - 'null'
+        association:
+          type:
+          - string
+          - 'null'
+        associationId:
+          type:
+          - string
+          - 'null'
+        memberId:
+          type:
+          - string
+          - 'null'
+        statusCode:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        code:
+          type:
+          - string
+          - 'null'
+        verifier:
+          type:
+          - string
+          - 'null'
+        scope:
+          type:
+          - string
+          - 'null'
+        tokenType:
+          type:
+          - string
+          - 'null'
+        idToken:
+          type:
+          - string
+          - 'null'
+        accessToken:
+          type:
+          - string
+          - 'null'
+        expiresOn:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        refreshToken:
+          type:
+          - string
+          - 'null'
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

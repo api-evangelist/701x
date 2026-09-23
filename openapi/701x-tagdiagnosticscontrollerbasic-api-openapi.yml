@@ -1,0 +1,312 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Tag Diagnostics Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: TagDiagnosticsControllerBasic
+paths:
+  /TagDiagnosticsControllerBasic/Get/{id}:
+    get:
+      tags:
+      - TagDiagnosticsControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Tag_Diagnostics'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag_Diagnostics'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Tag_Diagnostics'
+      summary: Get tag diagnostics controller basic get by id
+      x-summary-source: derived
+      operationId: getTagDiagnosticsControllerBasicGetById
+      x-operation-id-source: derived
+  /TagDiagnosticsControllerBasic/GetByFilter:
+    get:
+      tags:
+      - TagDiagnosticsControllerBasic
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LogTypeId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: Comment
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: NetworkNumber
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: CompanyDescription
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: RanchDescription
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Diagnostics'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Diagnostics'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Diagnostics'
+      summary: Get tag diagnostics controller basic get by filter
+      x-summary-source: derived
+      operationId: getTagDiagnosticsControllerBasicGetByFilter
+      x-operation-id-source: derived
+  /TagDiagnosticsControllerBasic/Post:
+    post:
+      tags:
+      - TagDiagnosticsControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Tag_Diagnostics'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag_Diagnostics'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Tag_Diagnostics'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Tag_Diagnostics'
+      responses:
+        '200':
+          description: Success
+      summary: Create tag diagnostics controller basic post
+      x-summary-source: derived
+      operationId: postTagDiagnosticsControllerBasicPost
+      x-operation-id-source: derived
+  /TagDiagnosticsControllerBasic/Put/{id}:
+    put:
+      tags:
+      - TagDiagnosticsControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Tag_Diagnostics'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag_Diagnostics'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Tag_Diagnostics'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Tag_Diagnostics'
+      responses:
+        '200':
+          description: Success
+      summary: Replace tag diagnostics controller basic put by id
+      x-summary-source: derived
+      operationId: putTagDiagnosticsControllerBasicPutById
+      x-operation-id-source: derived
+  /TagDiagnosticsControllerBasic/Delete/{id}:
+    delete:
+      tags:
+      - TagDiagnosticsControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+      summary: Delete tag diagnostics controller basic delete by id
+      x-summary-source: derived
+      operationId: deleteTagDiagnosticsControllerBasicDeleteById
+      x-operation-id-source: derived
+components:
+  schemas:
+    Tag_Diagnostics:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        logTypeId:
+          type:
+          - string
+          - 'null'
+        logDateTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        comment:
+          type:
+          - string
+          - 'null'
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        ranchDescription:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

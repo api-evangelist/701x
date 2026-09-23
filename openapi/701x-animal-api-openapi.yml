@@ -1,0 +1,4648 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Animal API
+  description: 701x API
+  version: v1
+tags:
+- name: Animal
+paths:
+  /Animal/AnimalDataByFilter:
+    get:
+      tags:
+      - Animal
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: Status
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: GroupId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: MaleAnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FemaleAnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: CattleNumber
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: Sex
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: Age
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: Breed
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: Type
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: Code
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: Description
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: EventTypeId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: EventStatusId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: AssociationCode
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: isShared
+        in: query
+        schema:
+          type: boolean
+          default: false
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get animal animal data by filter
+      x-summary-source: derived
+      operationId: getAnimalAnimalDataByFilter
+      x-operation-id-source: derived
+  /Animal/{id}:
+    get:
+      tags:
+      - Animal
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get animal by id
+      x-summary-source: derived
+      operationId: getAnimalById
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Animal
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Master'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace animal by id
+      x-summary-source: derived
+      operationId: putAnimalById
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Animal
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Delete animal by id
+      x-summary-source: derived
+      operationId: deleteAnimalById
+      x-operation-id-source: derived
+  /Animal/GetByIds:
+    post:
+      tags:
+      - Animal
+      parameters:
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal get by ids
+      x-summary-source: derived
+      operationId: postAnimalGetByIds
+      x-operation-id-source: derived
+  /Animal:
+    post:
+      tags:
+      - Animal
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Master'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal
+      x-summary-source: derived
+      operationId: postAnimal
+      x-operation-id-source: derived
+  /Animal/MassInsert:
+    post:
+      tags:
+      - Animal
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Master'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Master'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Master'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Master'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal mass insert
+      x-summary-source: derived
+      operationId: postAnimalMassInsert
+      x-operation-id-source: derived
+  /Animal/MassUpdate:
+    post:
+      tags:
+      - Animal
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Master'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Master'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Master'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Master'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal mass update
+      x-summary-source: derived
+      operationId: postAnimalMassUpdate
+      x-operation-id-source: derived
+  /Animal/MassDelete:
+    post:
+      tags:
+      - Animal
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Master'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Master'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Master'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Master'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal mass delete
+      x-summary-source: derived
+      operationId: postAnimalMassDelete
+      x-operation-id-source: derived
+  /Animal/MassMergeRepoint:
+    post:
+      tags:
+      - Animal
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AnimalMergeRepointRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnimalMergeRepointRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AnimalMergeRepointRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AnimalMergeRepointRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AnimalMergeMap'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AnimalMergeMap'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AnimalMergeMap'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal mass merge repoint
+      x-summary-source: derived
+      operationId: postAnimalMassMergeRepoint
+      x-operation-id-source: derived
+  /Animal/MassUpdateLocation:
+    post:
+      tags:
+      - Animal
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Location'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Location'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Location'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Location'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal mass update location
+      x-summary-source: derived
+      operationId: postAnimalMassUpdateLocation
+      x-operation-id-source: derived
+components:
+  schemas:
+    Animal_Location:
+      type: object
+      properties:
+        companyId:
+          type: string
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type: string
+          format: uuid
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        heading:
+          type:
+          - number
+          - 'null'
+          format: double
+        position_Uncertainty:
+          type:
+          - number
+          - 'null'
+          format: double
+        rssi:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        uploadedType:
+          type:
+          - string
+          - 'null'
+        time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Changes:
+      type: object
+      properties:
+        keyChanged:
+          type:
+          - string
+          - 'null'
+        oldValue: {}
+        newValue: {}
+      additionalProperties: false
+    Animal_Log:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        rowSequence:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        logId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalCalvingId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        registrationNumber:
+          type:
+          - string
+          - 'null'
+        animalCode:
+          type:
+          - string
+          - 'null'
+        animalDescription:
+          type:
+          - string
+          - 'null'
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        event:
+          type:
+          - string
+          - 'null'
+        isConfirmed:
+          type:
+          - boolean
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        logCategoryId:
+          type:
+          - string
+          - 'null'
+        logTypeId:
+          type:
+          - string
+          - 'null'
+        symptomTypeId:
+          type:
+          - string
+          - 'null'
+        symptoms:
+          type:
+          - string
+          - 'null'
+        conditionTypeId:
+          type:
+          - string
+          - 'null'
+        medicineTypeId:
+          type:
+          - string
+          - 'null'
+        medicationId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        medicationPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        isEstimateMeasurements:
+          type:
+          - boolean
+          - 'null'
+        addToWatchList:
+          type:
+          - boolean
+          - 'null'
+        old_Value:
+          type:
+          - string
+          - 'null'
+        old_ValueId:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+        valueId:
+          type:
+          - string
+          - 'null'
+        dosage:
+          type:
+          - number
+          - 'null'
+          format: double
+        weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        height:
+          type:
+          - number
+          - 'null'
+          format: double
+        temperature:
+          type:
+          - number
+          - 'null'
+          format: double
+        adg:
+          type:
+          - number
+          - 'null'
+          format: double
+        measurement:
+          type:
+          - string
+          - 'null'
+        medicineRoute:
+          type:
+          - string
+          - 'null'
+        medicineLocation:
+          type:
+          - string
+          - 'null'
+        withdrawalDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        withdrawalDays:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        boosterDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        boosterDays:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        lotNumber:
+          type:
+          - string
+          - 'null'
+        serialNumber:
+          type:
+          - string
+          - 'null'
+        manufacturer:
+          type:
+          - string
+          - 'null'
+        expirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        comment:
+          type:
+          - string
+          - 'null'
+        logDateTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        onBehalfMacAddress:
+          type:
+          - string
+          - 'null'
+        onBehalfAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        onBehalfCattleNumber:
+          type:
+          - string
+          - 'null'
+        onBehalfTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        onBehalfNetworkNumber:
+          type:
+          - string
+          - 'null'
+        uploadedByTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByFarmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isShared:
+          type:
+          - boolean
+          - 'null'
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AnimalMergeRepointRequest:
+      type: object
+      properties:
+        companyId:
+          type: string
+          format: uuid
+        pairs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AnimalMergePair'
+      additionalProperties: false
+    Log_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        rowSequence:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalCalvingId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        registrationNumber:
+          type:
+          - string
+          - 'null'
+        cattleCode:
+          type:
+          - string
+          - 'null'
+        cattleDescription:
+          type:
+          - string
+          - 'null'
+        animalColor:
+          type:
+          - string
+          - 'null'
+        animalBreed:
+          type:
+          - string
+          - 'null'
+        animalType:
+          type:
+          - string
+          - 'null'
+        logDateTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        event:
+          type:
+          - string
+          - 'null'
+        isConfirmed:
+          type:
+          - boolean
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        logCategoryId:
+          type:
+          - string
+          - 'null'
+        logTypeId:
+          type:
+          - string
+          - 'null'
+        symptomTypeId:
+          type:
+          - string
+          - 'null'
+        symptoms:
+          type:
+          - string
+          - 'null'
+        conditionTypeId:
+          type:
+          - string
+          - 'null'
+        medicineTypeId:
+          type:
+          - string
+          - 'null'
+        medicationId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        medicationPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        isEstimateMeasurements:
+          type:
+          - boolean
+          - 'null'
+        addToWatchList:
+          type:
+          - boolean
+          - 'null'
+        old_Value:
+          type:
+          - string
+          - 'null'
+        old_ValueId:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+        valueId:
+          type:
+          - string
+          - 'null'
+        dosage:
+          type:
+          - number
+          - 'null'
+          format: double
+        weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        height:
+          type:
+          - number
+          - 'null'
+          format: double
+        temperature:
+          type:
+          - number
+          - 'null'
+          format: double
+        adg:
+          type:
+          - number
+          - 'null'
+          format: double
+        measurement:
+          type:
+          - string
+          - 'null'
+        medicineRoute:
+          type:
+          - string
+          - 'null'
+        medicineLocation:
+          type:
+          - string
+          - 'null'
+        withdrawalDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        withdrawalDays:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        boosterDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        boosterDays:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        lotNumber:
+          type:
+          - string
+          - 'null'
+        serialNumber:
+          type:
+          - string
+          - 'null'
+        manufacturer:
+          type:
+          - string
+          - 'null'
+        expirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        comment:
+          type:
+          - string
+          - 'null'
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        onBehalfMacAddress:
+          type:
+          - string
+          - 'null'
+        onBehalfAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        onBehalfCattleNumber:
+          type:
+          - string
+          - 'null'
+        onBehalfTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        onBehalfNetworkNumber:
+          type:
+          - string
+          - 'null'
+        uploadedByTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByFarmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        hasBeenSeen:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        seenByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        seenByUserName:
+          type:
+          - string
+          - 'null'
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+        generateNotification:
+          type: boolean
+        animalList:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+      additionalProperties: false
+    Tag_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        assignedToAnimalDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        engineeringModel:
+          type:
+          - string
+          - 'null'
+        productType:
+          type:
+          - string
+          - 'null'
+        usdaNumber:
+          type:
+          - string
+          - 'null'
+        boxBarcode:
+          type:
+          - string
+          - 'null'
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        minimum_Reset_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        maximum_Reset_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        maximum_CheckIn_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        logging_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        gpS_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        caffeinated_Threshold:
+          type:
+          - number
+          - 'null'
+          format: double
+        awake_Threshold:
+          type:
+          - number
+          - 'null'
+          format: double
+        roll:
+          type:
+          - number
+          - 'null'
+          format: double
+        pitch:
+          type:
+          - number
+          - 'null'
+          format: double
+        yaw:
+          type:
+          - number
+          - 'null'
+          format: double
+        cell_Firmware:
+          type:
+          - string
+          - 'null'
+        cell_Disabled:
+          type:
+          - boolean
+          - 'null'
+        softwareVersion:
+          type:
+          - string
+          - 'null'
+        hardwareVersion:
+          type:
+          - string
+          - 'null'
+        modemFirmware:
+          type:
+          - string
+          - 'null'
+        deviceSoftwareVersion:
+          type:
+          - string
+          - 'null'
+        eventTypeId:
+          type:
+          - string
+          - 'null'
+        eventStatusId:
+          type:
+          - string
+          - 'null'
+        alertFreeFall:
+          type:
+          - boolean
+          - 'null'
+        alertNoMovement:
+          type:
+          - boolean
+          - 'null'
+        alertOutOfStasis:
+          type:
+          - boolean
+          - 'null'
+        alertHighSpeedCow:
+          type:
+          - boolean
+          - 'null'
+        alertGeofence:
+          type:
+          - boolean
+          - 'null'
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        heading:
+          type:
+          - number
+          - 'null'
+          format: double
+        position_Uncertainty:
+          type:
+          - number
+          - 'null'
+          format: double
+        temperature:
+          type:
+          - number
+          - 'null'
+          format: double
+        pressure:
+          type:
+          - number
+          - 'null'
+          format: double
+        cell_RSSI:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        gpS_TTFF:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        panel_Voltage:
+          type:
+          - number
+          - 'null'
+          format: double
+        battery_Voltage:
+          type:
+          - number
+          - 'null'
+          format: double
+        state_Of_Charge:
+          type:
+          - number
+          - 'null'
+          format: double
+        water_Pressure_Pa:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        water_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        air_Pressure_Pa:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        air_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        depth_MM:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        step_Count:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        step_Count_Offset:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        lastWatSenCalibratedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastCheckInDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUploadedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastCheckInMethod:
+          type:
+          - string
+          - 'null'
+        encryptionKey:
+          type:
+          - string
+          - 'null'
+        macAddress:
+          type:
+          - string
+          - 'null'
+        hashAddress:
+          type:
+          - string
+          - 'null'
+        broken_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        serviceExpirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        forceCheckInDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        turnOnLEDDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        updatedVersionByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        highFrequencyDataLogging:
+          type:
+          - boolean
+          - 'null'
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        target_CheckIn_Hour:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceDescription:
+          type:
+          - string
+          - 'null'
+        lastFenceChangedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        pins:
+          type:
+          - string
+          - 'null'
+        outOfFence:
+          type:
+          - boolean
+          - 'null'
+        farmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmPointOfInterestDescription:
+          type:
+          - string
+          - 'null'
+        lastBaseStationConfig:
+          type:
+          - string
+          - 'null'
+        nearPOI:
+          type:
+          - boolean
+          - 'null'
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        cattleColor:
+          type:
+          - string
+          - 'null'
+        cattleType:
+          type:
+          - string
+          - 'null'
+        cattleBreed:
+          type:
+          - string
+          - 'null'
+        cattleDOB:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        maximum_Time_Seperated:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        bullTurnoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        firstDeviceUploadedOnAnimalDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        companySaleId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyTransferId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        transferDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        arrayOfChanges:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Changes'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        disabledDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Animal_Comment:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        commentId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        comment:
+          type:
+          - string
+          - 'null'
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        animalCode:
+          type:
+          - string
+          - 'null'
+        animalDescription:
+          type:
+          - string
+          - 'null'
+        animalType:
+          type:
+          - string
+          - 'null'
+        animalBreed:
+          type:
+          - string
+          - 'null'
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupCode:
+          type:
+          - string
+          - 'null'
+        groupDescription:
+          type:
+          - string
+          - 'null'
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    AnimalMergeMap:
+      type: object
+      properties:
+        loserId:
+          type: string
+          format: uuid
+        survivorId:
+          type: string
+          format: uuid
+        companyId:
+          type: string
+          format: uuid
+      additionalProperties: false
+    Animal_Master:
+      type: object
+      properties:
+        companySaleId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyTransferId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        transferDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isArchived:
+          type:
+          - boolean
+          - 'null'
+        id:
+          type: string
+          format: uuid
+        companyAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        legacyId:
+          type:
+          - string
+          - 'null'
+        isReferenceAnimal:
+          type:
+          - boolean
+          - 'null'
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        productType:
+          type:
+          - string
+          - 'null'
+        assignedToTagDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        targetCheckInHourOfDay:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        assignedCattleTagDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        visualTagColor:
+          type:
+          - string
+          - 'null'
+        visualTagLocation:
+          type:
+          - string
+          - 'null'
+        otherNumber:
+          type:
+          - string
+          - 'null'
+        assignedOtherNumberDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        otherNumberColor:
+          type:
+          - string
+          - 'null'
+        otherNumberLocation:
+          type:
+          - string
+          - 'null'
+        tattooLeft:
+          type:
+          - string
+          - 'null'
+        assignedTattooLeftDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        tattooRight:
+          type:
+          - string
+          - 'null'
+        assignedTattooRightDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        phNumber:
+          type:
+          - string
+          - 'null'
+        assignedPHNumberDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        usdaNumber:
+          type:
+          - string
+          - 'null'
+        assignedEIDTagDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        managementRFID:
+          type:
+          - string
+          - 'null'
+        assignedManagementRFIDDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        internationalNumber:
+          type:
+          - string
+          - 'null'
+        primaryAssociationId:
+          type:
+          - string
+          - 'null'
+        associationCode:
+          type:
+          - string
+          - 'null'
+        registrationNumber:
+          type:
+          - string
+          - 'null'
+        registrationType:
+          type:
+          - string
+          - 'null'
+        assignedRegistrationNumberDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        tattooNumber:
+          type:
+          - string
+          - 'null'
+        assignedTattooTagDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        bangsNumber:
+          type:
+          - string
+          - 'null'
+        assignedBangsTagDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lotNumber:
+          type:
+          - string
+          - 'null'
+        assignedLotNumberDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        animalAttachmentId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        color:
+          type:
+          - string
+          - 'null'
+        breed:
+          type:
+          - string
+          - 'null'
+        breedDisplay:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        sex:
+          type:
+          - string
+          - 'null'
+        dob:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        dateOfBirth:
+          $ref: '#/components/schemas/DateOnly'
+        age:
+          type:
+          - string
+          - 'null'
+        isCalve:
+          type: boolean
+        horn_Type:
+          type:
+          - string
+          - 'null'
+        horn_Size:
+          type:
+          - string
+          - 'null'
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        enteredFarm_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceDescription:
+          type:
+          - string
+          - 'null'
+        lastFenceChangedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        outOfFence:
+          type:
+          - boolean
+          - 'null'
+        farmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmPointOfInterestDescription:
+          type:
+          - string
+          - 'null'
+        lastSeenNearPOIDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        nearPOI:
+          type:
+          - boolean
+          - 'null'
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        position_Uncertainty:
+          type:
+          - number
+          - 'null'
+          format: double
+        heading:
+          type:
+          - number
+          - 'null'
+          format: double
+        pressure:
+          type:
+          - number
+          - 'null'
+          format: double
+        cell_RSSI:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        gpS_TTFF:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        step_Count:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        lost_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        stolen_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        planToKeep_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        orphan_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        permanent_Mark_Type:
+          type:
+          - string
+          - 'null'
+        branded_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        brandLocation:
+          type:
+          - string
+          - 'null'
+        brandDescription:
+          type:
+          - string
+          - 'null'
+        crastrationMethod:
+          type:
+          - string
+          - 'null'
+        crastration_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        dehornedMethod:
+          type:
+          - string
+          - 'null'
+        dehorned_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        eventTypeId:
+          type:
+          - string
+          - 'null'
+        eventStatusId:
+          type:
+          - string
+          - 'null'
+        heatScale:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        healthScale:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        isOnWatchList:
+          type:
+          - boolean
+          - 'null'
+        watchListDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        watchListReason:
+          type:
+          - string
+          - 'null'
+        weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        weight_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        height:
+          type:
+          - number
+          - 'null'
+          format: double
+        height_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        temperature:
+          type:
+          - number
+          - 'null'
+          format: double
+        temperature_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        frame_Score:
+          type:
+          - number
+          - 'null'
+          format: double
+        frame_Score_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        rib_Bones_Score:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        spine_Bones_Transverse_Score:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        hip_Bones_Hook_Pin_Score:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        hip_Fill_Hook_Pin_Score:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        brisket_Score:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        tailhead_Score:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        body_Fat_Score:
+          type:
+          - number
+          - 'null'
+          format: double
+        body_Condition_Score:
+          type:
+          - number
+          - 'null'
+          format: double
+        body_Condition_Score_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        hair_Shed_Score:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        hair_Shed_Score_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isToxic_Fescue_Indicator:
+          type:
+          - boolean
+          - 'null'
+        dentition:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        dentition_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        pap:
+          type:
+          - number
+          - 'null'
+          format: double
+        paP_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        feed_Test_Weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        feed_Test_Weight_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        animalCalvingId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        seasonId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        seasonDescription:
+          type:
+          - string
+          - 'null'
+        isMostLikely:
+          type:
+          - boolean
+          - 'null'
+        breedingType:
+          type:
+          - string
+          - 'null'
+        breedingStatus:
+          type:
+          - string
+          - 'null'
+        estrusType:
+          type:
+          - string
+          - 'null'
+        estrus_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        semonTankId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        actualDateInseminated:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        embryoTankId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        embryoId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        actualDateEmbryoTransferred:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        turnoutId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        turnoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        turnInDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        syncType:
+          type:
+          - string
+          - 'null'
+        syncDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        flushType:
+          type:
+          - string
+          - 'null'
+        flushDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        pregCheckType:
+          type:
+          - string
+          - 'null'
+        pregCheckedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        predictedSex:
+          type:
+          - string
+          - 'null'
+        conceptionMethod:
+          type:
+          - string
+          - 'null'
+        hasMultipleCalves:
+          type:
+          - boolean
+          - 'null'
+        isBred:
+          type:
+          - boolean
+          - 'null'
+        isOpen:
+          type:
+          - boolean
+          - 'null'
+        isLate:
+          type:
+          - boolean
+          - 'null'
+        isRecheck:
+          type:
+          - boolean
+          - 'null'
+        estimatedDateInseminated:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        estimatedDateCalved:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        hasCalved:
+          type:
+          - boolean
+          - 'null'
+        hasAborted:
+          type:
+          - boolean
+          - 'null'
+        hasStillBorn:
+          type:
+          - boolean
+          - 'null'
+        actualDateCalved:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        pairIds:
+          type:
+          - string
+          - 'null'
+        sires:
+          type:
+          - string
+          - 'null'
+        siresData:
+          type:
+          - string
+          - 'null'
+        maleLegacyId:
+          type:
+          - string
+          - 'null'
+        maleAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        maleCode:
+          type:
+          - string
+          - 'null'
+        maleCattleNumber:
+          type:
+          - string
+          - 'null'
+        maleRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        maleAssociationCode:
+          type:
+          - string
+          - 'null'
+        maleNetworkNumber:
+          type:
+          - string
+          - 'null'
+        femaleLegacyId:
+          type:
+          - string
+          - 'null'
+        femaleAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        femaleCode:
+          type:
+          - string
+          - 'null'
+        femaleCattleNumber:
+          type:
+          - string
+          - 'null'
+        femaleRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        femaleAssociationCode:
+          type:
+          - string
+          - 'null'
+        femaleNetworkNumber:
+          type:
+          - string
+          - 'null'
+        fosterLegacyId:
+          type:
+          - string
+          - 'null'
+        fosterAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        fosterCode:
+          type:
+          - string
+          - 'null'
+        fosterCattleNumber:
+          type:
+          - string
+          - 'null'
+        fosterRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        fosterAssociationCode:
+          type:
+          - string
+          - 'null'
+        fosterNetworkNumber:
+          type:
+          - string
+          - 'null'
+        isGrafted:
+          type:
+          - boolean
+          - 'null'
+        recipientLegacyId:
+          type:
+          - string
+          - 'null'
+        recipientAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        recipientCattleNumber:
+          type:
+          - string
+          - 'null'
+        recipientAssociationCode:
+          type:
+          - string
+          - 'null'
+        recipientRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        recipientCode:
+          type:
+          - string
+          - 'null'
+        recipientNetworkNumber:
+          type:
+          - string
+          - 'null'
+        doNotBreedFlag:
+          type:
+          - boolean
+          - 'null'
+        temper:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        temper_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        udder:
+          type:
+          - number
+          - 'null'
+          format: double
+        teat:
+          type:
+          - number
+          - 'null'
+          format: double
+        dam_Collection_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        pelvic_Device:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        pelvic_Device_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        reproductive_Tract_Score:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        reproductive_Tract_Score_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        reason_Code:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        reason_Code_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        calving_Ease_Direct:
+          type:
+          - number
+          - 'null'
+          format: double
+        calving_Ease_Direct_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        birth_Weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        birth_Weight_Adj:
+          type:
+          - number
+          - 'null'
+          format: double
+        birth_Weight_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        twinCode:
+          type:
+          - string
+          - 'null'
+        calfVigor:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        isFreemartin:
+          type:
+          - boolean
+          - 'null'
+        weaning_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        contemporary_Group:
+          type:
+          - string
+          - 'null'
+        weaning_Weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        weaning_Weight_Adj:
+          type:
+          - number
+          - 'null'
+          format: double
+        weaning_Weight_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        weaning_Height:
+          type:
+          - number
+          - 'null'
+          format: double
+        weaning_Height_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        weaning_Temper:
+          type:
+          - number
+          - 'null'
+          format: double
+        weaning_Temper_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        weaning_Pelvic_Width:
+          type:
+          - number
+          - 'null'
+          format: double
+        weaning_Pelvic_Height:
+          type:
+          - number
+          - 'null'
+          format: double
+        weaning_Pelvic_Collection_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        weaning_Sheath_Score:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        weaning_Navel_Score:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        weaning_Sheath_Navel_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        weaning_Scrotal_Circumference:
+          type:
+          - number
+          - 'null'
+          format: double
+        weaning_Scrotal_Circumference_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isCreepFed:
+          type:
+          - boolean
+          - 'null'
+        feed_Code:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        feed_Code_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        yearling_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        yearling_Weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        yearling_Weight_Adj:
+          type:
+          - number
+          - 'null'
+          format: double
+        yearling_Weight_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        yearling_Height:
+          type:
+          - number
+          - 'null'
+          format: double
+        yearling_Height_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        yearling_Feed_Code:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        yearling_Feed_Code_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        sheath_Score:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        navel_Score:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        sheath_Navel_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        scrotal_Circumference:
+          type:
+          - number
+          - 'null'
+          format: double
+        scrotal_Circumference_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        pelvic_Width:
+          type:
+          - number
+          - 'null'
+          format: double
+        pelvic_Height:
+          type:
+          - number
+          - 'null'
+          format: double
+        pelvic_Collection_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        claw_Set:
+          type:
+          - number
+          - 'null'
+          format: double
+        foot_Angle:
+          type:
+          - number
+          - 'null'
+          format: double
+        rear_Leg_Score:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        foot_Score_Comment:
+          type:
+          - string
+          - 'null'
+        foot_Collection_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        docility:
+          type:
+          - number
+          - 'null'
+          format: double
+        docility_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        diet:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        diet_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        ultrasound_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        rib_Eye_Area:
+          type:
+          - number
+          - 'null'
+          format: double
+        fat_Thickness:
+          type:
+          - number
+          - 'null'
+          format: double
+        rump_Fat_Thickness:
+          type:
+          - number
+          - 'null'
+          format: double
+        imf:
+          type:
+          - number
+          - 'null'
+          format: double
+        ultrasound_Weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        ultrasound_Height:
+          type:
+          - number
+          - 'null'
+          format: double
+        ultrasound_Height_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        ultrasound_Scrotal_Circumference:
+          type:
+          - number
+          - 'null'
+          format: double
+        ultrasound_Scrotal_Circumference_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        carcass_Weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        carcass_Weight_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        marble_Type:
+          type:
+          - string
+          - 'null'
+        marble_Value:
+          type:
+          - number
+          - 'null'
+          format: double
+        quality_Grade:
+          type:
+          - string
+          - 'null'
+        carcass_Hot_Weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        back_Fat:
+          type:
+          - number
+          - 'null'
+          format: double
+        ribeye:
+          type:
+          - number
+          - 'null'
+          format: double
+        kph:
+          type:
+          - number
+          - 'null'
+          format: double
+        carcass_Harvest_Weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        yield_Grade:
+          type:
+          - number
+          - 'null'
+          format: double
+        pyg:
+          type:
+          - number
+          - 'null'
+          format: double
+        internal_Fat:
+          type:
+          - number
+          - 'null'
+          format: double
+        maturity:
+          type:
+          - string
+          - 'null'
+        days_On_Feed:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        packer_Code:
+          type:
+          - string
+          - 'null'
+        packer:
+          type:
+          - string
+          - 'null'
+        feedLotId:
+          type:
+          - string
+          - 'null'
+        non_Conform:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        plant_Loc:
+          type:
+          - string
+          - 'null'
+        disposal_Code:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        disposal_Code_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        death_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        cull_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        purchase_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        purchase_Price:
+          type:
+          - number
+          - 'null'
+          format: double
+        purchase_Weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        purchase_PricePerPounds:
+          type:
+          - number
+          - 'null'
+          format: double
+        purchase_Seller:
+          type:
+          - string
+          - 'null'
+        purchase_SaleDayLotNumber:
+          type:
+          - string
+          - 'null'
+        purchase_SaleDayLotId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        purchase_SaleDayName:
+          type:
+          - string
+          - 'null'
+        purchase_SaleDayId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        sold_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        sold_Price:
+          type:
+          - number
+          - 'null'
+          format: double
+        sold_Weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        sold_PricePerPounds:
+          type:
+          - number
+          - 'null'
+          format: double
+        sold_Buyer:
+          type:
+          - string
+          - 'null'
+        sold_SaleDayLotNumber:
+          type:
+          - string
+          - 'null'
+        sold_SaleDayLotId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        sold_SaleDayName:
+          type:
+          - string
+          - 'null'
+        sold_SaleDayId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastCheckInMethod:
+          type:
+          - string
+          - 'null'
+        lastCheckInDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUploadedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastWorkedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSeenDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        animalCalvings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Calving'
+        animalTurnouts:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Turn_Out'
+        animalLogs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Log'
+        animalComments:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Comment'
+        animalAttachments:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Attachment'
+        arrayOfChanges:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Changes'
+        insertedLogs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Log_Master'
+        insertedAnimalLogs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Log'
+        tagToUpdateOld:
+          $ref: '#/components/schemas/Tag_Master'
+        tagToUpdate:
+          $ref: '#/components/schemas/Tag_Master'
+        calvingToSave:
+          $ref: '#/components/schemas/Animal_Calving'
+        calvingToInsert:
+          $ref: '#/components/schemas/Animal_Calving'
+        foundCalvings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Calving'
+        note:
+          $ref: '#/components/schemas/Animal_Comment'
+        isShared:
+          type:
+          - boolean
+          - 'null'
+        companyShareId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        bluetoothFound:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+        clientId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DateOnly:
+      type: object
+      properties:
+        year:
+          type: integer
+          format: int32
+          readOnly: true
+        month:
+          type: integer
+          format: int32
+          readOnly: true
+        day:
+          type: integer
+          format: int32
+          readOnly: true
+        dayOfWeek:
+          $ref: '#/components/schemas/DayOfWeek'
+        dayOfYear:
+          type: integer
+          format: int32
+          readOnly: true
+        dayNumber:
+          type: integer
+          format: int32
+          readOnly: true
+      additionalProperties: false
+    DayOfWeek:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      type: integer
+      format: int32
+    AnimalMergePair:
+      type: object
+      properties:
+        loserId:
+          type: string
+          format: uuid
+        survivorId:
+          type: string
+          format: uuid
+      additionalProperties: false
+    Animal_Attachment:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        attachmentId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        fileName:
+          type:
+          - string
+          - 'null'
+        fileExtension:
+          type:
+          - string
+          - 'null'
+        filePath:
+          type:
+          - string
+          - 'null'
+        fileType:
+          type:
+          - string
+          - 'null'
+        fileSize:
+          type: integer
+          format: int64
+        isProfilePic:
+          type:
+          - boolean
+          - 'null'
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        animalCode:
+          type:
+          - string
+          - 'null'
+        animalDescription:
+          type:
+          - string
+          - 'null'
+        animalType:
+          type:
+          - string
+          - 'null'
+        animalBreed:
+          type:
+          - string
+          - 'null'
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupCode:
+          type:
+          - string
+          - 'null'
+        groupDescription:
+          type:
+          - string
+          - 'null'
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Animal_Turn_Out:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        turnOutId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        seasonId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        sireAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        sireCattleNumber:
+          type:
+          - string
+          - 'null'
+        sireAssociationCode:
+          type:
+          - string
+          - 'null'
+        sireRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        sireCode:
+          type:
+          - string
+          - 'null'
+        sireDescription:
+          type:
+          - string
+          - 'null'
+        steps:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        distance:
+          type:
+          - number
+          - 'null'
+          format: double
+        mounts:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        farmVirtualFenceDescription:
+          type:
+          - string
+          - 'null'
+        turnoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        turnInDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        seasonDescription:
+          type:
+          - string
+          - 'null'
+        calvingStartDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        calvingEndDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Animal_Calving:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceDescription:
+          type:
+          - string
+          - 'null'
+        legacyId:
+          type:
+          - string
+          - 'null'
+        seasonId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        seasonDescription:
+          type:
+          - string
+          - 'null'
+        calvingStartDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        calvingEndDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        sires:
+          type:
+          - string
+          - 'null'
+        siresData:
+          type:
+          - string
+          - 'null'
+        sireAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        sireCattleNumber:
+          type:
+          - string
+          - 'null'
+        sireAssociationCode:
+          type:
+          - string
+          - 'null'
+        sireRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        sireCode:
+          type:
+          - string
+          - 'null'
+        damAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        damCattleNumber:
+          type:
+          - string
+          - 'null'
+        damAssociationCode:
+          type:
+          - string
+          - 'null'
+        damRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        damCode:
+          type:
+          - string
+          - 'null'
+        fosterAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        fosterCattleNumber:
+          type:
+          - string
+          - 'null'
+        fosterAssociationCode:
+          type:
+          - string
+          - 'null'
+        fosterRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        fosterCode:
+          type:
+          - string
+          - 'null'
+        recipientAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        recipientCattleNumber:
+          type:
+          - string
+          - 'null'
+        recipientAssociationCode:
+          type:
+          - string
+          - 'null'
+        recipientRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        recipientCode:
+          type:
+          - string
+          - 'null'
+        isMostLikely:
+          type:
+          - boolean
+          - 'null'
+        isManuallyMostLikely:
+          type:
+          - boolean
+          - 'null'
+        breedingType:
+          type:
+          - string
+          - 'null'
+        breedingStatus:
+          type:
+          - string
+          - 'null'
+        estrusType:
+          type:
+          - string
+          - 'null'
+        estrus_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        semonTankId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        semonTankPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        actualDateInseminated:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        embryoTankId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        embryoId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        embryoTankPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        actualDateEmbryoTransferred:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        turnOutId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        turnoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        turnInDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        syncType:
+          type:
+          - string
+          - 'null'
+        syncDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        flushType:
+          type:
+          - string
+          - 'null'
+        flushDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        pregCheckType:
+          type:
+          - string
+          - 'null'
+        pregCheckedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        predictedSex:
+          type:
+          - string
+          - 'null'
+        predictedSex2:
+          type:
+          - string
+          - 'null'
+        predictedSex3:
+          type:
+          - string
+          - 'null'
+        predictedSex4:
+          type:
+          - string
+          - 'null'
+        conceptionMethod:
+          type:
+          - string
+          - 'null'
+        hasMultipleCalves:
+          type:
+          - boolean
+          - 'null'
+        isBred:
+          type:
+          - boolean
+          - 'null'
+        isOpen:
+          type:
+          - boolean
+          - 'null'
+        isLate:
+          type:
+          - boolean
+          - 'null'
+        isRecheck:
+          type:
+          - boolean
+          - 'null'
+        estimatedDateInseminated:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        estimatedDateCalved:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        hasCalved:
+          type:
+          - boolean
+          - 'null'
+        hasAborted:
+          type:
+          - boolean
+          - 'null'
+        hasStillBorn:
+          type:
+          - boolean
+          - 'null'
+        actualDateCalved:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        calves:
+          type:
+          - string
+          - 'null'
+        calfAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        calfCattleNumber:
+          type:
+          - string
+          - 'null'
+        calfAssociationCode:
+          type:
+          - string
+          - 'null'
+        calfRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        calfCode:
+          type:
+          - string
+          - 'null'
+        calfAnimalId2:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        calfCattleNumber2:
+          type:
+          - string
+          - 'null'
+        calfAnimalId3:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        calfCattleNumber3:
+          type:
+          - string
+          - 'null'
+        calfAnimalId4:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        calfCattleNumber4:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        disabledDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isShared:
+          type:
+          - boolean
+          - 'null'
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+        errorCode:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

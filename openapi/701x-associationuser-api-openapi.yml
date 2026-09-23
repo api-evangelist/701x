@@ -1,0 +1,522 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Association User API
+  description: 701x API
+  version: v1
+tags:
+- name: AssociationUser
+paths:
+  /AssociationUser/AssociationUserByFilter:
+    get:
+      tags:
+      - AssociationUser
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: associationId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: userId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: email
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: permissionLevel
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Association_User'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Association_User'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Association_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get association user association user by filter
+      x-summary-source: derived
+      operationId: getAssociationUserAssociationUserByFilter
+      x-operation-id-source: derived
+  /AssociationUser/{id}:
+    get:
+      tags:
+      - AssociationUser
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get association user by id
+      x-summary-source: derived
+      operationId: getAssociationUserById
+      x-operation-id-source: derived
+  /AssociationUser/RequestsAssociationUserDataByFilter:
+    get:
+      tags:
+      - AssociationUser
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Association_User'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Association_User'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Association_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get association user requests association user data by filter
+      x-summary-source: derived
+      operationId: getAssociationUserRequestsAssociationUserDataByFilter
+      x-operation-id-source: derived
+  /AssociationUser/AcceptRequest/{id}:
+    put:
+      tags:
+      - AssociationUser
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace association user accept request by id
+      x-summary-source: derived
+      operationId: putAssociationUserAcceptRequestById
+      x-operation-id-source: derived
+  /AssociationUser/DeclineRequest/{id}:
+    put:
+      tags:
+      - AssociationUser
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace association user decline request by id
+      x-summary-source: derived
+      operationId: putAssociationUserDeclineRequestById
+      x-operation-id-source: derived
+  /AssociationUser/Post:
+    post:
+      tags:
+      - AssociationUser
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create association user post
+      x-summary-source: derived
+      operationId: postAssociationUserPost
+      x-operation-id-source: derived
+  /AssociationUser/Put/{id}:
+    put:
+      tags:
+      - AssociationUser
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Association_User'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace association user put by id
+      x-summary-source: derived
+      operationId: putAssociationUserPutById
+      x-operation-id-source: derived
+  /AssociationUser/Delete/{id}:
+    delete:
+      tags:
+      - AssociationUser
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Association_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Delete association user delete by id
+      x-summary-source: derived
+      operationId: deleteAssociationUserDeleteById
+      x-operation-id-source: derived
+components:
+  schemas:
+    Association_User:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        associationId:
+          type:
+          - string
+          - 'null'
+        invitedToAssociation:
+          type:
+          - string
+          - 'null'
+        userFirstName:
+          type:
+          - string
+          - 'null'
+        userLastName:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        permissionLevel:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

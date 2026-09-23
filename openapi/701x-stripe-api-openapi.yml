@@ -1,0 +1,1513 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Stripe API
+  description: 701x API
+  version: v1
+tags:
+- name: Stripe
+paths:
+  /Stripe/CustomerPortal:
+    post:
+      tags:
+      - Stripe
+      parameters:
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: ReturnUrl
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create stripe customer portal
+      x-summary-source: derived
+      operationId: postStripeCustomerPortal
+      x-operation-id-source: derived
+  /Stripe/ProcessCheckOut:
+    post:
+      tags:
+      - Stripe
+      parameters:
+      - name: CartId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: ReturnUrl
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create stripe process check out
+      x-summary-source: derived
+      operationId: postStripeProcessCheckOut
+      x-operation-id-source: derived
+  /Stripe/CalculateShippingCostPro:
+    post:
+      tags:
+      - Stripe
+      parameters:
+      - name: totalQuantity
+        in: query
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int64
+            application/json:
+              schema:
+                type: integer
+                format: int64
+            text/json:
+              schema:
+                type: integer
+                format: int64
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create stripe calculate shipping cost pro
+      x-summary-source: derived
+      operationId: postStripeCalculateShippingCostPro
+      x-operation-id-source: derived
+  /Stripe/CalculateShippingCostLite:
+    post:
+      tags:
+      - Stripe
+      parameters:
+      - name: totalQuantity
+        in: query
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int64
+            application/json:
+              schema:
+                type: integer
+                format: int64
+            text/json:
+              schema:
+                type: integer
+                format: int64
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create stripe calculate shipping cost lite
+      x-summary-source: derived
+      operationId: postStripeCalculateShippingCostLite
+      x-operation-id-source: derived
+  /Stripe/CalculateShippingCostTag:
+    post:
+      tags:
+      - Stripe
+      parameters:
+      - name: totalQuantity
+        in: query
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int64
+            application/json:
+              schema:
+                type: integer
+                format: int64
+            text/json:
+              schema:
+                type: integer
+                format: int64
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create stripe calculate shipping cost tag
+      x-summary-source: derived
+      operationId: postStripeCalculateShippingCostTag
+      x-operation-id-source: derived
+  /Stripe/CalculateShippingCostBaseStation:
+    post:
+      tags:
+      - Stripe
+      parameters:
+      - name: totalQuantity
+        in: query
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int64
+            application/json:
+              schema:
+                type: integer
+                format: int64
+            text/json:
+              schema:
+                type: integer
+                format: int64
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create stripe calculate shipping cost base station
+      x-summary-source: derived
+      operationId: postStripeCalculateShippingCostBaseStation
+      x-operation-id-source: derived
+  /Stripe/CalculateShippingCostWaterSensor:
+    post:
+      tags:
+      - Stripe
+      parameters:
+      - name: totalQuantity
+        in: query
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int64
+            application/json:
+              schema:
+                type: integer
+                format: int64
+            text/json:
+              schema:
+                type: integer
+                format: int64
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create stripe calculate shipping cost water sensor
+      x-summary-source: derived
+      operationId: postStripeCalculateShippingCostWaterSensor
+      x-operation-id-source: derived
+  /Stripe/CalculateShippingCostApplicator:
+    post:
+      tags:
+      - Stripe
+      parameters:
+      - name: totalQuantity
+        in: query
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int64
+            application/json:
+              schema:
+                type: integer
+                format: int64
+            text/json:
+              schema:
+                type: integer
+                format: int64
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create stripe calculate shipping cost applicator
+      x-summary-source: derived
+      operationId: postStripeCalculateShippingCostApplicator
+      x-operation-id-source: derived
+  /Stripe/CalculateShippingCostWand:
+    post:
+      tags:
+      - Stripe
+      parameters:
+      - name: totalQuantity
+        in: query
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int64
+            application/json:
+              schema:
+                type: integer
+                format: int64
+            text/json:
+              schema:
+                type: integer
+                format: int64
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create stripe calculate shipping cost wand
+      x-summary-source: derived
+      operationId: postStripeCalculateShippingCostWand
+      x-operation-id-source: derived
+  /Stripe/CalculateShippingCostMount:
+    post:
+      tags:
+      - Stripe
+      parameters:
+      - name: totalQuantity
+        in: query
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int64
+            application/json:
+              schema:
+                type: integer
+                format: int64
+            text/json:
+              schema:
+                type: integer
+                format: int64
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create stripe calculate shipping cost mount
+      x-summary-source: derived
+      operationId: postStripeCalculateShippingCostMount
+      x-operation-id-source: derived
+  /Stripe/CalculateShippingCostSpareParts:
+    post:
+      tags:
+      - Stripe
+      parameters:
+      - name: totalQuantity
+        in: query
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int64
+            application/json:
+              schema:
+                type: integer
+                format: int64
+            text/json:
+              schema:
+                type: integer
+                format: int64
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create stripe calculate shipping cost spare parts
+      x-summary-source: derived
+      operationId: postStripeCalculateShippingCostSpareParts
+      x-operation-id-source: derived
+  /Stripe/CalculateShippingCostMerch:
+    post:
+      tags:
+      - Stripe
+      parameters:
+      - name: totalQuantity
+        in: query
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int64
+            application/json:
+              schema:
+                type: integer
+                format: int64
+            text/json:
+              schema:
+                type: integer
+                format: int64
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create stripe calculate shipping cost merch
+      x-summary-source: derived
+      operationId: postStripeCalculateShippingCostMerch
+      x-operation-id-source: derived
+  /Stripe/VerifyCheckOutWasSuccessful:
+    post:
+      tags:
+      - Stripe
+      parameters:
+      - name: CartId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create stripe verify check out was successful
+      x-summary-source: derived
+      operationId: postStripeVerifyCheckOutWasSuccessful
+      x-operation-id-source: derived
+  /Stripe/GetProducts:
+    get:
+      tags:
+      - Stripe
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+      summary: Get stripe get products
+      x-summary-source: derived
+      operationId: getStripeGetProducts
+      x-operation-id-source: derived
+  /Stripe/GetPrices:
+    get:
+      tags:
+      - Stripe
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Price'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Price'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Price'
+      summary: Get stripe get prices
+      x-summary-source: derived
+      operationId: getStripeGetPrices
+      x-operation-id-source: derived
+  /Stripe/GetPricesByProduct:
+    get:
+      tags:
+      - Stripe
+      parameters:
+      - name: productId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Price'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Price'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Price'
+      summary: Get stripe get prices by product
+      x-summary-source: derived
+      operationId: getStripeGetPricesByProduct
+      x-operation-id-source: derived
+components:
+  schemas:
+    TaxCode:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        id:
+          type:
+          - string
+          - 'null'
+        object:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    PriceCurrencyOptions:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        customUnitAmount:
+          $ref: '#/components/schemas/PriceCurrencyOptionsCustomUnitAmount'
+        taxBehavior:
+          type:
+          - string
+          - 'null'
+        tiers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/PriceCurrencyOptionsTier'
+        unitAmount:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        unitAmountDecimal:
+          type:
+          - number
+          - 'null'
+          format: double
+      additionalProperties: false
+    Price:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        id:
+          type:
+          - string
+          - 'null'
+        object:
+          type:
+          - string
+          - 'null'
+        active:
+          type: boolean
+        billingScheme:
+          type:
+          - string
+          - 'null'
+        created:
+          type: string
+          format: date-time
+        currency:
+          type:
+          - string
+          - 'null'
+        currencyOptions:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/PriceCurrencyOptions'
+        customUnitAmount:
+          $ref: '#/components/schemas/PriceCustomUnitAmount'
+        deleted:
+          type:
+          - boolean
+          - 'null'
+        livemode:
+          type: boolean
+        lookupKey:
+          type:
+          - string
+          - 'null'
+        metadata:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type: string
+        nickname:
+          type:
+          - string
+          - 'null'
+        productId:
+          type:
+          - string
+          - 'null'
+        product:
+          $ref: '#/components/schemas/Product'
+        recurring:
+          $ref: '#/components/schemas/PriceRecurring'
+        taxBehavior:
+          type:
+          - string
+          - 'null'
+        tiers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/PriceTier'
+        tiersMode:
+          type:
+          - string
+          - 'null'
+        transformQuantity:
+          $ref: '#/components/schemas/PriceTransformQuantity'
+        type:
+          type:
+          - string
+          - 'null'
+        unitAmount:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        unitAmountDecimal:
+          type:
+          - number
+          - 'null'
+          format: double
+      additionalProperties: false
+    StringStringIEnumerableKeyValuePair:
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        value:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          readOnly: true
+      additionalProperties: false
+    PriceCustomUnitAmount:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        maximum:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        minimum:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        preset:
+          type:
+          - integer
+          - 'null'
+          format: int64
+      additionalProperties: false
+    StripeResponse:
+      type: object
+      properties:
+        statusCode:
+          $ref: '#/components/schemas/HttpStatusCode'
+        headers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/StringStringIEnumerableKeyValuePair'
+          readOnly: true
+        date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          readOnly: true
+        idempotencyKey:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        requestId:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        content:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+      additionalProperties: false
+    ProductFeature:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    HttpStatusCode:
+      enum:
+      - 100
+      - 101
+      - 102
+      - 103
+      - 200
+      - 201
+      - 202
+      - 203
+      - 204
+      - 205
+      - 206
+      - 207
+      - 208
+      - 226
+      - 300
+      - 301
+      - 302
+      - 303
+      - 304
+      - 305
+      - 306
+      - 307
+      - 308
+      - 400
+      - 401
+      - 402
+      - 403
+      - 404
+      - 405
+      - 406
+      - 407
+      - 408
+      - 409
+      - 410
+      - 411
+      - 412
+      - 413
+      - 414
+      - 415
+      - 416
+      - 417
+      - 421
+      - 422
+      - 423
+      - 424
+      - 426
+      - 428
+      - 429
+      - 431
+      - 451
+      - 500
+      - 501
+      - 502
+      - 503
+      - 504
+      - 505
+      - 506
+      - 507
+      - 508
+      - 510
+      - 511
+      type: integer
+      format: int32
+    PriceTransformQuantity:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        divideBy:
+          type: integer
+          format: int64
+        round:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    PriceCurrencyOptionsTier:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        flatAmount:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        flatAmountDecimal:
+          type:
+          - number
+          - 'null'
+          format: double
+        unitAmount:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        unitAmountDecimal:
+          type:
+          - number
+          - 'null'
+          format: double
+        upTo:
+          type:
+          - integer
+          - 'null'
+          format: int64
+      additionalProperties: false
+    Cart_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        orderNumber:
+          type:
+          - string
+          - 'null'
+        paymentIntentId:
+          type:
+          - string
+          - 'null'
+        priorityLevel:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        desiredShipDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        cartProcess:
+          type:
+          - string
+          - 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        sessionId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        poNumber:
+          type:
+          - string
+          - 'null'
+        orderByName:
+          type:
+          - string
+          - 'null'
+        stripeCustomerId:
+          type:
+          - string
+          - 'null'
+        stripeSessionId:
+          type:
+          - string
+          - 'null'
+        stripeInvoiceNumber:
+          type:
+          - string
+          - 'null'
+        stripeShippingRateId:
+          type:
+          - string
+          - 'null'
+        isSubscriptionBased:
+          type:
+          - boolean
+          - 'null'
+        promotionId:
+          type:
+          - string
+          - 'null'
+        stripeDiscountId:
+          type:
+          - string
+          - 'null'
+        promotionCode:
+          type:
+          - string
+          - 'null'
+        coupon:
+          type:
+          - string
+          - 'null'
+        serviceLevel:
+          type:
+          - string
+          - 'null'
+        orderType:
+          type:
+          - string
+          - 'null'
+        comments:
+          type:
+          - string
+          - 'null'
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        shippingRateId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        code:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        billAddress1:
+          type:
+          - string
+          - 'null'
+        billAddress2:
+          type:
+          - string
+          - 'null'
+        billAddress3:
+          type:
+          - string
+          - 'null'
+        billCountry:
+          type:
+          - string
+          - 'null'
+        billState:
+          type:
+          - string
+          - 'null'
+        billRegion:
+          type:
+          - string
+          - 'null'
+        billZip:
+          type:
+          - string
+          - 'null'
+        billCity:
+          type:
+          - string
+          - 'null'
+        shipName:
+          type:
+          - string
+          - 'null'
+        shipAddress1:
+          type:
+          - string
+          - 'null'
+        shipAddress2:
+          type:
+          - string
+          - 'null'
+        shipAddress3:
+          type:
+          - string
+          - 'null'
+        shipCountry:
+          type:
+          - string
+          - 'null'
+        shipState:
+          type:
+          - string
+          - 'null'
+        shipRegion:
+          type:
+          - string
+          - 'null'
+        shipZip:
+          type:
+          - string
+          - 'null'
+        shipCity:
+          type:
+          - string
+          - 'null'
+        isWishlist:
+          type:
+          - boolean
+          - 'null'
+        isLocalPickup:
+          type:
+          - boolean
+          - 'null'
+        isNewRanch:
+          type:
+          - boolean
+          - 'null'
+        lineItemsTotal:
+          type:
+          - number
+          - 'null'
+          format: double
+        discountTotal:
+          type:
+          - number
+          - 'null'
+          format: double
+        shippingRate:
+          type:
+          - number
+          - 'null'
+          format: double
+        taxTotal:
+          type:
+          - number
+          - 'null'
+          format: double
+        totalPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        pendingCheckoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        checkoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        filledByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        filledByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        shippedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        shippedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        tagFilledCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        tagPendingCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        tagOrderCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        cancelledByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        cancelledByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cancelledByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    PriceCurrencyOptionsCustomUnitAmount:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        maximum:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        minimum:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        preset:
+          type:
+          - integer
+          - 'null'
+          format: int64
+      additionalProperties: false
+    PriceRecurring:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        aggregateUsage:
+          type:
+          - string
+          - 'null'
+        interval:
+          type:
+          - string
+          - 'null'
+        intervalCount:
+          type: integer
+          format: int64
+        trialPeriodDays:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        usageType:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    JToken:
+      type: array
+      items:
+        $ref: '#/components/schemas/JToken'
+    Product:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        id:
+          type:
+          - string
+          - 'null'
+        object:
+          type:
+          - string
+          - 'null'
+        active:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+        defaultPriceId:
+          type:
+          - string
+          - 'null'
+        defaultPrice:
+          $ref: '#/components/schemas/Price'
+        deleted:
+          type:
+          - boolean
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        features:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ProductFeature'
+        images:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        livemode:
+          type: boolean
+        metadata:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type: string
+        name:
+          type:
+          - string
+          - 'null'
+        packageDimensions:
+          $ref: '#/components/schemas/ProductPackageDimensions'
+        shippable:
+          type:
+          - boolean
+          - 'null'
+        statementDescriptor:
+          type:
+          - string
+          - 'null'
+        taxCodeId:
+          type:
+          - string
+          - 'null'
+        taxCode:
+          $ref: '#/components/schemas/TaxCode'
+        type:
+          type:
+          - string
+          - 'null'
+        unitLabel:
+          type:
+          - string
+          - 'null'
+        updated:
+          type: string
+          format: date-time
+        url:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    PriceTier:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        flatAmount:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        flatAmountDecimal:
+          type:
+          - number
+          - 'null'
+          format: double
+        unitAmount:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        unitAmountDecimal:
+          type:
+          - number
+          - 'null'
+          format: double
+        upTo:
+          type:
+          - integer
+          - 'null'
+          format: int64
+      additionalProperties: false
+    ProductPackageDimensions:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        height:
+          type: number
+          format: double
+        length:
+          type: number
+          format: double
+        weight:
+          type: number
+          format: double
+        width:
+          type: number
+          format: double
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

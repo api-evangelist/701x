@@ -1,0 +1,29 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Cow Calf Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: CowCalfControllerBasic
+paths:
+  /CowCalfControllerBasic/validityCheck:
+    post:
+      tags:
+      - CowCalfControllerBasic
+      responses:
+        '200':
+          description: Success
+      summary: Create cow calf controller basic validity check
+      x-summary-source: derived
+      operationId: postCowCalfControllerBasicValidityCheck
+      x-operation-id-source: derived
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

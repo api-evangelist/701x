@@ -1,0 +1,468 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Work Queue Animal API
+  description: 701x API
+  version: v1
+tags:
+- name: WorkQueueAnimal
+paths:
+  /WorkQueueAnimal/{id}:
+    get:
+      tags:
+      - WorkQueueAnimal
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Work_Queue_Animal'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Work_Queue_Animal'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Work_Queue_Animal'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get work queue animal by id
+      x-summary-source: derived
+      operationId: getWorkQueueAnimalById
+      x-operation-id-source: derived
+  /WorkQueueAnimal/GetWorkQueueAnimalDataByFilter:
+    get:
+      tags:
+      - WorkQueueAnimal
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: WorkQueueId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: AssociationCode
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: AssociationId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: MemberId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: ActionType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: status
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Work_Queue_Animal'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Work_Queue_Animal'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Work_Queue_Animal'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get work queue animal get work queue animal data by filter
+      x-summary-source: derived
+      operationId: getWorkQueueAnimalGetWorkQueueAnimalDataByFilter
+      x-operation-id-source: derived
+  /WorkQueueAnimal/MassUpdate:
+    post:
+      tags:
+      - WorkQueueAnimal
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Work_Queue_Animal'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Work_Queue_Animal'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Work_Queue_Animal'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Work_Queue_Animal'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Work_Queue_Animal'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Work_Queue_Animal'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Work_Queue_Animal'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create work queue animal mass update
+      x-summary-source: derived
+      operationId: postWorkQueueAnimalMassUpdate
+      x-operation-id-source: derived
+components:
+  schemas:
+    Work_Queue_Animal:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        workQueueId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        associationCode:
+          type:
+          - string
+          - 'null'
+        registrationNumber:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        otherNumber:
+          type:
+          - string
+          - 'null'
+        phNumber:
+          type:
+          - string
+          - 'null'
+        tattooLeft:
+          type:
+          - string
+          - 'null'
+        tattooRight:
+          type:
+          - string
+          - 'null'
+        usdaNumber:
+          type:
+          - string
+          - 'null'
+        managementRFID:
+          type:
+          - string
+          - 'null'
+        permanent_Mark_Type:
+          type:
+          - string
+          - 'null'
+        branded_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        brandLocation:
+          type:
+          - string
+          - 'null'
+        brandDescription:
+          type:
+          - string
+          - 'null'
+        dob:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        type:
+          type:
+          - string
+          - 'null'
+        sireGroup:
+          type:
+          - string
+          - 'null'
+        femaleAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        femaleAssociationCode:
+          type:
+          - string
+          - 'null'
+        femaleRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        femaleCattleNumber:
+          type:
+          - string
+          - 'null'
+        femaleCode:
+          type:
+          - string
+          - 'null'
+        maleAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        maleAssociationCode:
+          type:
+          - string
+          - 'null'
+        maleRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        maleCattleNumber:
+          type:
+          - string
+          - 'null'
+        maleCode:
+          type:
+          - string
+          - 'null'
+        primaryKey:
+          type:
+          - string
+          - 'null'
+        secondaryKey:
+          type:
+          - string
+          - 'null'
+        warnings:
+          type:
+          - string
+          - 'null'
+        register:
+          type:
+          - boolean
+          - 'null'
+        calvingInfo:
+          type:
+          - boolean
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

@@ -1,0 +1,735 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Company User Controller Admin API
+  description: 701x API
+  version: v1
+tags:
+- name: CompanyUserControllerAdmin
+paths:
+  /CompanyUserControllerAdmin/Get/{id}:
+    get:
+      tags:
+      - CompanyUserControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get company user controller admin get by id
+      x-summary-source: derived
+      operationId: getCompanyUserControllerAdminGetById
+      x-operation-id-source: derived
+  /CompanyUserControllerAdmin/RequestsCompanyUserDataByFilter:
+    get:
+      tags:
+      - CompanyUserControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get company user controller admin requests company user data by filter
+      x-summary-source: derived
+      operationId: getCompanyUserControllerAdminRequestsCompanyUserDataByFilter
+      x-operation-id-source: derived
+  /CompanyUserControllerAdmin/CompanyUserDataByFilter:
+    get:
+      tags:
+      - CompanyUserControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get company user controller admin company user data by filter
+      x-summary-source: derived
+      operationId: getCompanyUserControllerAdminCompanyUserDataByFilter
+      x-operation-id-source: derived
+  /CompanyUserControllerAdmin/AllCompanyUserDataByFilter:
+    get:
+      tags:
+      - CompanyUserControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get company user controller admin all company user data by filter
+      x-summary-source: derived
+      operationId: getCompanyUserControllerAdminAllCompanyUserDataByFilter
+      x-operation-id-source: derived
+  /CompanyUserControllerAdmin/UserCompanyData:
+    get:
+      tags:
+      - CompanyUserControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: UserId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: OrderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get company user controller admin user company data
+      x-summary-source: derived
+      operationId: getCompanyUserControllerAdminUserCompanyData
+      x-operation-id-source: derived
+  /CompanyUserControllerAdmin/UpdateDefaults/{id}:
+    put:
+      tags:
+      - CompanyUserControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace company user controller admin update defaults by id
+      x-summary-source: derived
+      operationId: putCompanyUserControllerAdminUpdateDefaultsById
+      x-operation-id-source: derived
+  /CompanyUserControllerAdmin/AcceptRequest/{id}:
+    put:
+      tags:
+      - CompanyUserControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace company user controller admin accept request by id
+      x-summary-source: derived
+      operationId: putCompanyUserControllerAdminAcceptRequestById
+      x-operation-id-source: derived
+  /CompanyUserControllerAdmin/DeclineRequest/{id}:
+    put:
+      tags:
+      - CompanyUserControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace company user controller admin decline request by id
+      x-summary-source: derived
+      operationId: putCompanyUserControllerAdminDeclineRequestById
+      x-operation-id-source: derived
+  /CompanyUserControllerAdmin/Post:
+    post:
+      tags:
+      - CompanyUserControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create company user controller admin post
+      x-summary-source: derived
+      operationId: postCompanyUserControllerAdminPost
+      x-operation-id-source: derived
+  /CompanyUserControllerAdmin/Put/{id}:
+    put:
+      tags:
+      - CompanyUserControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Company_User'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace company user controller admin put by id
+      x-summary-source: derived
+      operationId: putCompanyUserControllerAdminPutById
+      x-operation-id-source: derived
+  /CompanyUserControllerAdmin/Delete/{id}:
+    delete:
+      tags:
+      - CompanyUserControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_User'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Delete company user controller admin delete by id
+      x-summary-source: derived
+      operationId: deleteCompanyUserControllerAdminDeleteById
+      x-operation-id-source: derived
+components:
+  schemas:
+    Company_User:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        email:
+          type:
+          - string
+          - 'null'
+        invitedToCompany:
+          type:
+          - string
+          - 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        defaultLoadScreen:
+          type:
+          - string
+          - 'null'
+        defaultRanch:
+          type:
+          - string
+          - 'null'
+        defaultGroup:
+          type:
+          - string
+          - 'null'
+        defaultFence:
+          type:
+          - string
+          - 'null'
+        defaultBreed:
+          type:
+          - string
+          - 'null'
+        defaultBreedDisplay:
+          type:
+          - string
+          - 'null'
+        defaultColor:
+          type:
+          - string
+          - 'null'
+        defaultVisualTagColor:
+          type:
+          - string
+          - 'null'
+        defaultVisualTagLocation:
+          type:
+          - string
+          - 'null'
+        defaultEstimatedAge:
+          type:
+          - string
+          - 'null'
+        defaultAnimalSort:
+          type:
+          - string
+          - 'null'
+        defaultAssociationCode:
+          type:
+          - string
+          - 'null'
+        defaultAssociationId:
+          type:
+          - string
+          - 'null'
+        starredReports:
+          type:
+          - string
+          - 'null'
+        permissionLevel:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        companyCode:
+          type:
+          - string
+          - 'null'
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        userFirstName:
+          type:
+          - string
+          - 'null'
+        userLastName:
+          type:
+          - string
+          - 'null'
+        userOrganization:
+          type:
+          - string
+          - 'null'
+        userTitle:
+          type:
+          - string
+          - 'null'
+        userEmail:
+          type:
+          - string
+          - 'null'
+        userPhone:
+          type:
+          - string
+          - 'null'
+        userInActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

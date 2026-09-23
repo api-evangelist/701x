@@ -1,0 +1,238 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Version Controller Admin API
+  description: 701x API
+  version: v1
+tags:
+- name: VersionControllerAdmin
+paths:
+  /VersionControllerAdmin/Get:
+    get:
+      tags:
+      - VersionControllerAdmin
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Version_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Version_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Version_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get version controller admin get
+      x-summary-source: derived
+      operationId: getVersionControllerAdminGet
+      x-operation-id-source: derived
+  /VersionControllerAdmin/Get/{id}:
+    get:
+      tags:
+      - VersionControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Version_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Version_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Version_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get version controller admin get by id
+      x-summary-source: derived
+      operationId: getVersionControllerAdminGetById
+      x-operation-id-source: derived
+  /VersionControllerAdmin/Post:
+    post:
+      tags:
+      - VersionControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Version_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Version_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Version_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Version_Master'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create version controller admin post
+      x-summary-source: derived
+      operationId: postVersionControllerAdminPost
+      x-operation-id-source: derived
+  /VersionControllerAdmin/Put/{id}:
+    put:
+      tags:
+      - VersionControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Version_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Version_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Version_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Version_Master'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace version controller admin put by id
+      x-summary-source: derived
+      operationId: putVersionControllerAdminPutById
+      x-operation-id-source: derived
+  /VersionControllerAdmin/Delete/{id}:
+    delete:
+      tags:
+      - VersionControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Delete version controller admin delete by id
+      x-summary-source: derived
+      operationId: deleteVersionControllerAdminDeleteById
+      x-operation-id-source: derived
+components:
+  schemas:
+    Version_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        versionNumber:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

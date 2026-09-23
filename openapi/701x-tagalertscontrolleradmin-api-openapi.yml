@@ -1,0 +1,249 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Tag Alerts Controller Admin API
+  description: 701x API
+  version: v1
+tags:
+- name: TagAlertsControllerAdmin
+paths:
+  /TagAlertsControllerAdmin/{id}:
+    get:
+      tags:
+      - TagAlertsControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Tag_Alerts'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag_Alerts'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Tag_Alerts'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag alerts controller admin by id
+      x-summary-source: derived
+      operationId: getTagAlertsControllerAdminById
+      x-operation-id-source: derived
+    put:
+      tags:
+      - TagAlertsControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Tag_Alerts'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag_Alerts'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Tag_Alerts'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Tag_Alerts'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace tag alerts controller admin by id
+      x-summary-source: derived
+      operationId: putTagAlertsControllerAdminById
+      x-operation-id-source: derived
+  /TagAlertsControllerAdmin:
+    post:
+      tags:
+      - TagAlertsControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Tag_Alerts'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag_Alerts'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Tag_Alerts'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Tag_Alerts'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create tag alerts controller admin
+      x-summary-source: derived
+      operationId: postTagAlertsControllerAdmin
+      x-operation-id-source: derived
+components:
+  schemas:
+    Tag_Alerts:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        alertFreeFallDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        alertNoMovementDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        alertGeofenceDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        alertHighSpeedCowDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        alertHighActivityDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        alertLowActivityDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        alertMissingCalfDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        alertSensorCalibrationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        alertOutOfStasisDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        alertSensorDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        alertInvalidDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        alertHotWaterDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        alertColdWaterDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        alertHighWaterDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        alertLowWaterDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

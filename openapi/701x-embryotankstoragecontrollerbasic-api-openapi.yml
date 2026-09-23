@@ -1,0 +1,294 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Embryo Tank Storage Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: EmbryoTankStorageControllerBasic
+paths:
+  /EmbryoTankStorageControllerBasic/GetByFilter:
+    get:
+      tags:
+      - EmbryoTankStorageControllerBasic
+      parameters:
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Tank_Storage'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Tank_Storage'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Tank_Storage'
+      summary: Get embryo tank storage controller basic get by filter
+      x-summary-source: derived
+      operationId: getEmbryoTankStorageControllerBasicGetByFilter
+      x-operation-id-source: derived
+  /EmbryoTankStorageControllerBasic/MassInsert:
+    post:
+      tags:
+      - EmbryoTankStorageControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Tank_Storage'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Tank_Storage'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Tank_Storage'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Tank_Storage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Tank_Storage'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Tank_Storage'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Tank_Storage'
+      summary: Create embryo tank storage controller basic mass insert
+      x-summary-source: derived
+      operationId: postEmbryoTankStorageControllerBasicMassInsert
+      x-operation-id-source: derived
+  /EmbryoTankStorageControllerBasic/MassUpdate:
+    post:
+      tags:
+      - EmbryoTankStorageControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Tank_Storage'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Tank_Storage'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Tank_Storage'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Tank_Storage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Tank_Storage'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Tank_Storage'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Tank_Storage'
+      summary: Create embryo tank storage controller basic mass update
+      x-summary-source: derived
+      operationId: postEmbryoTankStorageControllerBasicMassUpdate
+      x-operation-id-source: derived
+  /EmbryoTankStorageControllerBasic/MassDelete:
+    post:
+      tags:
+      - EmbryoTankStorageControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Tank_Storage'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Tank_Storage'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Tank_Storage'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Tank_Storage'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Tank_Storage'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Tank_Storage'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Tank_Storage'
+      summary: Create embryo tank storage controller basic mass delete
+      x-summary-source: derived
+      operationId: postEmbryoTankStorageControllerBasicMassDelete
+      x-operation-id-source: derived
+components:
+  schemas:
+    Embryo_Tank_Storage:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        legacyId:
+          type:
+          - string
+          - 'null'
+        companyId:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByUserName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByUserName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

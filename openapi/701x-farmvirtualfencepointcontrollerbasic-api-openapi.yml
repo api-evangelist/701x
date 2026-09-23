@@ -1,0 +1,216 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Farm Virtual Fence Point Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: FarmVirtualFencePointControllerBasic
+paths:
+  /FarmVirtualFencePointControllerBasic/GetFarmVirtualFencePoint:
+    get:
+      tags:
+      - FarmVirtualFencePointControllerBasic
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Farm_Virtual_Fence_Point'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Farm_Virtual_Fence_Point'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Farm_Virtual_Fence_Point'
+      summary: Get farm virtual fence point controller basic get farm virtual fence point
+      x-summary-source: derived
+      operationId: getFarmVirtualFencePointControllerBasicGetFarmVirtualFencePoint
+      x-operation-id-source: derived
+components:
+  schemas:
+    Farm_Virtual_Fence_Point:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        type:
+          type:
+          - string
+          - 'null'
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        sequence:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

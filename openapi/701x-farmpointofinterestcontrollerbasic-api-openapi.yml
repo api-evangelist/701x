@@ -1,0 +1,356 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Farm Point Of Interest Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: FarmPointOfInterestControllerBasic
+paths:
+  /FarmPointOfInterestControllerBasic/Get/{id}:
+    get:
+      tags:
+      - FarmPointOfInterestControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Farm_PointOfInterest'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farm_PointOfInterest'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Farm_PointOfInterest'
+      summary: Get farm point of interest controller basic get by id
+      x-summary-source: derived
+      operationId: getFarmPointOfInterestControllerBasicGetById
+      x-operation-id-source: derived
+  /FarmPointOfInterestControllerBasic/GetByFilter:
+    get:
+      tags:
+      - FarmPointOfInterestControllerBasic
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmPointOfInterestId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Farm_PointOfInterest'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Farm_PointOfInterest'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Farm_PointOfInterest'
+      summary: Get farm point of interest controller basic get by filter
+      x-summary-source: derived
+      operationId: getFarmPointOfInterestControllerBasicGetByFilter
+      x-operation-id-source: derived
+components:
+  schemas:
+    Farm_PointOfInterest:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        type:
+          type:
+          - string
+          - 'null'
+        fieldType:
+          type:
+          - string
+          - 'null'
+        fieldColor:
+          type:
+          - string
+          - 'null'
+        fenceType:
+          type:
+          - string
+          - 'null'
+        fenceColor:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        pins:
+          type:
+          - string
+          - 'null'
+        dontShowOnMap:
+          type:
+          - boolean
+          - 'null'
+        size:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        radius_Miles:
+          type:
+          - number
+          - 'null'
+          format: double
+        perimeter_Miles:
+          type:
+          - number
+          - 'null'
+          format: double
+        area_SqMiles:
+          type:
+          - number
+          - 'null'
+          format: double
+        area_Acres:
+          type:
+          - number
+          - 'null'
+          format: double
+        distance_Miles:
+          type:
+          - number
+          - 'null'
+          format: double
+        warningLevel:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        lastBaseStationConfig:
+          type:
+          - string
+          - 'null'
+        water_Pressure_Pa:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        water_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        air_Pressure_Pa:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        air_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        depth_MM:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        farmVirtualFenceDescription:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

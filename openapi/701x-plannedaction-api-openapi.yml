@@ -1,0 +1,331 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Planned Action API
+  description: 701x API
+  version: v1
+tags:
+- name: PlannedAction
+paths:
+  /PlannedAction/PlannedActionDataByFilter:
+    get:
+      tags:
+      - PlannedAction
+      parameters:
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DB_Planned_Action'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DB_Planned_Action'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DB_Planned_Action'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get planned action planned action data by filter
+      x-summary-source: derived
+      operationId: getPlannedActionPlannedActionDataByFilter
+      x-operation-id-source: derived
+  /PlannedAction/{id}:
+    get:
+      tags:
+      - PlannedAction
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Planned_Action'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Planned_Action'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Planned_Action'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get planned action by id
+      x-summary-source: derived
+      operationId: getPlannedActionById
+      x-operation-id-source: derived
+  /PlannedAction/MassUpdate:
+    post:
+      tags:
+      - PlannedAction
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Planned_Action'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Planned_Action'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Planned_Action'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Planned_Action'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Planned_Action'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Planned_Action'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Planned_Action'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create planned action mass update
+      x-summary-source: derived
+      operationId: postPlannedActionMassUpdate
+      x-operation-id-source: derived
+components:
+  schemas:
+    Planned_Action:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type: string
+          format: uuid
+        animalId:
+          type: string
+          format: uuid
+        plannedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        completedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        workingCattleId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        targetTable:
+          type:
+          - string
+          - 'null'
+        targetId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        resultTable:
+          type:
+          - string
+          - 'null'
+        resultId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DB_Planned_Action:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type: string
+          format: uuid
+        animalId:
+          type: string
+          format: uuid
+        plannedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        completedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        workingCattleId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        targetTable:
+          type:
+          - string
+          - 'null'
+        targetId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        resultTable:
+          type:
+          - string
+          - 'null'
+        resultId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

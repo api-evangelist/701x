@@ -1,0 +1,1389 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Cart Controller Admin API
+  description: 701x API
+  version: v1
+tags:
+- name: CartControllerAdmin
+paths:
+  /CartControllerAdmin/{id}:
+    get:
+      tags:
+      - CartControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get cart controller admin by id
+      x-summary-source: derived
+      operationId: getCartControllerAdminById
+      x-operation-id-source: derived
+    put:
+      tags:
+      - CartControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Cart_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cart_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Cart_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Cart_Master'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace cart controller admin by id
+      x-summary-source: derived
+      operationId: putCartControllerAdminById
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - CartControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Delete cart controller admin by id
+      x-summary-source: derived
+      operationId: deleteCartControllerAdminById
+      x-operation-id-source: derived
+  /CartControllerAdmin/CartDataByFilter:
+    get:
+      tags:
+      - CartControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: CartStatus
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: isSubscriptionBased
+        in: query
+        schema:
+          type:
+          - boolean
+          - 'null'
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThanDesiredShipDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThanDesiredShipDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: SearchString
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cart_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cart_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cart_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get cart controller admin cart data by filter
+      x-summary-source: derived
+      operationId: getCartControllerAdminCartDataByFilter
+      x-operation-id-source: derived
+  /CartControllerAdmin/CartHistoryDataByFilter:
+    get:
+      tags:
+      - CartControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: CartStatus
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: isSubscriptionBased
+        in: query
+        schema:
+          type:
+          - boolean
+          - 'null'
+      - name: OrderType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThanDesiredShipDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThanDesiredShipDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThanShippedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThanShippedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThanPendingCheckoutDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThanPendingCheckoutDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThanCheckoutDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThanCheckoutDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: SearchString
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: StripeProductId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cart_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cart_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cart_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get cart controller admin cart history data by filter
+      x-summary-source: derived
+      operationId: getCartControllerAdminCartHistoryDataByFilter
+      x-operation-id-source: derived
+  /CartControllerAdmin/CartHistoryCountByFilter:
+    get:
+      tags:
+      - CartControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: CartStatus
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: isSubscriptionBased
+        in: query
+        schema:
+          type:
+          - boolean
+          - 'null'
+      - name: OrderType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThanDesiredShipDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThanDesiredShipDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThanShippedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThanShippedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThanCheckoutDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThanCheckoutDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: SearchString
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: StripeProductId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get cart controller admin cart history count by filter
+      x-summary-source: derived
+      operationId: getCartControllerAdminCartHistoryCountByFilter
+      x-operation-id-source: derived
+  /CartControllerAdmin/DemandRelatedCarts:
+    get:
+      tags:
+      - CartControllerAdmin
+      parameters:
+      - name: FirstName
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: LastName
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: PhoneNumber
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: Email
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: OrderType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: GreaterThenDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cart_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cart_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cart_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get cart controller admin demand related carts
+      x-summary-source: derived
+      operationId: getCartControllerAdminDemandRelatedCarts
+      x-operation-id-source: derived
+  /CartControllerAdmin:
+    post:
+      tags:
+      - CartControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Cart_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cart_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Cart_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Cart_Master'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Cart_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create cart controller admin
+      x-summary-source: derived
+      operationId: postCartControllerAdmin
+      x-operation-id-source: derived
+  /CartControllerAdmin/PurchaseStatsByProduct:
+    get:
+      tags:
+      - CartControllerAdmin
+      parameters:
+      - name: LessThenCheckoutDate
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: GreaterThenCheckoutDate
+        in: query
+        schema:
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Sales_Stats'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sales_Stats'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Sales_Stats'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get cart controller admin purchase stats by product
+      x-summary-source: derived
+      operationId: getCartControllerAdminPurchaseStatsByProduct
+      x-operation-id-source: derived
+  /CartControllerAdmin/ReturnedCartStats:
+    get:
+      tags:
+      - CartControllerAdmin
+      parameters:
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenReturnDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenReturnDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: OrderType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order_Stats'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order_Stats'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order_Stats'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get cart controller admin returned cart stats
+      x-summary-source: derived
+      operationId: getCartControllerAdminReturnedCartStats
+      x-operation-id-source: derived
+  /CartControllerAdmin/SoldCartStats:
+    get:
+      tags:
+      - CartControllerAdmin
+      parameters:
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCheckoutDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCheckoutDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: OrderType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order_Stats'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order_Stats'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order_Stats'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get cart controller admin sold cart stats
+      x-summary-source: derived
+      operationId: getCartControllerAdminSoldCartStats
+      x-operation-id-source: derived
+components:
+  schemas:
+    Sales_Stats:
+      type: object
+      properties:
+        productTypes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SalesProductType'
+      additionalProperties: false
+    Cart_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        orderNumber:
+          type:
+          - string
+          - 'null'
+        paymentIntentId:
+          type:
+          - string
+          - 'null'
+        priorityLevel:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        desiredShipDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        cartProcess:
+          type:
+          - string
+          - 'null'
+        userId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        sessionId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        poNumber:
+          type:
+          - string
+          - 'null'
+        orderByName:
+          type:
+          - string
+          - 'null'
+        stripeCustomerId:
+          type:
+          - string
+          - 'null'
+        stripeSessionId:
+          type:
+          - string
+          - 'null'
+        stripeInvoiceNumber:
+          type:
+          - string
+          - 'null'
+        stripeShippingRateId:
+          type:
+          - string
+          - 'null'
+        isSubscriptionBased:
+          type:
+          - boolean
+          - 'null'
+        promotionId:
+          type:
+          - string
+          - 'null'
+        stripeDiscountId:
+          type:
+          - string
+          - 'null'
+        promotionCode:
+          type:
+          - string
+          - 'null'
+        coupon:
+          type:
+          - string
+          - 'null'
+        serviceLevel:
+          type:
+          - string
+          - 'null'
+        orderType:
+          type:
+          - string
+          - 'null'
+        comments:
+          type:
+          - string
+          - 'null'
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        shippingRateId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        code:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        billAddress1:
+          type:
+          - string
+          - 'null'
+        billAddress2:
+          type:
+          - string
+          - 'null'
+        billAddress3:
+          type:
+          - string
+          - 'null'
+        billCountry:
+          type:
+          - string
+          - 'null'
+        billState:
+          type:
+          - string
+          - 'null'
+        billRegion:
+          type:
+          - string
+          - 'null'
+        billZip:
+          type:
+          - string
+          - 'null'
+        billCity:
+          type:
+          - string
+          - 'null'
+        shipName:
+          type:
+          - string
+          - 'null'
+        shipAddress1:
+          type:
+          - string
+          - 'null'
+        shipAddress2:
+          type:
+          - string
+          - 'null'
+        shipAddress3:
+          type:
+          - string
+          - 'null'
+        shipCountry:
+          type:
+          - string
+          - 'null'
+        shipState:
+          type:
+          - string
+          - 'null'
+        shipRegion:
+          type:
+          - string
+          - 'null'
+        shipZip:
+          type:
+          - string
+          - 'null'
+        shipCity:
+          type:
+          - string
+          - 'null'
+        isWishlist:
+          type:
+          - boolean
+          - 'null'
+        isLocalPickup:
+          type:
+          - boolean
+          - 'null'
+        isNewRanch:
+          type:
+          - boolean
+          - 'null'
+        lineItemsTotal:
+          type:
+          - number
+          - 'null'
+          format: double
+        discountTotal:
+          type:
+          - number
+          - 'null'
+          format: double
+        shippingRate:
+          type:
+          - number
+          - 'null'
+          format: double
+        taxTotal:
+          type:
+          - number
+          - 'null'
+          format: double
+        totalPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        pendingCheckoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        checkoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        filledByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        filledByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        shippedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        shippedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        tagFilledCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        tagPendingCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        tagOrderCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        cancelledByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        cancelledByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cancelledByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    OrderProductType:
+      type: object
+      properties:
+        quantity:
+          type: integer
+          format: int32
+        total:
+          type: number
+          format: double
+        stripeProductId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    SalesProductType:
+      type: object
+      properties:
+        quantity:
+          type: integer
+          format: int32
+        stripeProductId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Order_Stats:
+      type: object
+      properties:
+        productTypes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OrderProductType'
+        subTotal:
+          type: number
+          format: double
+        discountTotal:
+          type: number
+          format: double
+        shippingTotal:
+          type: number
+          format: double
+        total:
+          type: number
+          format: double
+        totalQuantity:
+          type: integer
+          format: int32
+        pendingCheckoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        checkoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        returnDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        cartId:
+          type:
+          - string
+          - 'null'
+        companyId:
+          type:
+          - string
+          - 'null'
+        orderNumber:
+          type:
+          - string
+          - 'null'
+        orderType:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

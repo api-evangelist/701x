@@ -1,0 +1,668 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Animal Turn Out Controller Admin API
+  description: 701x API
+  version: v1
+tags:
+- name: AnimalTurnOutControllerAdmin
+paths:
+  /AnimalTurnOutControllerAdmin/AnimalTurnOutDataByFilter:
+    get:
+      tags:
+      - AnimalTurnOutControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: SireAnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TurnOutId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: SeasonId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Turn_Out'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Turn_Out'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Turn_Out'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get animal turn out controller admin animal turn out data by filter
+      x-summary-source: derived
+      operationId: getAnimalTurnOutControllerAdminAnimalTurnOutDataByFilter
+      x-operation-id-source: derived
+  /AnimalTurnOutControllerAdmin/{id}:
+    get:
+      tags:
+      - AnimalTurnOutControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get animal turn out controller admin by id
+      x-summary-source: derived
+      operationId: getAnimalTurnOutControllerAdminById
+      x-operation-id-source: derived
+    put:
+      tags:
+      - AnimalTurnOutControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Turn_Out'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Turn_Out'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Turn_Out'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Turn_Out'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace animal turn out controller admin by id
+      x-summary-source: derived
+      operationId: putAnimalTurnOutControllerAdminById
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - AnimalTurnOutControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Delete animal turn out controller admin by id
+      x-summary-source: derived
+      operationId: deleteAnimalTurnOutControllerAdminById
+      x-operation-id-source: derived
+  /AnimalTurnOutControllerAdmin:
+    post:
+      tags:
+      - AnimalTurnOutControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Turn_Out'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Turn_Out'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Turn_Out'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Turn_Out'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal turn out controller admin
+      x-summary-source: derived
+      operationId: postAnimalTurnOutControllerAdmin
+      x-operation-id-source: derived
+  /AnimalTurnOutControllerAdmin/MassInsert:
+    post:
+      tags:
+      - AnimalTurnOutControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Turn_Out'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Turn_Out'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Turn_Out'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal turn out controller admin mass insert
+      x-summary-source: derived
+      operationId: postAnimalTurnOutControllerAdminMassInsert
+      x-operation-id-source: derived
+  /AnimalTurnOutControllerAdmin/MassUpdate:
+    post:
+      tags:
+      - AnimalTurnOutControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Turn_Out'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Turn_Out'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Turn_Out'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal turn out controller admin mass update
+      x-summary-source: derived
+      operationId: postAnimalTurnOutControllerAdminMassUpdate
+      x-operation-id-source: derived
+  /AnimalTurnOutControllerAdmin/MassDelete:
+    post:
+      tags:
+      - AnimalTurnOutControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Turn_Out'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Turn_Out'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Turn_Out'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Turn_Out'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal turn out controller admin mass delete
+      x-summary-source: derived
+      operationId: postAnimalTurnOutControllerAdminMassDelete
+      x-operation-id-source: derived
+components:
+  schemas:
+    Animal_Turn_Out:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        turnOutId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        seasonId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        sireAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        sireCattleNumber:
+          type:
+          - string
+          - 'null'
+        sireAssociationCode:
+          type:
+          - string
+          - 'null'
+        sireRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        sireCode:
+          type:
+          - string
+          - 'null'
+        sireDescription:
+          type:
+          - string
+          - 'null'
+        steps:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        distance:
+          type:
+          - number
+          - 'null'
+          format: double
+        mounts:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        farmVirtualFenceDescription:
+          type:
+          - string
+          - 'null'
+        turnoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        turnInDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        seasonDescription:
+          type:
+          - string
+          - 'null'
+        calvingStartDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        calvingEndDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

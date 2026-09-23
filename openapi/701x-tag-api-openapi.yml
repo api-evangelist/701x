@@ -1,0 +1,1006 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Tag API
+  description: 701x API
+  version: v1
+tags:
+- name: Tag
+paths:
+  /Tag/GetAdmin/{id}:
+    get:
+      tags:
+      - Tag
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Tag_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Tag_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag get admin by id
+      x-summary-source: derived
+      operationId: getTagGetAdminById
+      x-operation-id-source: derived
+  /Tag/GetByIds:
+    post:
+      tags:
+      - Tag
+      parameters:
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create tag get by ids
+      x-summary-source: derived
+      operationId: postTagGetByIds
+      x-operation-id-source: derived
+  /Tag/TagDataByFilter:
+    get:
+      tags:
+      - Tag
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: NetworkNumber
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: MacAddress
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag tag data by filter
+      x-summary-source: derived
+      operationId: getTagTagDataByFilter
+      x-operation-id-source: derived
+  /Tag/UpdateConfig:
+    post:
+      tags:
+      - Tag
+      parameters:
+      - name: Id
+        in: query
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create tag update config
+      x-summary-source: derived
+      operationId: postTagUpdateConfig
+      x-operation-id-source: derived
+  /Tag/TurnOnLED:
+    post:
+      tags:
+      - Tag
+      parameters:
+      - name: Id
+        in: query
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create tag turn on led
+      x-summary-source: derived
+      operationId: postTagTurnOnLED
+      x-operation-id-source: derived
+  /Tag/ForceCheckIn:
+    post:
+      tags:
+      - Tag
+      parameters:
+      - name: Id
+        in: query
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create tag force check in
+      x-summary-source: derived
+      operationId: postTagForceCheckIn
+      x-operation-id-source: derived
+  /Tag/PutAdmin/{id}:
+    put:
+      tags:
+      - Tag
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Tag_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tag_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Tag_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Tag_Master'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Tag_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Tag_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace tag put admin by id
+      x-summary-source: derived
+      operationId: putTagPutAdminById
+      x-operation-id-source: derived
+  /Tag/Enabled/{id}:
+    post:
+      tags:
+      - Tag
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Tag_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Tag_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create tag enabled by id
+      x-summary-source: derived
+      operationId: postTagEnabledById
+      x-operation-id-source: derived
+  /Tag/Disabled/{id}:
+    post:
+      tags:
+      - Tag
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Tag_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Tag_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create tag disabled by id
+      x-summary-source: derived
+      operationId: postTagDisabledById
+      x-operation-id-source: derived
+  /Tag/MassUpdate:
+    post:
+      tags:
+      - Tag
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Tag_Master'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Tag_Master'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Tag_Master'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Tag_Master'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create tag mass update
+      x-summary-source: derived
+      operationId: postTagMassUpdate
+      x-operation-id-source: derived
+components:
+  schemas:
+    Tag_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        assignedToAnimalDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        engineeringModel:
+          type:
+          - string
+          - 'null'
+        productType:
+          type:
+          - string
+          - 'null'
+        usdaNumber:
+          type:
+          - string
+          - 'null'
+        boxBarcode:
+          type:
+          - string
+          - 'null'
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        minimum_Reset_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        maximum_Reset_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        maximum_CheckIn_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        logging_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        gpS_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        caffeinated_Threshold:
+          type:
+          - number
+          - 'null'
+          format: double
+        awake_Threshold:
+          type:
+          - number
+          - 'null'
+          format: double
+        roll:
+          type:
+          - number
+          - 'null'
+          format: double
+        pitch:
+          type:
+          - number
+          - 'null'
+          format: double
+        yaw:
+          type:
+          - number
+          - 'null'
+          format: double
+        cell_Firmware:
+          type:
+          - string
+          - 'null'
+        cell_Disabled:
+          type:
+          - boolean
+          - 'null'
+        softwareVersion:
+          type:
+          - string
+          - 'null'
+        hardwareVersion:
+          type:
+          - string
+          - 'null'
+        modemFirmware:
+          type:
+          - string
+          - 'null'
+        deviceSoftwareVersion:
+          type:
+          - string
+          - 'null'
+        eventTypeId:
+          type:
+          - string
+          - 'null'
+        eventStatusId:
+          type:
+          - string
+          - 'null'
+        alertFreeFall:
+          type:
+          - boolean
+          - 'null'
+        alertNoMovement:
+          type:
+          - boolean
+          - 'null'
+        alertOutOfStasis:
+          type:
+          - boolean
+          - 'null'
+        alertHighSpeedCow:
+          type:
+          - boolean
+          - 'null'
+        alertGeofence:
+          type:
+          - boolean
+          - 'null'
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        heading:
+          type:
+          - number
+          - 'null'
+          format: double
+        position_Uncertainty:
+          type:
+          - number
+          - 'null'
+          format: double
+        temperature:
+          type:
+          - number
+          - 'null'
+          format: double
+        pressure:
+          type:
+          - number
+          - 'null'
+          format: double
+        cell_RSSI:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        gpS_TTFF:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        panel_Voltage:
+          type:
+          - number
+          - 'null'
+          format: double
+        battery_Voltage:
+          type:
+          - number
+          - 'null'
+          format: double
+        state_Of_Charge:
+          type:
+          - number
+          - 'null'
+          format: double
+        water_Pressure_Pa:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        water_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        air_Pressure_Pa:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        air_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        depth_MM:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        step_Count:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        step_Count_Offset:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        lastWatSenCalibratedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastCheckInDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUploadedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastCheckInMethod:
+          type:
+          - string
+          - 'null'
+        encryptionKey:
+          type:
+          - string
+          - 'null'
+        macAddress:
+          type:
+          - string
+          - 'null'
+        hashAddress:
+          type:
+          - string
+          - 'null'
+        broken_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        serviceExpirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        forceCheckInDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        turnOnLEDDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        updatedVersionByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        highFrequencyDataLogging:
+          type:
+          - boolean
+          - 'null'
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        target_CheckIn_Hour:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceDescription:
+          type:
+          - string
+          - 'null'
+        lastFenceChangedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        pins:
+          type:
+          - string
+          - 'null'
+        outOfFence:
+          type:
+          - boolean
+          - 'null'
+        farmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmPointOfInterestDescription:
+          type:
+          - string
+          - 'null'
+        lastBaseStationConfig:
+          type:
+          - string
+          - 'null'
+        nearPOI:
+          type:
+          - boolean
+          - 'null'
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        cattleColor:
+          type:
+          - string
+          - 'null'
+        cattleType:
+          type:
+          - string
+          - 'null'
+        cattleBreed:
+          type:
+          - string
+          - 'null'
+        cattleDOB:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        maximum_Time_Seperated:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        bullTurnoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        firstDeviceUploadedOnAnimalDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        companySaleId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyTransferId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        transferDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        arrayOfChanges:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Changes'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        disabledDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Changes:
+      type: object
+      properties:
+        keyChanged:
+          type:
+          - string
+          - 'null'
+        oldValue: {}
+        newValue: {}
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

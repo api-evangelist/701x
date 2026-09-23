@@ -1,0 +1,60 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Time Near Device Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: TimeNearDeviceBasic
+paths:
+  /TimeNearDeviceBasic/upload:
+    post:
+      tags:
+      - TimeNearDeviceBasic
+      operationId: UploadTimeNearDeviceFile
+      parameters:
+      - name: TagId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type:
+                  - string
+                  - 'null'
+                  format: binary
+            encoding:
+              file:
+                style: form
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+      summary: Upload time near device file
+      x-summary-source: derived
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

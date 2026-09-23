@@ -1,0 +1,649 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Contact Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: ContactControllerBasic
+paths:
+  /ContactControllerBasic/ContactDataByFilter:
+    get:
+      tags:
+      - ContactControllerBasic
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: AssociationCode
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: AssociationId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: AssociationMember
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact_Master'
+      summary: Get contact controller basic contact data by filter
+      x-summary-source: derived
+      operationId: getContactControllerBasicContactDataByFilter
+      x-operation-id-source: derived
+  /ContactControllerBasic/{id}:
+    get:
+      tags:
+      - ContactControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Contact_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Contact_Master'
+      summary: Get contact controller basic by id
+      x-summary-source: derived
+      operationId: getContactControllerBasicById
+      x-operation-id-source: derived
+    put:
+      tags:
+      - ContactControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Contact_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Contact_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Contact_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Contact_Master'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Contact_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Contact_Master'
+      summary: Replace contact controller basic by id
+      x-summary-source: derived
+      operationId: putContactControllerBasicById
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - ContactControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Contact_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Contact_Master'
+      summary: Delete contact controller basic by id
+      x-summary-source: derived
+      operationId: deleteContactControllerBasicById
+      x-operation-id-source: derived
+  /ContactControllerBasic:
+    post:
+      tags:
+      - ContactControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Contact_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Contact_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Contact_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Contact_Master'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Contact_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Contact_Master'
+      summary: Create contact controller basic
+      x-summary-source: derived
+      operationId: postContactControllerBasic
+      x-operation-id-source: derived
+  /ContactControllerBasic/MassInsert:
+    post:
+      tags:
+      - ContactControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Contact_Master'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Contact_Master'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Contact_Master'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Contact_Master'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact_Master'
+      summary: Create contact controller basic mass insert
+      x-summary-source: derived
+      operationId: postContactControllerBasicMassInsert
+      x-operation-id-source: derived
+  /ContactControllerBasic/MassUpdate:
+    post:
+      tags:
+      - ContactControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Contact_Master'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Contact_Master'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Contact_Master'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Contact_Master'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact_Master'
+      summary: Create contact controller basic mass update
+      x-summary-source: derived
+      operationId: postContactControllerBasicMassUpdate
+      x-operation-id-source: derived
+  /ContactControllerBasic/MassDelete:
+    post:
+      tags:
+      - ContactControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Contact_Master'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Contact_Master'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Contact_Master'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Contact_Master'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contact_Master'
+      summary: Create contact controller basic mass delete
+      x-summary-source: derived
+      operationId: postContactControllerBasicMassDelete
+      x-operation-id-source: derived
+components:
+  schemas:
+    Contact_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        userId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        organization:
+          type:
+          - string
+          - 'null'
+        displayName:
+          type:
+          - string
+          - 'null'
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        website:
+          type:
+          - string
+          - 'null'
+        tags:
+          type:
+          - string
+          - 'null'
+        mailAddress1:
+          type:
+          - string
+          - 'null'
+        mailAddress2:
+          type:
+          - string
+          - 'null'
+        mailAddress3:
+          type:
+          - string
+          - 'null'
+        mailCountry:
+          type:
+          - string
+          - 'null'
+        mailState:
+          type:
+          - string
+          - 'null'
+        mailRegion:
+          type:
+          - string
+          - 'null'
+        mailZip:
+          type:
+          - string
+          - 'null'
+        mailCity:
+          type:
+          - string
+          - 'null'
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        associationCode1:
+          type:
+          - string
+          - 'null'
+        associationCode2:
+          type:
+          - string
+          - 'null'
+        associationCode3:
+          type:
+          - string
+          - 'null'
+        associationCode4:
+          type:
+          - string
+          - 'null'
+        associationId1:
+          type:
+          - string
+          - 'null'
+        associationId2:
+          type:
+          - string
+          - 'null'
+        associationId3:
+          type:
+          - string
+          - 'null'
+        associationId4:
+          type:
+          - string
+          - 'null'
+        associationMemberId1:
+          type:
+          - string
+          - 'null'
+        associationMemberId2:
+          type:
+          - string
+          - 'null'
+        associationMemberId3:
+          type:
+          - string
+          - 'null'
+        associationMemberId4:
+          type:
+          - string
+          - 'null'
+        legacyId:
+          type:
+          - string
+          - 'null'
+        salesRep:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

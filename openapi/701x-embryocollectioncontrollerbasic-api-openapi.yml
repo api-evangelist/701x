@@ -1,0 +1,474 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Embryo Collection Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: EmbryoCollectionControllerBasic
+paths:
+  /EmbryoCollectionControllerBasic/EmbryoCollectionByFilter:
+    get:
+      tags:
+      - EmbryoCollectionControllerBasic
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: SearchString
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Collection'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Collection'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Collection'
+      summary: Get embryo collection controller basic embryo collection by filter
+      x-summary-source: derived
+      operationId: getEmbryoCollectionControllerBasicEmbryoCollectionByFilter
+      x-operation-id-source: derived
+  /EmbryoCollectionControllerBasic/{id}:
+    get:
+      tags:
+      - EmbryoCollectionControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Embryo_Collection'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Embryo_Collection'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Embryo_Collection'
+      summary: Get embryo collection controller basic by id
+      x-summary-source: derived
+      operationId: getEmbryoCollectionControllerBasicById
+      x-operation-id-source: derived
+  /EmbryoCollectionControllerBasic/MassInsert:
+    post:
+      tags:
+      - EmbryoCollectionControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Collection'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Collection'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Collection'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Collection'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Collection'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Collection'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Collection'
+      summary: Create embryo collection controller basic mass insert
+      x-summary-source: derived
+      operationId: postEmbryoCollectionControllerBasicMassInsert
+      x-operation-id-source: derived
+  /EmbryoCollectionControllerBasic/MassUpdate:
+    post:
+      tags:
+      - EmbryoCollectionControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Collection'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Collection'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Collection'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Collection'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Collection'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Collection'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Collection'
+      summary: Create embryo collection controller basic mass update
+      x-summary-source: derived
+      operationId: postEmbryoCollectionControllerBasicMassUpdate
+      x-operation-id-source: derived
+  /EmbryoCollectionControllerBasic/MassDelete:
+    post:
+      tags:
+      - EmbryoCollectionControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Collection'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Collection'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Collection'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Embryo_Collection'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Collection'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Collection'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Embryo_Collection'
+      summary: Create embryo collection controller basic mass delete
+      x-summary-source: derived
+      operationId: postEmbryoCollectionControllerBasicMassDelete
+      x-operation-id-source: derived
+components:
+  schemas:
+    Embryo_Collection:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        legacyId:
+          type:
+          - string
+          - 'null'
+        companyId:
+          type: string
+          format: uuid
+        farmId:
+          type: string
+          format: uuid
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        sireAnimalId:
+          type: string
+          format: uuid
+        sireCattleNumber:
+          type:
+          - string
+          - 'null'
+        sireRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        sireCode:
+          type:
+          - string
+          - 'null'
+        sireDescription:
+          type:
+          - string
+          - 'null'
+        sireAssociationCode:
+          type:
+          - string
+          - 'null'
+        damAnimalId:
+          type: string
+          format: uuid
+        damCattleNumber:
+          type:
+          - string
+          - 'null'
+        damRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        damCode:
+          type:
+          - string
+          - 'null'
+        damDescription:
+          type:
+          - string
+          - 'null'
+        damAssociationCode:
+          type:
+          - string
+          - 'null'
+        flushDate:
+          type: string
+          format: date-time
+        inseminationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        flushType:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        protocol:
+          type:
+          - string
+          - 'null'
+        comment:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByUserName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByUserName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

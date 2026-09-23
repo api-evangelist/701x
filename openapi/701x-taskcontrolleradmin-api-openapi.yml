@@ -1,0 +1,540 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Task Controller Admin API
+  description: 701x API
+  version: v1
+tags:
+- name: TaskControllerAdmin
+paths:
+  /TaskControllerAdmin/Get/{id}:
+    get:
+      tags:
+      - TaskControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Task_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Task_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get task controller admin get by id
+      x-summary-source: derived
+      operationId: getTaskControllerAdminGetById
+      x-operation-id-source: derived
+  /TaskControllerAdmin/GetByFilter:
+    get:
+      tags:
+      - TaskControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: SearchString
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get task controller admin get by filter
+      x-summary-source: derived
+      operationId: getTaskControllerAdminGetByFilter
+      x-operation-id-source: derived
+  /TaskControllerAdmin/Post:
+    post:
+      tags:
+      - TaskControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Task_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Task_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Task_Master'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create task controller admin post
+      x-summary-source: derived
+      operationId: postTaskControllerAdminPost
+      x-operation-id-source: derived
+  /TaskControllerAdmin/Put/{id}:
+    put:
+      tags:
+      - TaskControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Task_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Task_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Task_Master'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace task controller admin put by id
+      x-summary-source: derived
+      operationId: putTaskControllerAdminPutById
+      x-operation-id-source: derived
+  /TaskControllerAdmin/Delete/{id}:
+    delete:
+      tags:
+      - TaskControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Delete task controller admin delete by id
+      x-summary-source: derived
+      operationId: deleteTaskControllerAdminDeleteById
+      x-operation-id-source: derived
+  /TaskControllerAdmin/MassInsert:
+    post:
+      tags:
+      - TaskControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Task_Master'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Task_Master'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Task_Master'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Task_Master'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create task controller admin mass insert
+      x-summary-source: derived
+      operationId: postTaskControllerAdminMassInsert
+      x-operation-id-source: derived
+  /TaskControllerAdmin/MassUpdate:
+    post:
+      tags:
+      - TaskControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Task_Master'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Task_Master'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Task_Master'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Task_Master'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create task controller admin mass update
+      x-summary-source: derived
+      operationId: postTaskControllerAdminMassUpdate
+      x-operation-id-source: derived
+  /TaskControllerAdmin/MassDelete:
+    post:
+      tags:
+      - TaskControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Task_Master'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Task_Master'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Task_Master'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Task_Master'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create task controller admin mass delete
+      x-summary-source: derived
+      operationId: postTaskControllerAdminMassDelete
+      x-operation-id-source: derived
+components:
+  schemas:
+    Task_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type:
+          - string
+          - 'null'
+        isDone:
+          type: boolean
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        hasBeenSeen:
+          type: boolean
+        seenByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        hasBeenClicked:
+          type: boolean
+        clickedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        hasNotificationBeenSent:
+          type: boolean
+        notificationSentByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        userId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        feedTemplateId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        feedId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        medTemplateId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        medId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        logTemplateId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        logId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

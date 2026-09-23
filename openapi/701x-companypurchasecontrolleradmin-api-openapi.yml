@@ -1,0 +1,630 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Company Purchase Controller Admin API
+  description: 701x API
+  version: v1
+tags:
+- name: CompanyPurchaseControllerAdmin
+paths:
+  /CompanyPurchaseControllerAdmin/Get:
+    get:
+      tags:
+      - CompanyPurchaseControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FromCompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FromFarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: ToCompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: ToFarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: CartId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Purchase'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Purchase'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Purchase'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get company purchase controller admin get
+      x-summary-source: derived
+      operationId: getCompanyPurchaseControllerAdminGet
+      x-operation-id-source: derived
+  /CompanyPurchaseControllerAdmin/Get/{id}:
+    get:
+      tags:
+      - CompanyPurchaseControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_Purchase'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_Purchase'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_Purchase'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get company purchase controller admin get by id
+      x-summary-source: derived
+      operationId: getCompanyPurchaseControllerAdminGetById
+      x-operation-id-source: derived
+  /CompanyPurchaseControllerAdmin/Post:
+    post:
+      tags:
+      - CompanyPurchaseControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Company_Purchase'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company_Purchase'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Company_Purchase'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Company_Purchase'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_Purchase'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_Purchase'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_Purchase'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create company purchase controller admin post
+      x-summary-source: derived
+      operationId: postCompanyPurchaseControllerAdminPost
+      x-operation-id-source: derived
+  /CompanyPurchaseControllerAdmin/Put/{id}:
+    put:
+      tags:
+      - CompanyPurchaseControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Company_Purchase'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company_Purchase'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Company_Purchase'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Company_Purchase'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_Purchase'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_Purchase'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_Purchase'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace company purchase controller admin put by id
+      x-summary-source: derived
+      operationId: putCompanyPurchaseControllerAdminPutById
+      x-operation-id-source: derived
+  /CompanyPurchaseControllerAdmin/Delete/{id}:
+    delete:
+      tags:
+      - CompanyPurchaseControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_Purchase'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_Purchase'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_Purchase'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Delete company purchase controller admin delete by id
+      x-summary-source: derived
+      operationId: deleteCompanyPurchaseControllerAdminDeleteById
+      x-operation-id-source: derived
+components:
+  schemas:
+    Company_Purchase:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companySaleId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyTransferId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cartId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        fromCompanyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        fromFarmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        fromEmail:
+          type:
+          - string
+          - 'null'
+        toCompanyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        toFarmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        toEmail:
+          type:
+          - string
+          - 'null'
+        organization:
+          type:
+          - string
+          - 'null'
+        displayName:
+          type:
+          - string
+          - 'null'
+        contactId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        referenceNumber:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        marketingMethod:
+          type:
+          - string
+          - 'null'
+        isTicket:
+          type:
+          - boolean
+          - 'null'
+        checkNumber:
+          type:
+          - string
+          - 'null'
+        paymentMethod:
+          type:
+          - string
+          - 'null'
+        paidDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        soldDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        deliveryDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        deliveryPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        laborPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        feePrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        deliveryCost:
+          type:
+          - number
+          - 'null'
+          format: double
+        laborCost:
+          type:
+          - number
+          - 'null'
+          format: double
+        feeCost:
+          type:
+          - number
+          - 'null'
+          format: double
+        cattleCost:
+          type:
+          - number
+          - 'null'
+          format: double
+        itemCosts:
+          type:
+          - number
+          - 'null'
+          format: double
+        totalFees:
+          type:
+          - number
+          - 'null'
+          format: double
+        total:
+          type:
+          - number
+          - 'null'
+          format: double
+        perHead:
+          type:
+          - boolean
+          - 'null'
+        perIndividual:
+          type:
+          - boolean
+          - 'null'
+        perWeight:
+          type:
+          - boolean
+          - 'null'
+        perGross:
+          type:
+          - boolean
+          - 'null'
+        cattleWeight:
+          type:
+          - number
+          - 'null'
+          format: double
+        perIndividualWeight:
+          type:
+          - boolean
+          - 'null'
+        perGrossWeight:
+          type:
+          - boolean
+          - 'null'
+        sentByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        sentByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        approvedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        approvedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        deniedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        deniedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cancelledByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        cancelledByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        fromCompanyDescription:
+          type:
+          - string
+          - 'null'
+        fromFarmDescription:
+          type:
+          - string
+          - 'null'
+        toCompanyDescription:
+          type:
+          - string
+          - 'null'
+        toFarmDescription:
+          type:
+          - string
+          - 'null'
+        animalCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        tagCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        legacyId:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

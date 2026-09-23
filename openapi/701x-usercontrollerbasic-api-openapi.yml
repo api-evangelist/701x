@@ -1,0 +1,265 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 User Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: UserControllerBasic
+paths:
+  /UserControllerBasic/{id}:
+    get:
+      tags:
+      - UserControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/User_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/User_Master'
+      summary: Get user controller basic by id
+      x-summary-source: derived
+      operationId: getUserControllerBasicById
+      x-operation-id-source: derived
+components:
+  schemas:
+    User_Master:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        defaultCompanyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        stripeCustomerId:
+          type:
+          - string
+          - 'null'
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        userName:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        roleId:
+          type:
+          - string
+          - 'null'
+        organization:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        mailAddress1:
+          type:
+          - string
+          - 'null'
+        mailAddress2:
+          type:
+          - string
+          - 'null'
+        mailAddress3:
+          type:
+          - string
+          - 'null'
+        mailCountry:
+          type:
+          - string
+          - 'null'
+        mailState:
+          type:
+          - string
+          - 'null'
+        mailRegion:
+          type:
+          - string
+          - 'null'
+        mailZip:
+          type:
+          - string
+          - 'null'
+        mailCity:
+          type:
+          - string
+          - 'null'
+        acersOfLand:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        acersOfLandMax:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        acersOfLandRented:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        acersOfLandRentedMax:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfCows:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfCowsMax:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfBulls:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfBullsMax:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfRanches:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfRanchesMax:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfEmployees:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfEmployeesMax:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        howDidYouHearAboutUs:
+          type:
+          - string
+          - 'null'
+        satisfactionLevel:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        isApproved:
+          type:
+          - boolean
+          - 'null'
+        emailConfirmed:
+          type:
+          - boolean
+          - 'null'
+        currentIP:
+          type:
+          - string
+          - 'null'
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        showPatchNoteFromDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastLoginDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastTimeEmailedAboutOverage:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

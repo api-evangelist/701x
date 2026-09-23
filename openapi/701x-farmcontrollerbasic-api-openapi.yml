@@ -1,0 +1,383 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Farm Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: FarmControllerBasic
+paths:
+  /FarmControllerBasic/Get/{id}:
+    get:
+      tags:
+      - FarmControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Farm_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Farm_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Farm_Master'
+      summary: Get farm controller basic get by id
+      x-summary-source: derived
+      operationId: getFarmControllerBasicGetById
+      x-operation-id-source: derived
+  /FarmControllerBasic/GetByFilter:
+    get:
+      tags:
+      - FarmControllerBasic
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenSeenAtBaseTimeStart
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: GreaterThenSeenAtBaseTimeStart
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: LessThenSeenAtBaseTimeEnd
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: GreaterThenSeenAtBaseTimeEnd
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Farm_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Farm_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Farm_Master'
+      summary: Get farm controller basic get by filter
+      x-summary-source: derived
+      operationId: getFarmControllerBasicGetByFilter
+      x-operation-id-source: derived
+components:
+  schemas:
+    Farm_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        timeZoneId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        timeZone:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        targetCheckInHourOfDay:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        targetCheckInHourOfDay_UTC:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seenAtBaseTimeStart:
+          type:
+          - string
+          - 'null'
+        seenAtBaseTimeEnd:
+          type:
+          - string
+          - 'null'
+        seenAtBaseTimeHours:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seenCalfPhase1TimeHours:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seenCalfPhase2TimeHours:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seenCalfPhase3TimeHours:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seenCalfPhase4TimeHours:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        code:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        size:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        radius_Miles:
+          type:
+          - number
+          - 'null'
+          format: double
+        perimeter_Miles:
+          type:
+          - number
+          - 'null'
+          format: double
+        area_SqMiles:
+          type:
+          - number
+          - 'null'
+          format: double
+        area_Acres:
+          type:
+          - number
+          - 'null'
+          format: double
+        shipAddress1:
+          type:
+          - string
+          - 'null'
+        shipAddress2:
+          type:
+          - string
+          - 'null'
+        shipAddress3:
+          type:
+          - string
+          - 'null'
+        shipCountry:
+          type:
+          - string
+          - 'null'
+        shipState:
+          type:
+          - string
+          - 'null'
+        shipRegion:
+          type:
+          - string
+          - 'null'
+        shipZip:
+          type:
+          - string
+          - 'null'
+        shipCity:
+          type:
+          - string
+          - 'null'
+        calvingSeasonStartDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        tagCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        animalCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

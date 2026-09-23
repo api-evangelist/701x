@@ -1,0 +1,651 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Animal Attachment API
+  description: 701x API
+  version: v1
+tags:
+- name: AnimalAttachment
+paths:
+  /AnimalAttachment/AnimalAttachmentDataByFilter:
+    get:
+      tags:
+      - AnimalAttachment
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: isShared
+        in: query
+        schema:
+          type: boolean
+          default: false
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Attachment'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Attachment'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Attachment'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get animal attachment animal attachment data by filter
+      x-summary-source: derived
+      operationId: getAnimalAttachmentAnimalAttachmentDataByFilter
+      x-operation-id-source: derived
+  /AnimalAttachment/{id}:
+    get:
+      tags:
+      - AnimalAttachment
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Attachment'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Attachment'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Attachment'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get animal attachment by id
+      x-summary-source: derived
+      operationId: getAnimalAttachmentById
+      x-operation-id-source: derived
+    put:
+      tags:
+      - AnimalAttachment
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Attachment'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Attachment'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Attachment'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Attachment'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Attachment'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Attachment'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Attachment'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace animal attachment by id
+      x-summary-source: derived
+      operationId: putAnimalAttachmentById
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - AnimalAttachment
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Attachment'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Attachment'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Attachment'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Delete animal attachment by id
+      x-summary-source: derived
+      operationId: deleteAnimalAttachmentById
+      x-operation-id-source: derived
+  /AnimalAttachment:
+    post:
+      tags:
+      - AnimalAttachment
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Attachment'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Attachment'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Attachment'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Attachment'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Attachment'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Attachment'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Attachment'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal attachment
+      x-summary-source: derived
+      operationId: postAnimalAttachment
+      x-operation-id-source: derived
+  /AnimalAttachment/MassInsert:
+    post:
+      tags:
+      - AnimalAttachment
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Attachment'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Attachment'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Attachment'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Attachment'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Attachment'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Attachment'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Attachment'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal attachment mass insert
+      x-summary-source: derived
+      operationId: postAnimalAttachmentMassInsert
+      x-operation-id-source: derived
+  /AnimalAttachment/MassUpdate:
+    post:
+      tags:
+      - AnimalAttachment
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Attachment'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Attachment'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Attachment'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Attachment'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Attachment'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Attachment'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Attachment'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal attachment mass update
+      x-summary-source: derived
+      operationId: postAnimalAttachmentMassUpdate
+      x-operation-id-source: derived
+  /AnimalAttachment/MassDelete:
+    post:
+      tags:
+      - AnimalAttachment
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Attachment'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Attachment'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Attachment'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Attachment'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Attachment'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Attachment'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Attachment'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal attachment mass delete
+      x-summary-source: derived
+      operationId: postAnimalAttachmentMassDelete
+      x-operation-id-source: derived
+components:
+  schemas:
+    Animal_Attachment:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        attachmentId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        fileName:
+          type:
+          - string
+          - 'null'
+        fileExtension:
+          type:
+          - string
+          - 'null'
+        filePath:
+          type:
+          - string
+          - 'null'
+        fileType:
+          type:
+          - string
+          - 'null'
+        fileSize:
+          type: integer
+          format: int64
+        isProfilePic:
+          type:
+          - boolean
+          - 'null'
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        animalCode:
+          type:
+          - string
+          - 'null'
+        animalDescription:
+          type:
+          - string
+          - 'null'
+        animalType:
+          type:
+          - string
+          - 'null'
+        animalBreed:
+          type:
+          - string
+          - 'null'
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupCode:
+          type:
+          - string
+          - 'null'
+        groupDescription:
+          type:
+          - string
+          - 'null'
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

@@ -1,0 +1,680 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Animal Data Carcass API
+  description: 701x API
+  version: v1
+tags:
+- name: AnimalDataCarcass
+paths:
+  /AnimalDataCarcass/AnimalDataCarcassByFilter:
+    get:
+      tags:
+      - AnimalDataCarcass
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: AssociationId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: RegistrationNumber
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: isShared
+        in: query
+        schema:
+          type: boolean
+          default: false
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Carcass'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Carcass'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Carcass'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get animal data carcass animal data carcass by filter
+      x-summary-source: derived
+      operationId: getAnimalDataCarcassAnimalDataCarcassByFilter
+      x-operation-id-source: derived
+  /AnimalDataCarcass/GetAllChanges:
+    get:
+      tags:
+      - AnimalDataCarcass
+      parameters:
+      - name: lastSynced
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: companyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: includeShared
+        in: query
+        schema:
+          type: boolean
+          default: false
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SyncingRequestParams'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SyncingRequestParams'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SyncingRequestParams'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SyncingRequestParams'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CarcassData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarcassData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CarcassData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get animal data carcass get all changes
+      x-summary-source: derived
+      operationId: getAnimalDataCarcassGetAllChanges
+      x-operation-id-source: derived
+    post:
+      tags:
+      - AnimalDataCarcass
+      parameters:
+      - name: lastSynced
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: companyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: includeShared
+        in: query
+        schema:
+          type: boolean
+          default: false
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/SyncingRequestParams'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SyncingRequestParams'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/SyncingRequestParams'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/SyncingRequestParams'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CarcassData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarcassData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CarcassData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal data carcass get all changes
+      x-summary-source: derived
+      operationId: postAnimalDataCarcassGetAllChanges
+      x-operation-id-source: derived
+  /AnimalDataCarcass/{id}:
+    get:
+      tags:
+      - AnimalDataCarcass
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Carcass'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Carcass'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Carcass'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get animal data carcass by id
+      x-summary-source: derived
+      operationId: getAnimalDataCarcassById
+      x-operation-id-source: derived
+  /AnimalDataCarcass/Put/{id}:
+    put:
+      tags:
+      - AnimalDataCarcass
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Carcass'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Carcass'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Carcass'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Carcass'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Carcass'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Carcass'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Carcass'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace animal data carcass put by id
+      x-summary-source: derived
+      operationId: putAnimalDataCarcassPutById
+      x-operation-id-source: derived
+  /AnimalDataCarcass/MassUpdate:
+    post:
+      tags:
+      - AnimalDataCarcass
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Carcass'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Carcass'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Carcass'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Carcass'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Carcass'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Carcass'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Carcass'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create animal data carcass mass update
+      x-summary-source: derived
+      operationId: postAnimalDataCarcassMassUpdate
+      x-operation-id-source: derived
+components:
+  schemas:
+    SyncingTableRequestParams:
+      type: object
+      properties:
+        tableName:
+          type:
+          - string
+          - 'null'
+        dateTimeOffset:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpochMs:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          readOnly: true
+      additionalProperties: false
+    CarcassData:
+      type: object
+      properties:
+        animalDataCarcassInserted:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Data_Carcass'
+        animalDataCarcassUpdated:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Data_Carcass'
+        animalDataCarcassDeleted:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Data_Carcass'
+      additionalProperties: false
+    SyncingRequestParams:
+      type: object
+      properties:
+        syncingTableRequestParams:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SyncingTableRequestParams'
+      additionalProperties: false
+    DateOnly:
+      type: object
+      properties:
+        year:
+          type: integer
+          format: int32
+          readOnly: true
+        month:
+          type: integer
+          format: int32
+          readOnly: true
+        day:
+          type: integer
+          format: int32
+          readOnly: true
+        dayOfWeek:
+          $ref: '#/components/schemas/DayOfWeek'
+        dayOfYear:
+          type: integer
+          format: int32
+          readOnly: true
+        dayNumber:
+          type: integer
+          format: int32
+          readOnly: true
+      additionalProperties: false
+    DayOfWeek:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      type: integer
+      format: int32
+    Animal_Data_Carcass:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        memberNumber:
+          type:
+          - string
+          - 'null'
+        associationCode:
+          type:
+          - string
+          - 'null'
+        registrationNumber:
+          type:
+          - string
+          - 'null'
+        usdaNumber:
+          type:
+          - string
+          - 'null'
+        workOrderNumber:
+          type:
+          - string
+          - 'null'
+        contemporaryGroup:
+          type:
+          - string
+          - 'null'
+        subContemporaryGroup:
+          type:
+          - string
+          - 'null'
+        cohortGroup:
+          type:
+          - string
+          - 'null'
+        legacyId:
+          type:
+          - string
+          - 'null'
+        carcassTag:
+          type:
+          - string
+          - 'null'
+        animalSire:
+          type:
+          - string
+          - 'null'
+        animalDam:
+          type:
+          - string
+          - 'null'
+        animalSex:
+          type:
+          - string
+          - 'null'
+        birthDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        dateOfBirth:
+          $ref: '#/components/schemas/DateOnly'
+        killDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        liveWeight:
+          type:
+          - number
+          - 'null'
+          format: double
+        hotCarcassWeight:
+          type:
+          - number
+          - 'null'
+          format: double
+        percentRetail:
+          type:
+          - number
+          - 'null'
+          format: double
+        ribeyeArea:
+          type:
+          - number
+          - 'null'
+          format: double
+        fatThickness:
+          type:
+          - number
+          - 'null'
+          format: double
+        kidneyPelvicHeartFat:
+          type:
+          - number
+          - 'null'
+          format: double
+        preliminaryYieldGrade:
+          type:
+          - number
+          - 'null'
+          format: double
+        tenderness:
+          type:
+          - number
+          - 'null'
+          format: double
+        internalFat:
+          type:
+          - number
+          - 'null'
+          format: double
+        marblingScore:
+          type:
+          - number
+          - 'null'
+          format: double
+        qualityGrade:
+          type:
+          - string
+          - 'null'
+        yieldGrade:
+          type:
+          - number
+          - 'null'
+          format: double
+        gradeDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        maturity:
+          type:
+          - string
+          - 'null'
+        daysOnFeed:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        packerCode:
+          type:
+          - string
+          - 'null'
+        packer:
+          type:
+          - string
+          - 'null'
+        plant:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isShared:
+          type:
+          - boolean
+          - 'null'
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

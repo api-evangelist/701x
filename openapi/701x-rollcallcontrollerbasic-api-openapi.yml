@@ -1,0 +1,266 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Roll Call Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: RollCallControllerBasic
+paths:
+  /RollCallControllerBasic/{id}:
+    get:
+      tags:
+      - RollCallControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Roll_Call'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Roll_Call'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Roll_Call'
+      summary: Get roll call controller basic by id
+      x-summary-source: derived
+      operationId: getRollCallControllerBasicById
+      x-operation-id-source: derived
+    put:
+      tags:
+      - RollCallControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Roll_Call'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Roll_Call'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Roll_Call'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Roll_Call'
+      responses:
+        '200':
+          description: Success
+      summary: Replace roll call controller basic by id
+      x-summary-source: derived
+      operationId: putRollCallControllerBasicById
+      x-operation-id-source: derived
+  /RollCallControllerBasic:
+    post:
+      tags:
+      - RollCallControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Roll_Call'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Roll_Call'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Roll_Call'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Roll_Call'
+      responses:
+        '200':
+          description: Success
+      summary: Create roll call controller basic
+      x-summary-source: derived
+      operationId: postRollCallControllerBasic
+      x-operation-id-source: derived
+components:
+  schemas:
+    Roll_Call:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        scanningPeripheralId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        title:
+          type:
+          - string
+          - 'null'
+        transferId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupDescription:
+          type:
+          - string
+          - 'null'
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        fenceDescription:
+          type:
+          - string
+          - 'null'
+        farmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        pointOfInterestDescription:
+          type:
+          - string
+          - 'null'
+        rollCallPathPartsCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        startDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        endDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        rollCallSetupData:
+          type:
+          - string
+          - 'null'
+        deviceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        targetedAnimalIds:
+          type:
+          - string
+          - 'null'
+        animalList:
+          type:
+          - string
+          - 'null'
+        pathList:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - string
+          - 'null'
+        lastRollCallStage:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

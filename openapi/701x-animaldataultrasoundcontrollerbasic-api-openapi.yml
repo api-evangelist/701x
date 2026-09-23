@@ -1,0 +1,655 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Animal Data Ultrasound Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: AnimalDataUltrasoundControllerBasic
+paths:
+  /AnimalDataUltrasoundControllerBasic/GetAllByFilter:
+    get:
+      tags:
+      - AnimalDataUltrasoundControllerBasic
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: AssociationCode
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: AnimalId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: RegistrationNumber
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Ultrasound'
+      summary: Get animal data ultrasound controller basic get all by filter
+      x-summary-source: derived
+      operationId: getAnimalDataUltrasoundControllerBasicGetAllByFilter
+      x-operation-id-source: derived
+  /AnimalDataUltrasoundControllerBasic/{id}:
+    get:
+      tags:
+      - AnimalDataUltrasoundControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+      summary: Get animal data ultrasound controller basic by id
+      x-summary-source: derived
+      operationId: getAnimalDataUltrasoundControllerBasicById
+      x-operation-id-source: derived
+    put:
+      tags:
+      - AnimalDataUltrasoundControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Ultrasound'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+      summary: Replace animal data ultrasound controller basic by id
+      x-summary-source: derived
+      operationId: putAnimalDataUltrasoundControllerBasicById
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - AnimalDataUltrasoundControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+      summary: Delete animal data ultrasound controller basic by id
+      x-summary-source: derived
+      operationId: deleteAnimalDataUltrasoundControllerBasicById
+      x-operation-id-source: derived
+  /AnimalDataUltrasoundControllerBasic:
+    post:
+      tags:
+      - AnimalDataUltrasoundControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Ultrasound'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+      summary: Create animal data ultrasound controller basic
+      x-summary-source: derived
+      operationId: postAnimalDataUltrasoundControllerBasic
+      x-operation-id-source: derived
+  /AnimalDataUltrasoundControllerBasic/MassInsert:
+    post:
+      tags:
+      - AnimalDataUltrasoundControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Ultrasound'
+      summary: Create animal data ultrasound controller basic mass insert
+      x-summary-source: derived
+      operationId: postAnimalDataUltrasoundControllerBasicMassInsert
+      x-operation-id-source: derived
+  /AnimalDataUltrasoundControllerBasic/MassUpdate:
+    post:
+      tags:
+      - AnimalDataUltrasoundControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Ultrasound'
+      summary: Create animal data ultrasound controller basic mass update
+      x-summary-source: derived
+      operationId: postAnimalDataUltrasoundControllerBasicMassUpdate
+      x-operation-id-source: derived
+  /AnimalDataUltrasoundControllerBasic/MassDelete:
+    post:
+      tags:
+      - AnimalDataUltrasoundControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Ultrasound'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Ultrasound'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Ultrasound'
+      summary: Create animal data ultrasound controller basic mass delete
+      x-summary-source: derived
+      operationId: postAnimalDataUltrasoundControllerBasicMassDelete
+      x-operation-id-source: derived
+components:
+  schemas:
+    Animal_Data_Ultrasound:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        memberNumber:
+          type:
+          - string
+          - 'null'
+        associationCode:
+          type:
+          - string
+          - 'null'
+        registrationNumber:
+          type:
+          - string
+          - 'null'
+        usdaNumber:
+          type:
+          - string
+          - 'null'
+        workOrderNumber:
+          type:
+          - string
+          - 'null'
+        contemporaryGroup:
+          type:
+          - string
+          - 'null'
+        managmentGroup:
+          type:
+          - string
+          - 'null'
+        subContemporaryGroup:
+          type:
+          - string
+          - 'null'
+        preContemporaryGroup:
+          type:
+          - string
+          - 'null'
+        season:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        animalSex:
+          type:
+          - string
+          - 'null'
+        legacyId:
+          type:
+          - string
+          - 'null'
+        technician:
+          type:
+          - string
+          - 'null'
+        hardware:
+          type:
+          - string
+          - 'null'
+        software:
+          type:
+          - string
+          - 'null'
+        ultrasoundDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        ultrasoundWeight:
+          type:
+          - number
+          - 'null'
+          format: double
+        ultrasoundWeightAdj:
+          type:
+          - number
+          - 'null'
+          format: double
+        ultrasoundWeightRatio:
+          type:
+          - number
+          - 'null'
+          format: double
+        ultrasoundWeightNumberOfContemps:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        ultrasoundWeightRankInContempGroup:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        ribeyeArea:
+          type:
+          - number
+          - 'null'
+          format: double
+        ribeyeAreaAdj:
+          type:
+          - number
+          - 'null'
+          format: double
+        ribeyeAreaRatio:
+          type:
+          - number
+          - 'null'
+          format: double
+        ribeyeAreaNumberOfContemps:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        ribeyeAreaRankInContempGroup:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        fatThickness:
+          type:
+          - number
+          - 'null'
+          format: double
+        fatThicknessAdj:
+          type:
+          - number
+          - 'null'
+          format: double
+        fatThicknessRatio:
+          type:
+          - number
+          - 'null'
+          format: double
+        fatThicknessNumberOfContemps:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        fatThicknessRankInContempGroup:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        intramuscularFat:
+          type:
+          - number
+          - 'null'
+          format: double
+        intramuscularFatAdj:
+          type:
+          - number
+          - 'null'
+          format: double
+        intramuscularFatRatio:
+          type:
+          - number
+          - 'null'
+          format: double
+        intramuscularFatNumberOfContemps:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        intramuscularFatRankInContempGroup:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        rumpFatThickness:
+          type:
+          - number
+          - 'null'
+          format: double
+        rumpFatThicknessAdj:
+          type:
+          - number
+          - 'null'
+          format: double
+        rumpFatThicknessRatio:
+          type:
+          - number
+          - 'null'
+          format: double
+        rumpFatThicknessNumberOfContemps:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        rumpFatThicknessRankInContempGroup:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        scrotalCircumference:
+          type:
+          - number
+          - 'null'
+          format: double
+        scrotalCircumferenceAdj:
+          type:
+          - number
+          - 'null'
+          format: double
+        hipHeight:
+          type:
+          - number
+          - 'null'
+          format: double
+        frameScore:
+          type:
+          - number
+          - 'null'
+          format: double
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isShared:
+          type:
+          - boolean
+          - 'null'
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

@@ -1,0 +1,338 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Company Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: CompanyControllerBasic
+paths:
+  /CompanyControllerBasic/Get/{id}:
+    get:
+      tags:
+      - CompanyControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Company_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Company_Master'
+      summary: Get company controller basic get by id
+      x-summary-source: derived
+      operationId: getCompanyControllerBasicGetById
+      x-operation-id-source: derived
+  /CompanyControllerBasic/GetByFilter:
+    get:
+      tags:
+      - CompanyControllerBasic
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: Code
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: Description
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: SearchString
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Company_Master'
+      summary: Get company controller basic get by filter
+      x-summary-source: derived
+      operationId: getCompanyControllerBasicGetByFilter
+      x-operation-id-source: derived
+components:
+  schemas:
+    Company_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        userId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        email:
+          type:
+          - string
+          - 'null'
+        stripeCustomerId:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        size:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        radius_Miles:
+          type:
+          - number
+          - 'null'
+          format: double
+        perimeter_Miles:
+          type:
+          - number
+          - 'null'
+          format: double
+        area_SqMiles:
+          type:
+          - number
+          - 'null'
+          format: double
+        area_Acres:
+          type:
+          - number
+          - 'null'
+          format: double
+        unitOfMeasure:
+          type:
+          - string
+          - 'null'
+        billAddress1:
+          type:
+          - string
+          - 'null'
+        billAddress2:
+          type:
+          - string
+          - 'null'
+        billAddress3:
+          type:
+          - string
+          - 'null'
+        billCountry:
+          type:
+          - string
+          - 'null'
+        billState:
+          type:
+          - string
+          - 'null'
+        billRegion:
+          type:
+          - string
+          - 'null'
+        billZip:
+          type:
+          - string
+          - 'null'
+        billCity:
+          type:
+          - string
+          - 'null'
+        renewalType:
+          type:
+          - string
+          - 'null'
+        animalFields:
+          type:
+          - string
+          - 'null'
+        animalEntry:
+          type:
+          - string
+          - 'null'
+        fromAPIEvent:
+          type:
+          - string
+          - 'null'
+        lastTimeEmailedAboutOverage:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        tagCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        animalCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        subCount:
+          type: integer
+          format: int64
+        subType:
+          type:
+          - string
+          - 'null'
+        hadFreeTrial:
+          type: boolean
+        activeSub:
+          type: boolean
+        lastUpdatedCountDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        reportIgnore:
+          type: boolean
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

@@ -1,0 +1,539 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Animal Data Owner Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: AnimalDataOwnerControllerBasic
+paths:
+  /AnimalDataOwnerControllerBasic/GetAllByFilter:
+    get:
+      tags:
+      - AnimalDataOwnerControllerBasic
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: AssociationCode
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: AnimalId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: RegistrationNumber
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Owner'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Owner'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Owner'
+      summary: Get animal data owner controller basic get all by filter
+      x-summary-source: derived
+      operationId: getAnimalDataOwnerControllerBasicGetAllByFilter
+      x-operation-id-source: derived
+  /AnimalDataOwnerControllerBasic/{id}:
+    get:
+      tags:
+      - AnimalDataOwnerControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+      summary: Get animal data owner controller basic by id
+      x-summary-source: derived
+      operationId: getAnimalDataOwnerControllerBasicById
+      x-operation-id-source: derived
+    put:
+      tags:
+      - AnimalDataOwnerControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Owner'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Owner'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Owner'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Owner'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+      summary: Replace animal data owner controller basic by id
+      x-summary-source: derived
+      operationId: putAnimalDataOwnerControllerBasicById
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - AnimalDataOwnerControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+      summary: Delete animal data owner controller basic by id
+      x-summary-source: derived
+      operationId: deleteAnimalDataOwnerControllerBasicById
+      x-operation-id-source: derived
+  /AnimalDataOwnerControllerBasic:
+    post:
+      tags:
+      - AnimalDataOwnerControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Owner'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Owner'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Owner'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Animal_Data_Owner'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+      summary: Create animal data owner controller basic
+      x-summary-source: derived
+      operationId: postAnimalDataOwnerControllerBasic
+      x-operation-id-source: derived
+  /AnimalDataOwnerControllerBasic/MassInsert:
+    post:
+      tags:
+      - AnimalDataOwnerControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Owner'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Owner'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Owner'
+      summary: Create animal data owner controller basic mass insert
+      x-summary-source: derived
+      operationId: postAnimalDataOwnerControllerBasicMassInsert
+      x-operation-id-source: derived
+  /AnimalDataOwnerControllerBasic/MassUpdate:
+    post:
+      tags:
+      - AnimalDataOwnerControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Owner'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Owner'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Owner'
+      summary: Create animal data owner controller basic mass update
+      x-summary-source: derived
+      operationId: postAnimalDataOwnerControllerBasicMassUpdate
+      x-operation-id-source: derived
+  /AnimalDataOwnerControllerBasic/MassDelete:
+    post:
+      tags:
+      - AnimalDataOwnerControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Animal_Data_Owner'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Owner'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Owner'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Data_Owner'
+      summary: Create animal data owner controller basic mass delete
+      x-summary-source: derived
+      operationId: postAnimalDataOwnerControllerBasicMassDelete
+      x-operation-id-source: derived
+components:
+  schemas:
+    Animal_Data_Owner:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        legacyId:
+          type:
+          - string
+          - 'null'
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        contactId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        contactLegacyId:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalLegacyId:
+          type:
+          - string
+          - 'null'
+        associationCode:
+          type:
+          - string
+          - 'null'
+        registrationNumber:
+          type:
+          - string
+          - 'null'
+        memberNumber:
+          type:
+          - string
+          - 'null'
+        workOrderNumber:
+          type:
+          - string
+          - 'null'
+        relationshipType:
+          type:
+          - string
+          - 'null'
+        startDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        endDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        ownership:
+          type:
+          - number
+          - 'null'
+          format: double
+        genetic:
+          type:
+          - number
+          - 'null'
+          format: double
+        hasPossession:
+          type:
+          - boolean
+          - 'null'
+        isSuperceded:
+          type:
+          - boolean
+          - 'null'
+        isTransfer:
+          type:
+          - boolean
+          - 'null'
+        salePrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        purchasePrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        comments:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isShared:
+          type:
+          - boolean
+          - 'null'
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

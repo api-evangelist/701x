@@ -1,0 +1,478 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Semon Tank Purchase Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: SemonTankPurchaseControllerBasic
+paths:
+  /SemonTankPurchaseControllerBasic/SemonDataByFilter:
+    get:
+      tags:
+      - SemonTankPurchaseControllerBasic
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: SemonTankId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: SearchString
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Semon_Tank_Purchase'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Semon_Tank_Purchase'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Semon_Tank_Purchase'
+      summary: Get semon tank purchase controller basic semon data by filter
+      x-summary-source: derived
+      operationId: getSemonTankPurchaseControllerBasicSemonDataByFilter
+      x-operation-id-source: derived
+  /SemonTankPurchaseControllerBasic/{id}:
+    get:
+      tags:
+      - SemonTankPurchaseControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+      summary: Get semon tank purchase controller basic by id
+      x-summary-source: derived
+      operationId: getSemonTankPurchaseControllerBasicById
+      x-operation-id-source: derived
+  /SemonTankPurchaseControllerBasic/MassInsert:
+    post:
+      tags:
+      - SemonTankPurchaseControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Semon_Tank_Purchase'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Semon_Tank_Purchase'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Semon_Tank_Purchase'
+      summary: Create semon tank purchase controller basic mass insert
+      x-summary-source: derived
+      operationId: postSemonTankPurchaseControllerBasicMassInsert
+      x-operation-id-source: derived
+  /SemonTankPurchaseControllerBasic/MassUpdate:
+    post:
+      tags:
+      - SemonTankPurchaseControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Semon_Tank_Purchase'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Semon_Tank_Purchase'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Semon_Tank_Purchase'
+      summary: Create semon tank purchase controller basic mass update
+      x-summary-source: derived
+      operationId: postSemonTankPurchaseControllerBasicMassUpdate
+      x-operation-id-source: derived
+  /SemonTankPurchaseControllerBasic/MassDelete:
+    post:
+      tags:
+      - SemonTankPurchaseControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Semon_Tank_Purchase'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Semon_Tank_Purchase'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Semon_Tank_Purchase'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Semon_Tank_Purchase'
+      summary: Create semon tank purchase controller basic mass delete
+      x-summary-source: derived
+      operationId: postSemonTankPurchaseControllerBasicMassDelete
+      x-operation-id-source: derived
+components:
+  schemas:
+    Semon_Tank_Purchase:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        semonTankId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companySaleId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyTransferId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyItemId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        purchase_Quantity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        purchase_Cost:
+          type:
+          - number
+          - 'null'
+          format: double
+        purchase_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isEmpty:
+          type:
+          - boolean
+          - 'null'
+        tank:
+          type:
+          - string
+          - 'null'
+        canister:
+          type:
+          - string
+          - 'null'
+        itemNumber:
+          type:
+          - string
+          - 'null'
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        legacyId:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

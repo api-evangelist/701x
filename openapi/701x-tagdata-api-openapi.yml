@@ -1,0 +1,2897 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Tag Data API
+  description: 701x API
+  version: v1
+tags:
+- name: TagData
+paths:
+  /TagData/TagDataByFilter:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmPointOfInterstId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: UploadedByTagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: animalType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: youngerThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: olderThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data tag data by filter
+      x-summary-source: derived
+      operationId: getTagDataTagDataByFilter
+      x-operation-id-source: derived
+  /TagData/TagDataByFilterRaw:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmPointOfInterstId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: UploadedByTagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: animalType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: youngerThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: olderThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data tag data by filter raw
+      x-summary-source: derived
+      operationId: getTagDataTagDataByFilterRaw
+      x-operation-id-source: derived
+  /TagData/TagDataByFilterReport:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmPointOfInterstId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: UploadedByTagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: animalType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: youngerThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: olderThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data tag data by filter report
+      x-summary-source: derived
+      operationId: getTagDataTagDataByFilterReport
+      x-operation-id-source: derived
+  /TagData/TagDataByFilterResearch:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmPointOfInterstId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: UploadedByTagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Research'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Research'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Research'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data tag data by filter research
+      x-summary-source: derived
+      operationId: getTagDataTagDataByFilterResearch
+      x-operation-id-source: derived
+  /TagData/TagDataStepCountByFilter:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: animalType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: youngerThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: olderThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data tag data step count by filter
+      x-summary-source: derived
+      operationId: getTagDataTagDataStepCountByFilter
+      x-operation-id-source: derived
+  /TagData/TagDataStepCountByFilterRaw:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: animalType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: youngerThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: olderThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data tag data step count by filter raw
+      x-summary-source: derived
+      operationId: getTagDataTagDataStepCountByFilterRaw
+      x-operation-id-source: derived
+  /TagData/TagDataMountCountByFilterRaw:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: animalType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: youngerThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: olderThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data tag data mount count by filter raw
+      x-summary-source: derived
+      operationId: getTagDataTagDataMountCountByFilterRaw
+      x-operation-id-source: derived
+  /TagData/TagDataHeartBeatCountByFilterRaw:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: animalType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: youngerThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: olderThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data tag data heart beat count by filter raw
+      x-summary-source: derived
+      operationId: getTagDataTagDataHeartBeatCountByFilterRaw
+      x-operation-id-source: derived
+  /TagData/GetAllTrackingTagDataByFilter:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: UploadedByTagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: sampleSize
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: animalType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: youngerThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: olderThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data get all tracking tag data by filter
+      x-summary-source: derived
+      operationId: getTagDataGetAllTrackingTagDataByFilter
+      x-operation-id-source: derived
+  /TagData/GetAllTrackingTagDataByFilterRaw:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: UploadedByTagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: sampleSize
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: animalType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: youngerThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: olderThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data get all tracking tag data by filter raw
+      x-summary-source: derived
+      operationId: getTagDataGetAllTrackingTagDataByFilterRaw
+      x-operation-id-source: derived
+  /TagData/GetHerdTrackingDataByFilter:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: UploadedByTagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: sampleSize
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: animalType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: youngerThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: olderThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data get herd tracking data by filter
+      x-summary-source: derived
+      operationId: getTagDataGetHerdTrackingDataByFilter
+      x-operation-id-source: derived
+  /TagData/GetHeatMapDataByFilter:
+    post:
+      tags:
+      - TagData
+      parameters:
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: fromDate
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: toDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: animalType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: youngerThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: olderThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: sampleType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Heatmap_Point'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Heatmap_Point'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Heatmap_Point'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create tag data get heat map data by filter
+      x-summary-source: derived
+      operationId: postTagDataGetHeatMapDataByFilter
+      x-operation-id-source: derived
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: fromDate
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: toDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: animalType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: youngerThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: olderThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: sampleType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                type: string
+                format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Heatmap_Point'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Heatmap_Point'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Heatmap_Point'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data get heat map data by filter
+      x-summary-source: derived
+      operationId: getTagDataGetHeatMapDataByFilter
+      x-operation-id-source: derived
+  /TagData/GetAllRSSITagDataByFilter:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: AnimalId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmVirtualFenceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: UploadedByTagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: sampleSize
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: animalType
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: youngerThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: olderThen
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data get all rssi tag data by filter
+      x-summary-source: derived
+      operationId: getTagDataGetAllRSSITagDataByFilter
+      x-operation-id-source: derived
+  /TagData/GetLastWaterDataByFilter:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data_Reduced'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data get last water data by filter
+      x-summary-source: derived
+      operationId: getTagDataGetLastWaterDataByFilter
+      x-operation-id-source: derived
+  /TagData/GetLastBatteryDataByFilter:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data get last battery data by filter
+      x-summary-source: derived
+      operationId: getTagDataGetLastBatteryDataByFilter
+      x-operation-id-source: derived
+  /TagData/GetLastActivityDataByFilter:
+    get:
+      tags:
+      - TagData
+      parameters:
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: TagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag_Data'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get tag data get last activity data by filter
+      x-summary-source: derived
+      operationId: getTagDataGetLastActivityDataByFilter
+      x-operation-id-source: derived
+components:
+  schemas:
+    Tag_Data:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmPointOfInterstId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        dob:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        animalType:
+          type:
+          - string
+          - 'null'
+        uploadedByTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByFarmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedType:
+          type:
+          - string
+          - 'null'
+        time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        timeRTC:
+          type:
+          - number
+          - 'null'
+          format: double
+        timeUTC:
+          type:
+          - number
+          - 'null'
+          format: double
+        timeUTCFormatted:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        heading:
+          type:
+          - number
+          - 'null'
+          format: double
+        saT_Available:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        accelVelocity:
+          type:
+          - number
+          - 'null'
+          format: double
+        accelXAxis:
+          type:
+          - number
+          - 'null'
+          format: double
+        accelYAxis:
+          type:
+          - number
+          - 'null'
+          format: double
+        accelZAxis:
+          type:
+          - number
+          - 'null'
+          format: double
+        gyroXAxis:
+          type:
+          - number
+          - 'null'
+          format: double
+        gyroYAxis:
+          type:
+          - number
+          - 'null'
+          format: double
+        gyroZAxis:
+          type:
+          - number
+          - 'null'
+          format: double
+        compXAxis:
+          type:
+          - number
+          - 'null'
+          format: double
+        compYAxis:
+          type:
+          - number
+          - 'null'
+          format: double
+        compZAxis:
+          type:
+          - number
+          - 'null'
+          format: double
+        temperature:
+          type:
+          - number
+          - 'null'
+          format: double
+        pressure:
+          type:
+          - number
+          - 'null'
+          format: double
+        humidity:
+          type:
+          - number
+          - 'null'
+          format: double
+        stressLevel:
+          type:
+          - number
+          - 'null'
+          format: double
+        eventStatusId:
+          type:
+          - string
+          - 'null'
+        eventTypes:
+          type:
+          - string
+          - 'null'
+        panel_Voltage:
+          type:
+          - number
+          - 'null'
+          format: double
+        battery_Voltage:
+          type:
+          - number
+          - 'null'
+          format: double
+        state_Of_Charge:
+          type:
+          - number
+          - 'null'
+          format: double
+        gpS_Speed:
+          type:
+          - number
+          - 'null'
+          format: double
+        gpS_TTFF:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        gpS_Xtra_Hrs:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        uptime:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        blE_RSSI:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        position_Uncertainty:
+          type:
+          - number
+          - 'null'
+          format: double
+        speed_Uncertainty:
+          type:
+          - number
+          - 'null'
+          format: double
+        cell_RSSI:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        cell_RSRP:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        cell_RSRQ:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        cell_Debug_String:
+          type:
+          - string
+          - 'null'
+        gpS_Debug_String:
+          type:
+          - string
+          - 'null'
+        misc_String:
+          type:
+          - string
+          - 'null'
+        cummPanelInterruptCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        cummPanelEnergyHarvested:
+          type:
+          - number
+          - 'null'
+          format: double
+        luX_Calibrated:
+          type:
+          - number
+          - 'null'
+          format: double
+        luX_White:
+          type:
+          - number
+          - 'null'
+          format: double
+        luX_Raw:
+          type:
+          - number
+          - 'null'
+          format: double
+        water_Pressure_Pa:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        water_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        air_Pressure_Pa:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        air_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        depth_MM:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        step_Count:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        mount_Count:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        heart_Rate_BPM:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        heart_Rate_Confidence_Percent:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Unknown_Activity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Eating:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Lying:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Resting:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Ruminating:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Standing:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Walking:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        softwareVersion:
+          type:
+          - string
+          - 'null'
+        hardwareVersion:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Tag_Data_Research:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        fenceDescription:
+          type:
+          - string
+          - 'null'
+        farmPointOfInterstId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmPointOfInterstDescription:
+          type:
+          - string
+          - 'null'
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        uploadedByTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByFarmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedType:
+          type:
+          - string
+          - 'null'
+        timeUTC:
+          type:
+          - number
+          - 'null'
+          format: double
+        timeUTCFormatted:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        position_Uncertainty:
+          type:
+          - number
+          - 'null'
+          format: double
+        water_Pressure_Pa:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        water_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        air_Pressure_Pa:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        air_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        depth_MM:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        step_Count:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        mount_Count:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        heart_Rate_BPM:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        heart_Rate_Confidence_Percent:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Unknown_Activity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Eating:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Lying:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Resting:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Ruminating:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Standing:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Walking:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    Tag_Heatmap_Point:
+      type: object
+      properties:
+        longitude:
+          type: number
+          format: double
+        latitude:
+          type: number
+          format: double
+        weight:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Tag_Data_Reduced:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmPointOfInterstId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        dob:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        animalType:
+          type:
+          - string
+          - 'null'
+        uploadedByTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByFarmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedType:
+          type:
+          - string
+          - 'null'
+        timeUTC:
+          type:
+          - number
+          - 'null'
+          format: double
+        timeUTCFormatted:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        heading:
+          type:
+          - number
+          - 'null'
+          format: double
+        water_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        depth_MM:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        step_Count:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        mount_Count:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        heart_Rate_BPM:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        heart_Rate_Confidence_Percent:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Unknown_Activity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Eating:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Lying:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Resting:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Ruminating:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Standing:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Walking:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        cell_RSSI:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

@@ -1,0 +1,698 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 User Controller Admin API
+  description: 701x API
+  version: v1
+tags:
+- name: UserControllerAdmin
+paths:
+  /UserControllerAdmin/UserDataByFilter:
+    get:
+      tags:
+      - UserControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: Email
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: SearchString
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get user controller admin user data by filter
+      x-summary-source: derived
+      operationId: getUserControllerAdminUserDataByFilter
+      x-operation-id-source: derived
+  /UserControllerAdmin/UserDirectoryDataByFilter:
+    get:
+      tags:
+      - UserControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: Email
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: SearchString
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get user controller admin user directory data by filter
+      x-summary-source: derived
+      operationId: getUserControllerAdminUserDirectoryDataByFilter
+      x-operation-id-source: derived
+  /UserControllerAdmin/Get/{id}:
+    get:
+      tags:
+      - UserControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/User_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/User_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get user controller admin get by id
+      x-summary-source: derived
+      operationId: getUserControllerAdminGetById
+      x-operation-id-source: derived
+  /UserControllerAdmin/GetMyAccount:
+    get:
+      tags:
+      - UserControllerAdmin
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/User_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/User_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get user controller admin get my account
+      x-summary-source: derived
+      operationId: getUserControllerAdminGetMyAccount
+      x-operation-id-source: derived
+  /UserControllerAdmin/AllUserDataByFilter:
+    get:
+      tags:
+      - UserControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: Email
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: OrderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get user controller admin all user data by filter
+      x-summary-source: derived
+      operationId: getUserControllerAdminAllUserDataByFilter
+      x-operation-id-source: derived
+  /UserControllerAdmin/PaginatedUserData:
+    get:
+      tags:
+      - UserControllerAdmin
+      parameters:
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderField
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: orderDirection
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: SearchString
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PaginatedUserData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedUserData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedUserData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get user controller admin paginated user data
+      x-summary-source: derived
+      operationId: getUserControllerAdminPaginatedUserData
+      x-operation-id-source: derived
+  /UserControllerAdmin/Put/{id}:
+    put:
+      tags:
+      - UserControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/User_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/User_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/User_Master'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace user controller admin put by id
+      x-summary-source: derived
+      operationId: putUserControllerAdminPutById
+      x-operation-id-source: derived
+  /UserControllerAdmin/Delete/{id}:
+    delete:
+      tags:
+      - UserControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Delete user controller admin delete by id
+      x-summary-source: derived
+      operationId: deleteUserControllerAdminDeleteById
+      x-operation-id-source: derived
+components:
+  schemas:
+    PaginatedUserData:
+      type: object
+      properties:
+        users:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/User_Master'
+        totalCount:
+          type: integer
+          format: int32
+      additionalProperties: false
+    User_Master:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        defaultCompanyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        stripeCustomerId:
+          type:
+          - string
+          - 'null'
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        userName:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        roleId:
+          type:
+          - string
+          - 'null'
+        organization:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        mailAddress1:
+          type:
+          - string
+          - 'null'
+        mailAddress2:
+          type:
+          - string
+          - 'null'
+        mailAddress3:
+          type:
+          - string
+          - 'null'
+        mailCountry:
+          type:
+          - string
+          - 'null'
+        mailState:
+          type:
+          - string
+          - 'null'
+        mailRegion:
+          type:
+          - string
+          - 'null'
+        mailZip:
+          type:
+          - string
+          - 'null'
+        mailCity:
+          type:
+          - string
+          - 'null'
+        acersOfLand:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        acersOfLandMax:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        acersOfLandRented:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        acersOfLandRentedMax:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfCows:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfCowsMax:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfBulls:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfBullsMax:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfRanches:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfRanchesMax:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfEmployees:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfEmployeesMax:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        howDidYouHearAboutUs:
+          type:
+          - string
+          - 'null'
+        satisfactionLevel:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        isApproved:
+          type:
+          - boolean
+          - 'null'
+        emailConfirmed:
+          type:
+          - boolean
+          - 'null'
+        currentIP:
+          type:
+          - string
+          - 'null'
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        showPatchNoteFromDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastLoginDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastTimeEmailedAboutOverage:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

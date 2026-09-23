@@ -1,0 +1,220 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Animal Association Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: AnimalAssociationControllerBasic
+paths:
+  /AnimalAssociationControllerBasic/AnimalAssociationDataByFilter:
+    get:
+      tags:
+      - AnimalAssociationControllerBasic
+      parameters:
+      - name: CompanyId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: AssociationId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Association'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Association'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal_Association'
+      summary: Get animal association controller basic animal association data by filter
+      x-summary-source: derived
+      operationId: getAnimalAssociationControllerBasicAnimalAssociationDataByFilter
+      x-operation-id-source: derived
+  /AnimalAssociationControllerBasic/{id}:
+    get:
+      tags:
+      - AnimalAssociationControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DB_Animal_Association'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_Animal_Association'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DB_Animal_Association'
+      summary: Get animal association controller basic by id
+      x-summary-source: derived
+      operationId: getAnimalAssociationControllerBasicById
+      x-operation-id-source: derived
+components:
+  schemas:
+    DB_Animal_Association:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type: string
+          format: uuid
+        animalId:
+          type: string
+          format: uuid
+        associationId:
+          type:
+          - string
+          - 'null'
+        registrationNumber:
+          type:
+          - string
+          - 'null'
+        disposalCodeId:
+          type:
+          - string
+          - 'null'
+        disposalCodeDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type: string
+          format: uuid
+        createdByDate:
+          type: string
+          format: date-time
+        lastUpdatedByUserId:
+          type: string
+          format: uuid
+        lastUpdatedByDate:
+          type: string
+          format: date-time
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+      additionalProperties: false
+    Animal_Association:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type: string
+          format: uuid
+        animalId:
+          type: string
+          format: uuid
+        associationId:
+          type:
+          - string
+          - 'null'
+        registrationNumber:
+          type:
+          - string
+          - 'null'
+        disposalCodeId:
+          type:
+          - string
+          - 'null'
+        disposalCodeDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type: string
+          format: uuid
+        createdByDate:
+          type: string
+          format: date-time
+        lastUpdatedByUserId:
+          type: string
+          format: uuid
+        lastUpdatedByDate:
+          type: string
+          format: date-time
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isShared:
+          type:
+          - boolean
+          - 'null'
+        isNew:
+          type:
+          - boolean
+          - 'null'
+        isUpdate:
+          type:
+          - boolean
+          - 'null'
+        isDelete:
+          type:
+          - boolean
+          - 'null'
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

@@ -1,0 +1,550 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Patch Note Controller Admin API
+  description: 701x API
+  version: v1
+tags:
+- name: PatchNoteControllerAdmin
+paths:
+  /PatchNoteControllerAdmin/Get/{id}:
+    get:
+      tags:
+      - PatchNoteControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Patch_Note'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Patch_Note'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Patch_Note'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get patch note controller admin get by id
+      x-summary-source: derived
+      operationId: getPatchNoteControllerAdminGetById
+      x-operation-id-source: derived
+  /PatchNoteControllerAdmin/GetByFilter:
+    get:
+      tags:
+      - PatchNoteControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patch_Note'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patch_Note'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patch_Note'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get patch note controller admin get by filter
+      x-summary-source: derived
+      operationId: getPatchNoteControllerAdminGetByFilter
+      x-operation-id-source: derived
+  /PatchNoteControllerAdmin:
+    post:
+      tags:
+      - PatchNoteControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Patch_Note'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Patch_Note'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Patch_Note'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Patch_Note'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Patch_Note'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Patch_Note'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Patch_Note'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create patch note controller admin
+      x-summary-source: derived
+      operationId: postPatchNoteControllerAdmin
+      x-operation-id-source: derived
+  /PatchNoteControllerAdmin/{id}:
+    put:
+      tags:
+      - PatchNoteControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Patch_Note'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Patch_Note'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Patch_Note'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Patch_Note'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Patch_Note'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Patch_Note'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Patch_Note'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace patch note controller admin by id
+      x-summary-source: derived
+      operationId: putPatchNoteControllerAdminById
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - PatchNoteControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Patch_Note'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Patch_Note'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Patch_Note'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Delete patch note controller admin by id
+      x-summary-source: derived
+      operationId: deletePatchNoteControllerAdminById
+      x-operation-id-source: derived
+  /PatchNoteControllerAdmin/MassInsert:
+    post:
+      tags:
+      - PatchNoteControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Patch_Note'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Patch_Note'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Patch_Note'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Patch_Note'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patch_Note'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patch_Note'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patch_Note'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create patch note controller admin mass insert
+      x-summary-source: derived
+      operationId: postPatchNoteControllerAdminMassInsert
+      x-operation-id-source: derived
+  /PatchNoteControllerAdmin/MassUpdate:
+    post:
+      tags:
+      - PatchNoteControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Patch_Note'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Patch_Note'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Patch_Note'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Patch_Note'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patch_Note'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patch_Note'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patch_Note'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create patch note controller admin mass update
+      x-summary-source: derived
+      operationId: postPatchNoteControllerAdminMassUpdate
+      x-operation-id-source: derived
+  /PatchNoteControllerAdmin/MassDelete:
+    post:
+      tags:
+      - PatchNoteControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Patch_Note'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Patch_Note'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Patch_Note'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Patch_Note'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patch_Note'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patch_Note'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Patch_Note'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create patch note controller admin mass delete
+      x-summary-source: derived
+      operationId: postPatchNoteControllerAdminMassDelete
+      x-operation-id-source: derived
+components:
+  schemas:
+    Patch_Note:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        patch_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        patch_Header:
+          type:
+          - string
+          - 'null'
+        patch_Content:
+          type:
+          - string
+          - 'null'
+        patch_Link:
+          type:
+          - string
+          - 'null'
+        patch_Image:
+          type:
+          - string
+          - 'null'
+          format: byte
+        fileURL:
+          type:
+          - string
+          - 'null'
+        fileName:
+          type:
+          - string
+          - 'null'
+        fileExtension:
+          type:
+          - string
+          - 'null'
+        filePath:
+          type:
+          - string
+          - 'null'
+        fileType:
+          type:
+          - string
+          - 'null'
+        fileSize:
+          type: integer
+          format: int64
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

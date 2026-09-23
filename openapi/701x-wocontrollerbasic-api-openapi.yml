@@ -1,0 +1,788 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 WO Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: WOControllerBasic
+paths:
+  /WOControllerBasic/Get/{id}:
+    get:
+      tags:
+      - WOControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/WO_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WO_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/WO_Master'
+      summary: Get wo controller basic get by id
+      x-summary-source: derived
+      operationId: getWOControllerBasicGetById
+      x-operation-id-source: derived
+  /WOControllerBasic/GetDataByFilter:
+    get:
+      tags:
+      - WOControllerBasic
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: tagId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: Id
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: boxBarcode
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: Status
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: PCBA_SN
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: PCB_MFG
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: NetworkNumber
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: USDANumber
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: IMEI
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: ICCID
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: MAC_Address
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: Completed_Technician
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: LessThenCompletedTime
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCompletedTime
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WO_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WO_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WO_Master'
+      summary: Get wo controller basic get data by filter
+      x-summary-source: derived
+      operationId: getWOControllerBasicGetDataByFilter
+      x-operation-id-source: derived
+  /WOControllerBasic/Post:
+    post:
+      tags:
+      - WOControllerBasic
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/WO_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WO_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/WO_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/WO_Master'
+      responses:
+        '200':
+          description: Success
+      summary: Create wo controller basic post
+      x-summary-source: derived
+      operationId: postWOControllerBasicPost
+      x-operation-id-source: derived
+  /WOControllerBasic/Put/{id}:
+    put:
+      tags:
+      - WOControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/WO_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WO_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/WO_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/WO_Master'
+      responses:
+        '200':
+          description: Success
+      summary: Replace wo controller basic put by id
+      x-summary-source: derived
+      operationId: putWOControllerBasicPutById
+      x-operation-id-source: derived
+  /WOControllerBasic/Delete/{id}:
+    delete:
+      tags:
+      - WOControllerBasic
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+      summary: Delete wo controller basic delete by id
+      x-summary-source: derived
+      operationId: deleteWOControllerBasicDeleteById
+      x-operation-id-source: derived
+components:
+  schemas:
+    WO_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        orderNumber:
+          type:
+          - string
+          - 'null'
+        pcbA_PN:
+          type:
+          - string
+          - 'null'
+        pcbA_SN:
+          type:
+          - string
+          - 'null'
+        pcbA_HW_Version:
+          type:
+          - string
+          - 'null'
+        pcbA_PO:
+          type:
+          - string
+          - 'null'
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        usdaNumber:
+          type:
+          - string
+          - 'null'
+        engineeringModel:
+          type:
+          - string
+          - 'null'
+        productType:
+          type:
+          - string
+          - 'null'
+        hR_FW_Version:
+          type:
+          - string
+          - 'null'
+        boxBarcode:
+          type:
+          - string
+          - 'null'
+        icT_Exector:
+          type:
+          - string
+          - 'null'
+        icT_Humidity:
+          type: number
+          format: double
+        icT_Temperature:
+          type: number
+          format: double
+        icT_Start_Time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        icT_End_Time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        icT_Results:
+          type:
+          - string
+          - 'null'
+        icT_Failure_Code:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        icT_Version:
+          type:
+          - string
+          - 'null'
+        vbaT_Test_Low:
+          type:
+          - number
+          - 'null'
+          format: double
+        ibaT_Current_Low:
+          type:
+          - number
+          - 'null'
+          format: double
+        vbaT_Test_High:
+          type:
+          - number
+          - 'null'
+          format: double
+        ibaT_Current_High:
+          type:
+          - number
+          - 'null'
+          format: double
+        vbaT_Test_Solar:
+          type:
+          - number
+          - 'null'
+          format: double
+        ibaT_Current_Solar:
+          type:
+          - number
+          - 'null'
+          format: double
+        imei:
+          type:
+          - string
+          - 'null'
+        iccid:
+          type:
+          - string
+          - 'null'
+        maC_Address:
+          type:
+          - string
+          - 'null'
+        sdC_Voltage:
+          type:
+          - string
+          - 'null'
+        vbat:
+          type:
+          - number
+          - 'null'
+          format: double
+        vSolar:
+          type:
+          - number
+          - 'null'
+          format: double
+        cell_FW_Version:
+          type:
+          - string
+          - 'null'
+        sW_Version:
+          type:
+          - string
+          - 'null'
+        biM_Version:
+          type:
+          - string
+          - 'null'
+        accel_Gryo_Self_Test:
+          type:
+          - string
+          - 'null'
+        compass_Self_Test:
+          type:
+          - string
+          - 'null'
+        barometer_Self_Test:
+          type:
+          - string
+          - 'null'
+        database_Allocation:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        vzW_DMD_Submission:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        vzW_Dataplan_Purchase:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        battery_Attachment:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        battery_Attachment_Technician:
+          type:
+          - string
+          - 'null'
+        heat_Staking:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        heat_Staking_Technician:
+          type:
+          - string
+          - 'null'
+        laser_Marking:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        laser_Marking_Technician:
+          type:
+          - string
+          - 'null'
+        enclosure_Glue_Up:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        enclosure_Glue_Up_Technician:
+          type:
+          - string
+          - 'null'
+        ffT_Exector:
+          type:
+          - string
+          - 'null'
+        ffT_Start_Time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        ffT_End_Time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        ffT_Results:
+          type:
+          - string
+          - 'null'
+        ffT_Panel_Voltage:
+          type:
+          - number
+          - 'null'
+          format: double
+        ffT_Panel_Result:
+          type:
+          - string
+          - 'null'
+        ffT_Battery_Voltage:
+          type:
+          - number
+          - 'null'
+          format: double
+        ffT_Battery_Result:
+          type:
+          - string
+          - 'null'
+        ffT_LED_Voltage:
+          type:
+          - number
+          - 'null'
+          format: double
+        ffT_LED_Result:
+          type:
+          - string
+          - 'null'
+        ffT_GPS_TTFF:
+          type:
+          - number
+          - 'null'
+          format: double
+        ffT_GPS_Result:
+          type:
+          - string
+          - 'null'
+        ffT_GPS_Data:
+          type:
+          - string
+          - 'null'
+        ffT_Cell_CW_PWR:
+          type:
+          - number
+          - 'null'
+          format: double
+        ffT_Cell_CW_CF:
+          type:
+          - number
+          - 'null'
+          format: double
+        ffT_Cell_Result:
+          type:
+          - string
+          - 'null'
+        ffT_BLE_CW_PWR:
+          type:
+          - number
+          - 'null'
+          format: double
+        ffT_BLE_CW_CF:
+          type:
+          - number
+          - 'null'
+          format: double
+        ffT_BLE_Result:
+          type:
+          - string
+          - 'null'
+        ffT_915_CW_PWR:
+          type:
+          - number
+          - 'null'
+          format: double
+        ffT_915_CW_CF:
+          type:
+          - number
+          - 'null'
+          format: double
+        ffT_915_Result:
+          type:
+          - string
+          - 'null'
+        ffT_BLE_RSSI:
+          type:
+          - number
+          - 'null'
+          format: double
+        tpU_Top_Lot:
+          type:
+          - string
+          - 'null'
+        front_Lot:
+          type:
+          - string
+          - 'null'
+        back_Lot:
+          type:
+          - string
+          - 'null'
+        front_Assmebly_Lot:
+          type:
+          - string
+          - 'null'
+        solar_Panel_Lot:
+          type:
+          - string
+          - 'null'
+        pcB_Lot:
+          type:
+          - string
+          - 'null'
+        cartoning_Time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        cartoning_Technician:
+          type:
+          - string
+          - 'null'
+        stasis_Time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        stasis_Technician:
+          type:
+          - string
+          - 'null'
+        u12_Voltage_Low:
+          type:
+          - number
+          - 'null'
+          format: double
+        u12_Voltage_High:
+          type:
+          - number
+          - 'null'
+          format: double
+        u12_Power_Draw:
+          type:
+          - string
+          - 'null'
+        vzW_DMD_Submission_Success:
+          type:
+          - string
+          - 'null'
+        vzW_Thingspace_Submission:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        vzW_Thingspace_Submission_Success:
+          type:
+          - string
+          - 'null'
+        requested_Quantity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        completed_Quantity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        completed_Technician:
+          type:
+          - string
+          - 'null'
+        completed_Time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        status:
+          type:
+          - string
+          - 'null'
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        pcB_MFG:
+          type:
+          - string
+          - 'null'
+        calibration_Time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        accel_Offset_X:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        accel_Offset_Y:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        accel_Offset_Z:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        gyro_Offset_X:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        gyro_Offset_Y:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        gyro_Offset_Z:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        comment:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

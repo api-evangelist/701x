@@ -1,0 +1,536 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Medication Controller Admin API
+  description: 701x API
+  version: v1
+tags:
+- name: MedicationControllerAdmin
+paths:
+  /MedicationControllerAdmin/Get/{id}:
+    get:
+      tags:
+      - MedicationControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Medication_Master'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Medication_Master'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Medication_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get medication controller admin get by id
+      x-summary-source: derived
+      operationId: getMedicationControllerAdminGetById
+      x-operation-id-source: derived
+  /MedicationControllerAdmin/GetByFilter:
+    get:
+      tags:
+      - MedicationControllerAdmin
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: FarmId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: SearchString
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Medication_Master'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Medication_Master'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Medication_Master'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Get medication controller admin get by filter
+      x-summary-source: derived
+      operationId: getMedicationControllerAdminGetByFilter
+      x-operation-id-source: derived
+  /MedicationControllerAdmin/Post:
+    post:
+      tags:
+      - MedicationControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Medication_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Medication_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Medication_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Medication_Master'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create medication controller admin post
+      x-summary-source: derived
+      operationId: postMedicationControllerAdminPost
+      x-operation-id-source: derived
+  /MedicationControllerAdmin/Put/{id}:
+    put:
+      tags:
+      - MedicationControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/Medication_Master'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Medication_Master'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Medication_Master'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Medication_Master'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Replace medication controller admin put by id
+      x-summary-source: derived
+      operationId: putMedicationControllerAdminPutById
+      x-operation-id-source: derived
+  /MedicationControllerAdmin/Delete/{id}:
+    delete:
+      tags:
+      - MedicationControllerAdmin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Delete medication controller admin delete by id
+      x-summary-source: derived
+      operationId: deleteMedicationControllerAdminDeleteById
+      x-operation-id-source: derived
+  /MedicationControllerAdmin/MassInsert:
+    post:
+      tags:
+      - MedicationControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Medication_Master'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Medication_Master'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Medication_Master'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Medication_Master'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create medication controller admin mass insert
+      x-summary-source: derived
+      operationId: postMedicationControllerAdminMassInsert
+      x-operation-id-source: derived
+  /MedicationControllerAdmin/MassUpdate:
+    post:
+      tags:
+      - MedicationControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Medication_Master'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Medication_Master'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Medication_Master'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Medication_Master'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create medication controller admin mass update
+      x-summary-source: derived
+      operationId: postMedicationControllerAdminMassUpdate
+      x-operation-id-source: derived
+  /MedicationControllerAdmin/MassDelete:
+    post:
+      tags:
+      - MedicationControllerAdmin
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Medication_Master'
+          application/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Medication_Master'
+          text/json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Medication_Master'
+          application/*+json:
+            schema:
+              type:
+              - array
+              - 'null'
+              items:
+                $ref: '#/components/schemas/Medication_Master'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+      - oauth2:
+        - API701x
+      summary: Create medication controller admin mass delete
+      x-summary-source: derived
+      operationId: postMedicationControllerAdminMassDelete
+      x-operation-id-source: derived
+components:
+  schemas:
+    Medication_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        type:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        measurement:
+          type:
+          - string
+          - 'null'
+        medicineRoute:
+          type:
+          - string
+          - 'null'
+        medicineLocation:
+          type:
+          - string
+          - 'null'
+        withdrawalDays:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        boosterDays:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        manufacturer:
+          type:
+          - string
+          - 'null'
+        serialNumber:
+          type:
+          - string
+          - 'null'
+        lotNumber:
+          type:
+          - string
+          - 'null'
+        expirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        remainingQuantity:
+          type:
+          - number
+          - 'null'
+          format: double
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        legacyId:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

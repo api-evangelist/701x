@@ -1,0 +1,411 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Cart Product Controller Basic API
+  description: 701x API
+  version: v1
+tags:
+- name: CartProductControllerBasic
+paths:
+  /CartProductControllerBasic/CartProductDataByFilter:
+    get:
+      tags:
+      - CartProductControllerBasic
+      parameters:
+      - name: top
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: offset
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: fetch
+        in: query
+        schema:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      - name: CartId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: StripProductId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: StripePriceId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: CompanyId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      - name: LessThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenCreatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenUpdatedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: LessThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      - name: GreaterThenDeletedByDate
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cart_Product'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cart_Product'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cart_Product'
+      summary: Get cart product controller basic cart product data by filter
+      x-summary-source: derived
+      operationId: getCartProductControllerBasicCartProductDataByFilter
+      x-operation-id-source: derived
+components:
+  schemas:
+    Cart_Product:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        userId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        sessionId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cartId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cartPackageId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        stripePricingId:
+          type:
+          - string
+          - 'null'
+        stripeProductId:
+          type:
+          - string
+          - 'null'
+        stripeDiscountId:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        unitPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        totalPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        quantity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        filledQuantity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        description:
+          type:
+          - string
+          - 'null'
+        productType:
+          type:
+          - string
+          - 'null'
+        category:
+          type:
+          - string
+          - 'null'
+        isSubscription:
+          type: boolean
+        isUpgrade:
+          type: boolean
+        checkCountry:
+          type: boolean
+        checkState:
+          type: boolean
+        serviceSubscriptionPriceId:
+          type:
+          - string
+          - 'null'
+        serviceSubscriptionTierId:
+          type:
+          - string
+          - 'null'
+        lastShippedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        tagFilledCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        tagPendingCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        tagOrderCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        orderNumber:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        billAddress1:
+          type:
+          - string
+          - 'null'
+        billAddress2:
+          type:
+          - string
+          - 'null'
+        billAddress3:
+          type:
+          - string
+          - 'null'
+        billCountry:
+          type:
+          - string
+          - 'null'
+        billState:
+          type:
+          - string
+          - 'null'
+        billRegion:
+          type:
+          - string
+          - 'null'
+        billZip:
+          type:
+          - string
+          - 'null'
+        billCity:
+          type:
+          - string
+          - 'null'
+        shipAddress1:
+          type:
+          - string
+          - 'null'
+        shipAddress2:
+          type:
+          - string
+          - 'null'
+        shipAddress3:
+          type:
+          - string
+          - 'null'
+        shipCountry:
+          type:
+          - string
+          - 'null'
+        shipState:
+          type:
+          - string
+          - 'null'
+        shipRegion:
+          type:
+          - string
+          - 'null'
+        shipZip:
+          type:
+          - string
+          - 'null'
+        shipCity:
+          type:
+          - string
+          - 'null'
+        isSubscriptionBased:
+          type:
+          - boolean
+          - 'null'
+        pendingCheckoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        checkoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        orderType:
+          type:
+          - string
+          - 'null'
+        comments:
+          type:
+          - string
+          - 'null'
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        sequence:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        cancelledQuantity:
+          type: integer
+          format: int32
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access

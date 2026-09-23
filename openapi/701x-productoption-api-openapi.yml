@@ -1,0 +1,107 @@
+openapi: 3.2.0
+info:
+  title: 701x API V1 Product Option API
+  description: 701x API
+  version: v1
+tags:
+- name: ProductOption
+paths:
+  /ProductOption/ProductOptionsByFilter:
+    get:
+      tags:
+      - ProductOption
+      parameters:
+      - name: productId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      - name: optionProductId
+        in: query
+        schema:
+          type:
+          - string
+          - 'null'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product_Option'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product_Option'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product_Option'
+      summary: Get product option product options by filter
+      x-summary-source: derived
+      operationId: getProductOptionProductOptionsByFilter
+      x-operation-id-source: derived
+components:
+  schemas:
+    Product_Option:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        productId:
+          type:
+          - string
+          - 'null'
+        optionProductId:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastupdatedByName:
+          type:
+          - string
+          - 'null'
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.701x.com/connect/authorize
+          tokenUrl: https://login.701x.com/connect/token
+          scopes:
+            api1: Demo API - full access
