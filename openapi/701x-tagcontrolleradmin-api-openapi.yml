@@ -701,6 +701,22 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Tag_Bulk_Result:
+      type: object
+      properties:
+        existingTagsIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        missingTagsIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
     Tag_Master:
       type: object
       properties:
@@ -1194,22 +1210,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    Tag_Bulk_Result:
-      type: object
-      properties:
-        existingTagsIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        missingTagsIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
       additionalProperties: false
     Changes:
       type: object

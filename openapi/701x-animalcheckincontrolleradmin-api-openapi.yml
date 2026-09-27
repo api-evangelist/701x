@@ -569,30 +569,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Animal_CheckIn_Report:
-      type: object
-      properties:
-        uploadedByTagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        forDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        onHour:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        numberOfAnimals:
-          type:
-          - integer
-          - 'null'
-          format: int32
-      additionalProperties: false
     Animal_CheckIn:
       type: object
       properties:
@@ -682,6 +658,30 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    Animal_CheckIn_Report:
+      type: object
+      properties:
+        uploadedByTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        forDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        onHour:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        numberOfAnimals:
+          type:
+          - integer
+          - 'null'
+          format: int32
       additionalProperties: false
   securitySchemes:
     oauth2:

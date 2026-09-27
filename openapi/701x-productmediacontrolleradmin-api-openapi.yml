@@ -277,20 +277,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    MassUpdateMedia:
-      type: object
-      properties:
-        ids:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        productId:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     Product_Media:
       type: object
       properties:
@@ -352,6 +338,20 @@ components:
           - 'null'
           format: date-time
         error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    MassUpdateMedia:
+      type: object
+      properties:
+        ids:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        productId:
           type:
           - string
           - 'null'

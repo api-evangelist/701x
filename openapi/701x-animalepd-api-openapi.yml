@@ -569,57 +569,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    SyncingRequestParams:
-      type: object
-      properties:
-        syncingTableRequestParams:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/SyncingTableRequestParams'
-      additionalProperties: false
-    SyncingTableRequestParams:
-      type: object
-      properties:
-        tableName:
-          type:
-          - string
-          - 'null'
-        dateTimeOffset:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpochMs:
-          type:
-          - integer
-          - 'null'
-          format: int64
-          readOnly: true
-      additionalProperties: false
-    EPDData:
-      type: object
-      properties:
-        animalEPDInserted:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Animal_EPD'
-        animalEPDUpdated:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Animal_EPD'
-        animalEPDDeleted:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Animal_EPD'
-      additionalProperties: false
     Animal_EPD:
       type: object
       properties:
@@ -713,6 +662,57 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    EPDData:
+      type: object
+      properties:
+        animalEPDInserted:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_EPD'
+        animalEPDUpdated:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_EPD'
+        animalEPDDeleted:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_EPD'
+      additionalProperties: false
+    SyncingTableRequestParams:
+      type: object
+      properties:
+        tableName:
+          type:
+          - string
+          - 'null'
+        dateTimeOffset:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpochMs:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          readOnly: true
+      additionalProperties: false
+    SyncingRequestParams:
+      type: object
+      properties:
+        syncingTableRequestParams:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SyncingTableRequestParams'
       additionalProperties: false
   securitySchemes:
     oauth2:

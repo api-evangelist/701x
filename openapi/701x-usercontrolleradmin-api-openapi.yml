@@ -456,19 +456,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    PaginatedUserData:
-      type: object
-      properties:
-        users:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/User_Master'
-        totalCount:
-          type: integer
-          format: int32
-      additionalProperties: false
     User_Master:
       type: object
       properties:
@@ -686,6 +673,19 @@ components:
           type: boolean
         isDelete:
           type: boolean
+      additionalProperties: false
+    PaginatedUserData:
+      type: object
+      properties:
+        users:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/User_Master'
+        totalCount:
+          type: integer
+          format: int32
       additionalProperties: false
   securitySchemes:
     oauth2:

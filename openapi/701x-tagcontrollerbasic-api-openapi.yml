@@ -535,6 +535,35 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    MassDisableRequestBody:
+      type: object
+      properties:
+        tagIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+        disableDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    PatchItem:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        fields:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+      additionalProperties: false
     Changes:
       type: object
       properties:
@@ -1038,35 +1067,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    PatchItem:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        fields:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/JToken'
-      additionalProperties: false
-    MassDisableRequestBody:
-      type: object
-      properties:
-        tagIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-            format: uuid
-        disableDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
       additionalProperties: false
     JToken:
       type: array

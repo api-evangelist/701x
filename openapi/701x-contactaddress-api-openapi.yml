@@ -152,6 +152,92 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    DB_Contact_Address:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        address1:
+          type:
+          - string
+          - 'null'
+        address2:
+          type:
+          - string
+          - 'null'
+        address3:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        region:
+          type:
+          - string
+          - 'null'
+        zip:
+          type:
+          - string
+          - 'null'
+        city:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        contactId:
+          type: string
+          format: uuid
+        isPrimary:
+          type:
+          - boolean
+          - 'null'
+        companyId:
+          type: string
+          format: uuid
+        legacyId:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
     Contact_Address:
       type: object
       properties:
@@ -253,92 +339,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    DB_Contact_Address:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        address1:
-          type:
-          - string
-          - 'null'
-        address2:
-          type:
-          - string
-          - 'null'
-        address3:
-          type:
-          - string
-          - 'null'
-        country:
-          type:
-          - string
-          - 'null'
-        state:
-          type:
-          - string
-          - 'null'
-        region:
-          type:
-          - string
-          - 'null'
-        zip:
-          type:
-          - string
-          - 'null'
-        city:
-          type:
-          - string
-          - 'null'
-        type:
-          type:
-          - string
-          - 'null'
-        description:
-          type:
-          - string
-          - 'null'
-        contactId:
-          type: string
-          format: uuid
-        isPrimary:
-          type:
-          - boolean
-          - 'null'
-        companyId:
-          type: string
-          format: uuid
-        legacyId:
-          type:
-          - string
-          - 'null'
-        createdByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        lastUpdatedByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastUpdatedByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        inActiveDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
       additionalProperties: false
   securitySchemes:
     oauth2:

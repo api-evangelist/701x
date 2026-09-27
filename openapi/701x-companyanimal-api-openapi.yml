@@ -627,16 +627,17 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Changes:
-      type: object
-      properties:
-        keyChanged:
-          type:
-          - string
-          - 'null'
-        oldValue: {}
-        newValue: {}
-      additionalProperties: false
+    DayOfWeek:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      type: integer
+      format: int32
     Animal_Log:
       type: object
       properties:
@@ -1356,500 +1357,6 @@ components:
           items:
             type: string
             format: uuid
-      additionalProperties: false
-    Tag_Master:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        companyTagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        tagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        assignedToAnimalDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        engineeringModel:
-          type:
-          - string
-          - 'null'
-        productType:
-          type:
-          - string
-          - 'null'
-        usdaNumber:
-          type:
-          - string
-          - 'null'
-        boxBarcode:
-          type:
-          - string
-          - 'null'
-        networkNumber:
-          type:
-          - string
-          - 'null'
-        code:
-          type:
-          - string
-          - 'null'
-        description:
-          type:
-          - string
-          - 'null'
-        minimum_Reset_Interval:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        maximum_Reset_Interval:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        maximum_CheckIn_Interval:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        logging_Interval:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        gpS_Interval:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        caffeinated_Threshold:
-          type:
-          - number
-          - 'null'
-          format: double
-        awake_Threshold:
-          type:
-          - number
-          - 'null'
-          format: double
-        roll:
-          type:
-          - number
-          - 'null'
-          format: double
-        pitch:
-          type:
-          - number
-          - 'null'
-          format: double
-        yaw:
-          type:
-          - number
-          - 'null'
-          format: double
-        cell_Firmware:
-          type:
-          - string
-          - 'null'
-        cell_Disabled:
-          type:
-          - boolean
-          - 'null'
-        softwareVersion:
-          type:
-          - string
-          - 'null'
-        hardwareVersion:
-          type:
-          - string
-          - 'null'
-        modemFirmware:
-          type:
-          - string
-          - 'null'
-        deviceSoftwareVersion:
-          type:
-          - string
-          - 'null'
-        eventTypeId:
-          type:
-          - string
-          - 'null'
-        eventStatusId:
-          type:
-          - string
-          - 'null'
-        alertFreeFall:
-          type:
-          - boolean
-          - 'null'
-        alertNoMovement:
-          type:
-          - boolean
-          - 'null'
-        alertOutOfStasis:
-          type:
-          - boolean
-          - 'null'
-        alertHighSpeedCow:
-          type:
-          - boolean
-          - 'null'
-        alertGeofence:
-          type:
-          - boolean
-          - 'null'
-        longitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        latitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        altitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        heading:
-          type:
-          - number
-          - 'null'
-          format: double
-        position_Uncertainty:
-          type:
-          - number
-          - 'null'
-          format: double
-        temperature:
-          type:
-          - number
-          - 'null'
-          format: double
-        pressure:
-          type:
-          - number
-          - 'null'
-          format: double
-        cell_RSSI:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        gpS_TTFF:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        panel_Voltage:
-          type:
-          - number
-          - 'null'
-          format: double
-        battery_Voltage:
-          type:
-          - number
-          - 'null'
-          format: double
-        state_Of_Charge:
-          type:
-          - number
-          - 'null'
-          format: double
-        water_Pressure_Pa:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        water_Temperature_C:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        air_Pressure_Pa:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        air_Temperature_C:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        depth_MM:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        step_Count:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        step_Count_Offset:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        lastWatSenCalibratedDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastCheckInDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastUploadedDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastCheckInMethod:
-          type:
-          - string
-          - 'null'
-        encryptionKey:
-          type:
-          - string
-          - 'null'
-        macAddress:
-          type:
-          - string
-          - 'null'
-        hashAddress:
-          type:
-          - string
-          - 'null'
-        broken_Date:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        serviceExpirationDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        forceCheckInDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        turnOnLEDDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        updatedVersionByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        highFrequencyDataLogging:
-          type:
-          - boolean
-          - 'null'
-        companyId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        companyDescription:
-          type:
-          - string
-          - 'null'
-        farmId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmDescription:
-          type:
-          - string
-          - 'null'
-        target_CheckIn_Hour:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        farmVirtualFenceId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmVirtualFenceDescription:
-          type:
-          - string
-          - 'null'
-        lastFenceChangedDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        pins:
-          type:
-          - string
-          - 'null'
-        outOfFence:
-          type:
-          - boolean
-          - 'null'
-        farmPointOfInterestId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmPointOfInterestDescription:
-          type:
-          - string
-          - 'null'
-        lastBaseStationConfig:
-          type:
-          - string
-          - 'null'
-        nearPOI:
-          type:
-          - boolean
-          - 'null'
-        animalId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        cattleNumber:
-          type:
-          - string
-          - 'null'
-        cattleColor:
-          type:
-          - string
-          - 'null'
-        cattleType:
-          type:
-          - string
-          - 'null'
-        cattleBreed:
-          type:
-          - string
-          - 'null'
-        cattleDOB:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        maximum_Time_Seperated:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        bullTurnoutDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        firstDeviceUploadedOnAnimalDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        companySaleId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        companyPurchaseId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        companyTransferId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        transferDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        arrayOfChanges:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Changes'
-        createdByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        createdByName:
-          type:
-          - string
-          - 'null'
-        lastUpdatedByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastUpdatedByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        lastUpdatedByName:
-          type:
-          - string
-          - 'null'
-        disabledDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        inActiveDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        deleteSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        isNew:
-          type: boolean
-        isUpdate:
-          type: boolean
-        isDelete:
-          type: boolean
-        error:
-          type:
-          - string
-          - 'null'
       additionalProperties: false
     Company_Animal:
       type: object
@@ -3456,329 +2963,15 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Animal_Comment:
+    Changes:
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-        companyId:
+        keyChanged:
           type:
           - string
           - 'null'
-          format: uuid
-        farmId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        animalId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        commentId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        comment:
-          type:
-          - string
-          - 'null'
-        cattleNumber:
-          type:
-          - string
-          - 'null'
-        animalCode:
-          type:
-          - string
-          - 'null'
-        animalDescription:
-          type:
-          - string
-          - 'null'
-        animalType:
-          type:
-          - string
-          - 'null'
-        animalBreed:
-          type:
-          - string
-          - 'null'
-        tagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        networkNumber:
-          type:
-          - string
-          - 'null'
-        groupId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        groupCode:
-          type:
-          - string
-          - 'null'
-        groupDescription:
-          type:
-          - string
-          - 'null'
-        companyDescription:
-          type:
-          - string
-          - 'null'
-        farmDescription:
-          type:
-          - string
-          - 'null'
-        createdByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        createdByName:
-          type:
-          - string
-          - 'null'
-        lastUpdatedByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastUpdatedByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        lastUpdatedByName:
-          type:
-          - string
-          - 'null'
-        inActiveDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        deleteSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        isNew:
-          type: boolean
-        isUpdate:
-          type: boolean
-        isDelete:
-          type: boolean
-        error:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    DateOnly:
-      type: object
-      properties:
-        year:
-          type: integer
-          format: int32
-          readOnly: true
-        month:
-          type: integer
-          format: int32
-          readOnly: true
-        day:
-          type: integer
-          format: int32
-          readOnly: true
-        dayOfWeek:
-          $ref: '#/components/schemas/DayOfWeek'
-        dayOfYear:
-          type: integer
-          format: int32
-          readOnly: true
-        dayNumber:
-          type: integer
-          format: int32
-          readOnly: true
-      additionalProperties: false
-    DayOfWeek:
-      enum:
-      - 0
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      type: integer
-      format: int32
-    Animal_Attachment:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        companyId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        animalId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        attachmentId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        fileName:
-          type:
-          - string
-          - 'null'
-        fileExtension:
-          type:
-          - string
-          - 'null'
-        filePath:
-          type:
-          - string
-          - 'null'
-        fileType:
-          type:
-          - string
-          - 'null'
-        fileSize:
-          type: integer
-          format: int64
-        isProfilePic:
-          type:
-          - boolean
-          - 'null'
-        cattleNumber:
-          type:
-          - string
-          - 'null'
-        animalCode:
-          type:
-          - string
-          - 'null'
-        animalDescription:
-          type:
-          - string
-          - 'null'
-        animalType:
-          type:
-          - string
-          - 'null'
-        animalBreed:
-          type:
-          - string
-          - 'null'
-        tagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        networkNumber:
-          type:
-          - string
-          - 'null'
-        groupId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        groupCode:
-          type:
-          - string
-          - 'null'
-        groupDescription:
-          type:
-          - string
-          - 'null'
-        companyDescription:
-          type:
-          - string
-          - 'null'
-        farmDescription:
-          type:
-          - string
-          - 'null'
-        createdByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        createdByName:
-          type:
-          - string
-          - 'null'
-        lastUpdatedByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastUpdatedByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        lastUpdatedByName:
-          type:
-          - string
-          - 'null'
-        inActiveDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        deleteSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        isNew:
-          type: boolean
-        isUpdate:
-          type: boolean
-        isDelete:
-          type: boolean
-        error:
-          type:
-          - string
-          - 'null'
+        oldValue: {}
+        newValue: {}
       additionalProperties: false
     Animal_Turn_Out:
       type: object
@@ -3887,6 +3080,159 @@ components:
           - string
           - 'null'
           format: date-time
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Animal_Attachment:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        attachmentId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        fileName:
+          type:
+          - string
+          - 'null'
+        fileExtension:
+          type:
+          - string
+          - 'null'
+        filePath:
+          type:
+          - string
+          - 'null'
+        fileType:
+          type:
+          - string
+          - 'null'
+        fileSize:
+          type: integer
+          format: int64
+        isProfilePic:
+          type:
+          - boolean
+          - 'null'
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        animalCode:
+          type:
+          - string
+          - 'null'
+        animalDescription:
+          type:
+          - string
+          - 'null'
+        animalType:
+          type:
+          - string
+          - 'null'
+        animalBreed:
+          type:
+          - string
+          - 'null'
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupCode:
+          type:
+          - string
+          - 'null'
+        groupDescription:
+          type:
+          - string
+          - 'null'
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
         createdByDate:
           type:
           - string
@@ -4377,6 +3723,660 @@ components:
           - integer
           - 'null'
           format: int32
+      additionalProperties: false
+    Tag_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        assignedToAnimalDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        engineeringModel:
+          type:
+          - string
+          - 'null'
+        productType:
+          type:
+          - string
+          - 'null'
+        usdaNumber:
+          type:
+          - string
+          - 'null'
+        boxBarcode:
+          type:
+          - string
+          - 'null'
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        minimum_Reset_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        maximum_Reset_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        maximum_CheckIn_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        logging_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        gpS_Interval:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        caffeinated_Threshold:
+          type:
+          - number
+          - 'null'
+          format: double
+        awake_Threshold:
+          type:
+          - number
+          - 'null'
+          format: double
+        roll:
+          type:
+          - number
+          - 'null'
+          format: double
+        pitch:
+          type:
+          - number
+          - 'null'
+          format: double
+        yaw:
+          type:
+          - number
+          - 'null'
+          format: double
+        cell_Firmware:
+          type:
+          - string
+          - 'null'
+        cell_Disabled:
+          type:
+          - boolean
+          - 'null'
+        softwareVersion:
+          type:
+          - string
+          - 'null'
+        hardwareVersion:
+          type:
+          - string
+          - 'null'
+        modemFirmware:
+          type:
+          - string
+          - 'null'
+        deviceSoftwareVersion:
+          type:
+          - string
+          - 'null'
+        eventTypeId:
+          type:
+          - string
+          - 'null'
+        eventStatusId:
+          type:
+          - string
+          - 'null'
+        alertFreeFall:
+          type:
+          - boolean
+          - 'null'
+        alertNoMovement:
+          type:
+          - boolean
+          - 'null'
+        alertOutOfStasis:
+          type:
+          - boolean
+          - 'null'
+        alertHighSpeedCow:
+          type:
+          - boolean
+          - 'null'
+        alertGeofence:
+          type:
+          - boolean
+          - 'null'
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        heading:
+          type:
+          - number
+          - 'null'
+          format: double
+        position_Uncertainty:
+          type:
+          - number
+          - 'null'
+          format: double
+        temperature:
+          type:
+          - number
+          - 'null'
+          format: double
+        pressure:
+          type:
+          - number
+          - 'null'
+          format: double
+        cell_RSSI:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        gpS_TTFF:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        panel_Voltage:
+          type:
+          - number
+          - 'null'
+          format: double
+        battery_Voltage:
+          type:
+          - number
+          - 'null'
+          format: double
+        state_Of_Charge:
+          type:
+          - number
+          - 'null'
+          format: double
+        water_Pressure_Pa:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        water_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        air_Pressure_Pa:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        air_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        depth_MM:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        step_Count:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        step_Count_Offset:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        lastWatSenCalibratedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastCheckInDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUploadedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastCheckInMethod:
+          type:
+          - string
+          - 'null'
+        encryptionKey:
+          type:
+          - string
+          - 'null'
+        macAddress:
+          type:
+          - string
+          - 'null'
+        hashAddress:
+          type:
+          - string
+          - 'null'
+        broken_Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        serviceExpirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        forceCheckInDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        turnOnLEDDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        updatedVersionByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        highFrequencyDataLogging:
+          type:
+          - boolean
+          - 'null'
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        target_CheckIn_Hour:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceDescription:
+          type:
+          - string
+          - 'null'
+        lastFenceChangedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        pins:
+          type:
+          - string
+          - 'null'
+        outOfFence:
+          type:
+          - boolean
+          - 'null'
+        farmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmPointOfInterestDescription:
+          type:
+          - string
+          - 'null'
+        lastBaseStationConfig:
+          type:
+          - string
+          - 'null'
+        nearPOI:
+          type:
+          - boolean
+          - 'null'
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        cattleColor:
+          type:
+          - string
+          - 'null'
+        cattleType:
+          type:
+          - string
+          - 'null'
+        cattleBreed:
+          type:
+          - string
+          - 'null'
+        cattleDOB:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        maximum_Time_Seperated:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        bullTurnoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        firstDeviceUploadedOnAnimalDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        companySaleId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyTransferId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        transferDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        arrayOfChanges:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Changes'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        disabledDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DateOnly:
+      type: object
+      properties:
+        year:
+          type: integer
+          format: int32
+          readOnly: true
+        month:
+          type: integer
+          format: int32
+          readOnly: true
+        day:
+          type: integer
+          format: int32
+          readOnly: true
+        dayOfWeek:
+          $ref: '#/components/schemas/DayOfWeek'
+        dayOfYear:
+          type: integer
+          format: int32
+          readOnly: true
+        dayNumber:
+          type: integer
+          format: int32
+          readOnly: true
+      additionalProperties: false
+    Animal_Comment:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        commentId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        comment:
+          type:
+          - string
+          - 'null'
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        animalCode:
+          type:
+          - string
+          - 'null'
+        animalDescription:
+          type:
+          - string
+          - 'null'
+        animalType:
+          type:
+          - string
+          - 'null'
+        animalBreed:
+          type:
+          - string
+          - 'null'
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupCode:
+          type:
+          - string
+          - 'null'
+        groupDescription:
+          type:
+          - string
+          - 'null'
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
   securitySchemes:
     oauth2:

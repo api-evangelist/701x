@@ -543,6 +543,31 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Stats_Time_Point:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date-time
+        category:
+          type:
+          - string
+          - 'null'
+        value:
+          type: number
+          format: double
+      additionalProperties: false
+    Stats_Point:
+      type: object
+      properties:
+        category:
+          type:
+          - string
+          - 'null'
+        value:
+          type: number
+          format: double
+      additionalProperties: false
     Stats_Line_Response:
       type: object
       properties:
@@ -621,17 +646,6 @@ components:
           items:
             $ref: '#/components/schemas/Stats_Time_Point'
       additionalProperties: false
-    Stats_Point:
-      type: object
-      properties:
-        category:
-          type:
-          - string
-          - 'null'
-        value:
-          type: number
-          format: double
-      additionalProperties: false
     Stats_Response:
       type: object
       properties:
@@ -641,20 +655,6 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/Stats_Line_Response'
-      additionalProperties: false
-    Stats_Time_Point:
-      type: object
-      properties:
-        date:
-          type: string
-          format: date-time
-        category:
-          type:
-          - string
-          - 'null'
-        value:
-          type: number
-          format: double
       additionalProperties: false
   securitySchemes:
     oauth2:

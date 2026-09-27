@@ -2066,6 +2066,197 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Tag_Heatmap_Point:
+      type: object
+      properties:
+        longitude:
+          type: number
+          format: double
+        latitude:
+          type: number
+          format: double
+        weight:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Tag_Data_Reduced:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmPointOfInterstId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        dob:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        animalType:
+          type:
+          - string
+          - 'null'
+        uploadedByTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByFarmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedType:
+          type:
+          - string
+          - 'null'
+        timeUTC:
+          type:
+          - number
+          - 'null'
+          format: double
+        timeUTCFormatted:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        heading:
+          type:
+          - number
+          - 'null'
+          format: double
+        water_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        depth_MM:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        step_Count:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        mount_Count:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        heart_Rate_BPM:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        heart_Rate_Confidence_Percent:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Unknown_Activity:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Eating:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Lying:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Resting:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Ruminating:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Standing:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        seconds_Walking:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        cell_RSSI:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
     Tag_Data:
       type: object
       properties:
@@ -2694,197 +2885,6 @@ components:
           - string
           - 'null'
           format: date-time
-      additionalProperties: false
-    Tag_Heatmap_Point:
-      type: object
-      properties:
-        longitude:
-          type: number
-          format: double
-        latitude:
-          type: number
-          format: double
-        weight:
-          type: integer
-          format: int32
-      additionalProperties: false
-    Tag_Data_Reduced:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        companyId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        groupId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmVirtualFenceId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmPointOfInterstId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        tagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        networkNumber:
-          type:
-          - string
-          - 'null'
-        animalId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        cattleNumber:
-          type:
-          - string
-          - 'null'
-        dob:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        animalType:
-          type:
-          - string
-          - 'null'
-        uploadedByTagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        uploadedByAnimalId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        uploadedByFarmPointOfInterestId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        uploadedType:
-          type:
-          - string
-          - 'null'
-        timeUTC:
-          type:
-          - number
-          - 'null'
-          format: double
-        timeUTCFormatted:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        longitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        latitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        altitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        heading:
-          type:
-          - number
-          - 'null'
-          format: double
-        water_Temperature_C:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        depth_MM:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        step_Count:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        mount_Count:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        heart_Rate_BPM:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        heart_Rate_Confidence_Percent:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        seconds_Unknown_Activity:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        seconds_Eating:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        seconds_Lying:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        seconds_Resting:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        seconds_Ruminating:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        seconds_Standing:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        seconds_Walking:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        cell_RSSI:
-          type:
-          - integer
-          - 'null'
-          format: int32
       additionalProperties: false
   securitySchemes:
     oauth2:

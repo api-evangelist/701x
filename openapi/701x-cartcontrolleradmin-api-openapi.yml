@@ -950,16 +950,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Sales_Stats:
-      type: object
-      properties:
-        productTypes:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/SalesProductType'
-      additionalProperties: false
     Cart_Master:
       type: object
       properties:
@@ -1297,6 +1287,16 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    Sales_Stats:
+      type: object
+      properties:
+        productTypes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SalesProductType'
+      additionalProperties: false
     OrderProductType:
       type: object
       properties:
@@ -1306,17 +1306,6 @@ components:
         total:
           type: number
           format: double
-        stripeProductId:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    SalesProductType:
-      type: object
-      properties:
-        quantity:
-          type: integer
-          format: int32
         stripeProductId:
           type:
           - string
@@ -1374,6 +1363,17 @@ components:
           - string
           - 'null'
         orderType:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    SalesProductType:
+      type: object
+      properties:
+        quantity:
+          type: integer
+          format: int32
+        stripeProductId:
           type:
           - string
           - 'null'
