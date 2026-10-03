@@ -366,27 +366,34 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    WeanData:
+    SyncingTableRequestParams:
       type: object
       properties:
-        animalDataWeanInserted:
+        tableName:
+          type:
+          - string
+          - 'null'
+        dateTimeOffset:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpochMs:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          readOnly: true
+      additionalProperties: false
+    SyncingRequestParams:
+      type: object
+      properties:
+        syncingTableRequestParams:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/Animal_Data_Wean'
-        animalDataWeanUpdated:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Animal_Data_Wean'
-        animalDataWeanDeleted:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Animal_Data_Wean'
+            $ref: '#/components/schemas/SyncingTableRequestParams'
       additionalProperties: false
     Animal_Data_Wean:
       type: object
@@ -574,34 +581,27 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    SyncingTableRequestParams:
+    WeanData:
       type: object
       properties:
-        tableName:
-          type:
-          - string
-          - 'null'
-        dateTimeOffset:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpochMs:
-          type:
-          - integer
-          - 'null'
-          format: int64
-          readOnly: true
-      additionalProperties: false
-    SyncingRequestParams:
-      type: object
-      properties:
-        syncingTableRequestParams:
+        animalDataWeanInserted:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/SyncingTableRequestParams'
+            $ref: '#/components/schemas/Animal_Data_Wean'
+        animalDataWeanUpdated:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Data_Wean'
+        animalDataWeanDeleted:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Data_Wean'
       additionalProperties: false
   securitySchemes:
     oauth2:

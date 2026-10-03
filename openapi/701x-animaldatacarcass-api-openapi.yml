@@ -366,17 +366,61 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    DayOfWeek:
-      enum:
-      - 0
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      type: integer
-      format: int32
+    SyncingTableRequestParams:
+      type: object
+      properties:
+        tableName:
+          type:
+          - string
+          - 'null'
+        dateTimeOffset:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpochMs:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          readOnly: true
+      additionalProperties: false
+    SyncingRequestParams:
+      type: object
+      properties:
+        syncingTableRequestParams:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SyncingTableRequestParams'
+      additionalProperties: false
+    DateOnly:
+      type: object
+      properties:
+        year:
+          type: integer
+          format: int32
+          readOnly: true
+        month:
+          type: integer
+          format: int32
+          readOnly: true
+        day:
+          type: integer
+          format: int32
+          readOnly: true
+        dayOfWeek:
+          $ref: '#/components/schemas/DayOfWeek'
+        dayOfYear:
+          type: integer
+          format: int32
+          readOnly: true
+        dayNumber:
+          type: integer
+          format: int32
+          readOnly: true
+      additionalProperties: false
     CarcassData:
       type: object
       properties:
@@ -399,25 +443,17 @@ components:
           items:
             $ref: '#/components/schemas/Animal_Data_Carcass'
       additionalProperties: false
-    SyncingTableRequestParams:
-      type: object
-      properties:
-        tableName:
-          type:
-          - string
-          - 'null'
-        dateTimeOffset:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpochMs:
-          type:
-          - integer
-          - 'null'
-          format: int64
-          readOnly: true
-      additionalProperties: false
+    DayOfWeek:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      type: integer
+      format: int32
     Animal_Data_Carcass:
       type: object
       properties:
@@ -632,42 +668,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    DateOnly:
-      type: object
-      properties:
-        year:
-          type: integer
-          format: int32
-          readOnly: true
-        month:
-          type: integer
-          format: int32
-          readOnly: true
-        day:
-          type: integer
-          format: int32
-          readOnly: true
-        dayOfWeek:
-          $ref: '#/components/schemas/DayOfWeek'
-        dayOfYear:
-          type: integer
-          format: int32
-          readOnly: true
-        dayNumber:
-          type: integer
-          format: int32
-          readOnly: true
-      additionalProperties: false
-    SyncingRequestParams:
-      type: object
-      properties:
-        syncingTableRequestParams:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/SyncingTableRequestParams'
       additionalProperties: false
   securitySchemes:
     oauth2:

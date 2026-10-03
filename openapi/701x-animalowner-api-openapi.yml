@@ -186,6 +186,148 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    DB_Animal_Owner:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        toCompanyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companySaleId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyTransferId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyShareId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        legacyId:
+          type:
+          - string
+          - 'null'
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        contactId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        contactLegacyId:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalLegacyId:
+          type:
+          - string
+          - 'null'
+        relationshipType:
+          type:
+          - string
+          - 'null'
+        startDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        endDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        ownership:
+          type:
+          - number
+          - 'null'
+          format: double
+        genetic:
+          type:
+          - number
+          - 'null'
+          format: double
+        hasPossession:
+          type:
+          - boolean
+          - 'null'
+        isShared:
+          type:
+          - boolean
+          - 'null'
+        comments:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+      additionalProperties: false
     Animal_Owner:
       type: object
       properties:
@@ -337,148 +479,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    DB_Animal_Owner:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        toCompanyId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        companySaleId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        companyPurchaseId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        companyTransferId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        companyShareId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        legacyId:
-          type:
-          - string
-          - 'null'
-        companyId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        contactId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        contactLegacyId:
-          type:
-          - string
-          - 'null'
-        email:
-          type:
-          - string
-          - 'null'
-        animalId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        animalLegacyId:
-          type:
-          - string
-          - 'null'
-        relationshipType:
-          type:
-          - string
-          - 'null'
-        startDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        endDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        ownership:
-          type:
-          - number
-          - 'null'
-          format: double
-        genetic:
-          type:
-          - number
-          - 'null'
-          format: double
-        hasPossession:
-          type:
-          - boolean
-          - 'null'
-        isShared:
-          type:
-          - boolean
-          - 'null'
-        comments:
-          type:
-          - string
-          - 'null'
-        createdByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        createdByName:
-          type:
-          - string
-          - 'null'
-        lastUpdatedByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastUpdatedByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        lastUpdatedByName:
-          type:
-          - string
-          - 'null'
-        inActiveDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        deleteSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
       additionalProperties: false
   securitySchemes:
     oauth2:

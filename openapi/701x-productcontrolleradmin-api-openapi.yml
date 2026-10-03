@@ -365,6 +365,71 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Product_Media:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        url:
+          type:
+          - string
+          - 'null'
+        productId:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        sequence:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     Product_Master:
       type: object
       properties:
@@ -533,71 +598,6 @@ components:
           type: boolean
         isDelete:
           type: boolean
-        error:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Product_Media:
-      type: object
-      properties:
-        id:
-          type:
-          - string
-          - 'null'
-        name:
-          type:
-          - string
-          - 'null'
-        description:
-          type:
-          - string
-          - 'null'
-        url:
-          type:
-          - string
-          - 'null'
-        productId:
-          type:
-          - string
-          - 'null'
-        type:
-          type:
-          - string
-          - 'null'
-        sequence:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        createdByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        createdByName:
-          type:
-          - string
-          - 'null'
-        createdByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastUpdatedByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        lastUpdatedByName:
-          type:
-          - string
-          - 'null'
-        lastUpdatedByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
         error:
           type:
           - string

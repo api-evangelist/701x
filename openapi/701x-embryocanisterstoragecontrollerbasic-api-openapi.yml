@@ -212,77 +212,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Embryo_Canister_Storage:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        legacyId:
-          type:
-          - string
-          - 'null'
-        companyId:
-          type: string
-          format: uuid
-        name:
-          type:
-          - string
-          - 'null'
-        createdByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        createdByUserName:
-          type:
-          - string
-          - 'null'
-        lastUpdatedByUserName:
-          type:
-          - string
-          - 'null'
-        lastUpdatedByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastUpdatedByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        inActiveDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        deleteSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        isNew:
-          type: boolean
-        isUpdate:
-          type: boolean
-        isDelete:
-          type: boolean
-        error:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     Embryo_Tank:
       type: object
       properties:
@@ -450,6 +379,77 @@ components:
           type:
           - string
           - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Embryo_Canister_Storage:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        legacyId:
+          type:
+          - string
+          - 'null'
+        companyId:
+          type: string
+          format: uuid
+        name:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByUserName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByUserName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
         inActiveDate:
           type:
           - string

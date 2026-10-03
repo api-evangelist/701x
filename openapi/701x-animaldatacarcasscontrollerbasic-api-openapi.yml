@@ -367,6 +367,43 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    DayOfWeek:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      type: integer
+      format: int32
+    DateOnly:
+      type: object
+      properties:
+        year:
+          type: integer
+          format: int32
+          readOnly: true
+        month:
+          type: integer
+          format: int32
+          readOnly: true
+        day:
+          type: integer
+          format: int32
+          readOnly: true
+        dayOfWeek:
+          $ref: '#/components/schemas/DayOfWeek'
+        dayOfYear:
+          type: integer
+          format: int32
+          readOnly: true
+        dayNumber:
+          type: integer
+          format: int32
+          readOnly: true
+      additionalProperties: false
     Animal_Data_Carcass:
       type: object
       properties:
@@ -582,43 +619,6 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    DateOnly:
-      type: object
-      properties:
-        year:
-          type: integer
-          format: int32
-          readOnly: true
-        month:
-          type: integer
-          format: int32
-          readOnly: true
-        day:
-          type: integer
-          format: int32
-          readOnly: true
-        dayOfWeek:
-          $ref: '#/components/schemas/DayOfWeek'
-        dayOfYear:
-          type: integer
-          format: int32
-          readOnly: true
-        dayNumber:
-          type: integer
-          format: int32
-          readOnly: true
-      additionalProperties: false
-    DayOfWeek:
-      enum:
-      - 0
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      type: integer
-      format: int32
   securitySchemes:
     oauth2:
       type: oauth2

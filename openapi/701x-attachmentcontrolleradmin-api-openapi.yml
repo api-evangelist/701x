@@ -623,21 +623,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    BlobLinks:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        fileURL:
-          type:
-          - string
-          - 'null'
-        thumbnailURL:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     Attachment_Master:
       type: object
       properties:
@@ -826,6 +811,21 @@ components:
         isDelete:
           type: boolean
         error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    BlobLinks:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        fileURL:
+          type:
+          - string
+          - 'null'
+        thumbnailURL:
           type:
           - string
           - 'null'

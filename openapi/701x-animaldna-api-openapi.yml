@@ -234,6 +234,24 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    BreedCompositionIngestItem:
+      type: object
+      properties:
+        animalId:
+          type:
+          - string
+          - 'null'
+        sampleNumber:
+          type:
+          - string
+          - 'null'
+        breeds:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BreedComp'
+      additionalProperties: false
     Animal_DNA:
       type: object
       properties:
@@ -317,24 +335,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    BreedCompositionIngestItem:
-      type: object
-      properties:
-        animalId:
-          type:
-          - string
-          - 'null'
-        sampleNumber:
-          type:
-          - string
-          - 'null'
-        breeds:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/BreedComp'
       additionalProperties: false
     BreedComp:
       type: object

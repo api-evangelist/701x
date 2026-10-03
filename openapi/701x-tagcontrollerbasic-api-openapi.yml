@@ -551,29 +551,6 @@ components:
           - 'null'
           format: date-time
       additionalProperties: false
-    PatchItem:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        fields:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/JToken'
-      additionalProperties: false
-    Changes:
-      type: object
-      properties:
-        keyChanged:
-          type:
-          - string
-          - 'null'
-        oldValue: {}
-        newValue: {}
-      additionalProperties: false
     Tag_Master:
       type: object
       properties:
@@ -1072,6 +1049,29 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/JToken'
+    PatchItem:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        fields:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+      additionalProperties: false
+    Changes:
+      type: object
+      properties:
+        keyChanged:
+          type:
+          - string
+          - 'null'
+        oldValue: {}
+        newValue: {}
+      additionalProperties: false
   securitySchemes:
     oauth2:
       type: oauth2

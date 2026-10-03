@@ -560,6 +560,268 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    PriceTier:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        flatAmount:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        flatAmountDecimal:
+          type:
+          - number
+          - 'null'
+          format: double
+        unitAmount:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        unitAmountDecimal:
+          type:
+          - number
+          - 'null'
+          format: double
+        upTo:
+          type:
+          - integer
+          - 'null'
+          format: int64
+      additionalProperties: false
+    PriceCurrencyOptionsCustomUnitAmount:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        maximum:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        minimum:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        preset:
+          type:
+          - integer
+          - 'null'
+          format: int64
+      additionalProperties: false
+    ProductFeature:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    PriceTransformQuantity:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        divideBy:
+          type: integer
+          format: int64
+        round:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Product:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        id:
+          type:
+          - string
+          - 'null'
+        object:
+          type:
+          - string
+          - 'null'
+        active:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+        defaultPriceId:
+          type:
+          - string
+          - 'null'
+        defaultPrice:
+          $ref: '#/components/schemas/Price'
+        deleted:
+          type:
+          - boolean
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        features:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ProductFeature'
+        images:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        livemode:
+          type: boolean
+        metadata:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            type: string
+        name:
+          type:
+          - string
+          - 'null'
+        packageDimensions:
+          $ref: '#/components/schemas/ProductPackageDimensions'
+        shippable:
+          type:
+          - boolean
+          - 'null'
+        statementDescriptor:
+          type:
+          - string
+          - 'null'
+        taxCodeId:
+          type:
+          - string
+          - 'null'
+        taxCode:
+          $ref: '#/components/schemas/TaxCode'
+        type:
+          type:
+          - string
+          - 'null'
+        unitLabel:
+          type:
+          - string
+          - 'null'
+        updated:
+          type: string
+          format: date-time
+        url:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    TaxCode:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        id:
+          type:
+          - string
+          - 'null'
+        object:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    PriceCurrencyOptions:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        customUnitAmount:
+          $ref: '#/components/schemas/PriceCurrencyOptionsCustomUnitAmount'
+        taxBehavior:
+          type:
+          - string
+          - 'null'
+        tiers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/PriceCurrencyOptionsTier'
+        unitAmount:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        unitAmountDecimal:
+          type:
+          - number
+          - 'null'
+          format: double
+      additionalProperties: false
     Cart_Master:
       type: object
       properties:
@@ -897,238 +1159,71 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    PriceRecurring:
-      type: object
-      properties:
-        rawJObject:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/JToken'
-          readOnly: true
-        stripeResponse:
-          $ref: '#/components/schemas/StripeResponse'
-        aggregateUsage:
-          type:
-          - string
-          - 'null'
-        interval:
-          type:
-          - string
-          - 'null'
-        intervalCount:
-          type: integer
-          format: int64
-        trialPeriodDays:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        usageType:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    StringStringIEnumerableKeyValuePair:
-      type: object
-      properties:
-        key:
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        value:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-          readOnly: true
-      additionalProperties: false
-    StripeResponse:
-      type: object
-      properties:
-        statusCode:
-          $ref: '#/components/schemas/HttpStatusCode'
-        headers:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/StringStringIEnumerableKeyValuePair'
-          readOnly: true
-        date:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          readOnly: true
-        idempotencyKey:
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        requestId:
-          type:
-          - string
-          - 'null'
-          readOnly: true
-        content:
-          type:
-          - string
-          - 'null'
-          readOnly: true
-      additionalProperties: false
-    PriceCustomUnitAmount:
-      type: object
-      properties:
-        rawJObject:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/JToken'
-          readOnly: true
-        stripeResponse:
-          $ref: '#/components/schemas/StripeResponse'
-        maximum:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        minimum:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        preset:
-          type:
-          - integer
-          - 'null'
-          format: int64
-      additionalProperties: false
-    ProductFeature:
-      type: object
-      properties:
-        rawJObject:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/JToken'
-          readOnly: true
-        stripeResponse:
-          $ref: '#/components/schemas/StripeResponse'
-        name:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    PriceCurrencyOptionsTier:
-      type: object
-      properties:
-        rawJObject:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/JToken'
-          readOnly: true
-        stripeResponse:
-          $ref: '#/components/schemas/StripeResponse'
-        flatAmount:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        flatAmountDecimal:
-          type:
-          - number
-          - 'null'
-          format: double
-        unitAmount:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        unitAmountDecimal:
-          type:
-          - number
-          - 'null'
-          format: double
-        upTo:
-          type:
-          - integer
-          - 'null'
-          format: int64
-      additionalProperties: false
-    PriceCurrencyOptionsCustomUnitAmount:
-      type: object
-      properties:
-        rawJObject:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/JToken'
-          readOnly: true
-        stripeResponse:
-          $ref: '#/components/schemas/StripeResponse'
-        maximum:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        minimum:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        preset:
-          type:
-          - integer
-          - 'null'
-          format: int64
-      additionalProperties: false
-    PriceTier:
-      type: object
-      properties:
-        rawJObject:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/JToken'
-          readOnly: true
-        stripeResponse:
-          $ref: '#/components/schemas/StripeResponse'
-        flatAmount:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        flatAmountDecimal:
-          type:
-          - number
-          - 'null'
-          format: double
-        unitAmount:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        unitAmountDecimal:
-          type:
-          - number
-          - 'null'
-          format: double
-        upTo:
-          type:
-          - integer
-          - 'null'
-          format: int64
-      additionalProperties: false
+    HttpStatusCode:
+      enum:
+      - 100
+      - 101
+      - 102
+      - 103
+      - 200
+      - 201
+      - 202
+      - 203
+      - 204
+      - 205
+      - 206
+      - 207
+      - 208
+      - 226
+      - 300
+      - 301
+      - 302
+      - 303
+      - 304
+      - 305
+      - 306
+      - 307
+      - 308
+      - 400
+      - 401
+      - 402
+      - 403
+      - 404
+      - 405
+      - 406
+      - 407
+      - 408
+      - 409
+      - 410
+      - 411
+      - 412
+      - 413
+      - 414
+      - 415
+      - 416
+      - 417
+      - 421
+      - 422
+      - 423
+      - 424
+      - 426
+      - 428
+      - 429
+      - 431
+      - 451
+      - 500
+      - 501
+      - 502
+      - 503
+      - 504
+      - 505
+      - 506
+      - 507
+      - 508
+      - 510
+      - 511
+      type: integer
+      format: int32
     Price:
       type: object
       properties:
@@ -1229,135 +1324,40 @@ components:
           - 'null'
           format: double
       additionalProperties: false
-    PriceCurrencyOptions:
+    StripeResponse:
       type: object
       properties:
-        rawJObject:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/JToken'
-          readOnly: true
-        stripeResponse:
-          $ref: '#/components/schemas/StripeResponse'
-        customUnitAmount:
-          $ref: '#/components/schemas/PriceCurrencyOptionsCustomUnitAmount'
-        taxBehavior:
-          type:
-          - string
-          - 'null'
-        tiers:
+        statusCode:
+          $ref: '#/components/schemas/HttpStatusCode'
+        headers:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/PriceCurrencyOptionsTier'
-        unitAmount:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        unitAmountDecimal:
-          type:
-          - number
-          - 'null'
-          format: double
-      additionalProperties: false
-    TaxCode:
-      type: object
-      properties:
-        rawJObject:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            $ref: '#/components/schemas/JToken'
+            $ref: '#/components/schemas/StringStringIEnumerableKeyValuePair'
           readOnly: true
-        stripeResponse:
-          $ref: '#/components/schemas/StripeResponse'
-        id:
+        date:
           type:
           - string
           - 'null'
-        object:
+          format: date-time
+          readOnly: true
+        idempotencyKey:
           type:
           - string
           - 'null'
-        description:
+          readOnly: true
+        requestId:
           type:
           - string
           - 'null'
-        name:
+          readOnly: true
+        content:
           type:
           - string
           - 'null'
+          readOnly: true
       additionalProperties: false
-    HttpStatusCode:
-      enum:
-      - 100
-      - 101
-      - 102
-      - 103
-      - 200
-      - 201
-      - 202
-      - 203
-      - 204
-      - 205
-      - 206
-      - 207
-      - 208
-      - 226
-      - 300
-      - 301
-      - 302
-      - 303
-      - 304
-      - 305
-      - 306
-      - 307
-      - 308
-      - 400
-      - 401
-      - 402
-      - 403
-      - 404
-      - 405
-      - 406
-      - 407
-      - 408
-      - 409
-      - 410
-      - 411
-      - 412
-      - 413
-      - 414
-      - 415
-      - 416
-      - 417
-      - 421
-      - 422
-      - 423
-      - 424
-      - 426
-      - 428
-      - 429
-      - 431
-      - 451
-      - 500
-      - 501
-      - 502
-      - 503
-      - 504
-      - 505
-      - 506
-      - 507
-      - 508
-      - 510
-      - 511
-      type: integer
-      format: int32
     ProductPackageDimensions:
       type: object
       properties:
@@ -1383,7 +1383,7 @@ components:
           type: number
           format: double
       additionalProperties: false
-    Product:
+    PriceCustomUnitAmount:
       type: object
       properties:
         rawJObject:
@@ -1395,94 +1395,27 @@ components:
           readOnly: true
         stripeResponse:
           $ref: '#/components/schemas/StripeResponse'
-        id:
+        maximum:
           type:
-          - string
+          - integer
           - 'null'
-        object:
+          format: int64
+        minimum:
           type:
-          - string
+          - integer
           - 'null'
-        active:
-          type: boolean
-        created:
-          type: string
-          format: date-time
-        defaultPriceId:
+          format: int64
+        preset:
           type:
-          - string
+          - integer
           - 'null'
-        defaultPrice:
-          $ref: '#/components/schemas/Price'
-        deleted:
-          type:
-          - boolean
-          - 'null'
-        description:
-          type:
-          - string
-          - 'null'
-        features:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ProductFeature'
-        images:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        livemode:
-          type: boolean
-        metadata:
-          type:
-          - object
-          - 'null'
-          additionalProperties:
-            type: string
-        name:
-          type:
-          - string
-          - 'null'
-        packageDimensions:
-          $ref: '#/components/schemas/ProductPackageDimensions'
-        shippable:
-          type:
-          - boolean
-          - 'null'
-        statementDescriptor:
-          type:
-          - string
-          - 'null'
-        taxCodeId:
-          type:
-          - string
-          - 'null'
-        taxCode:
-          $ref: '#/components/schemas/TaxCode'
-        type:
-          type:
-          - string
-          - 'null'
-        unitLabel:
-          type:
-          - string
-          - 'null'
-        updated:
-          type: string
-          format: date-time
-        url:
-          type:
-          - string
-          - 'null'
+          format: int64
       additionalProperties: false
     JToken:
       type: array
       items:
         $ref: '#/components/schemas/JToken'
-    PriceTransformQuantity:
+    PriceRecurring:
       type: object
       properties:
         rawJObject:
@@ -1494,13 +1427,80 @@ components:
           readOnly: true
         stripeResponse:
           $ref: '#/components/schemas/StripeResponse'
-        divideBy:
-          type: integer
-          format: int64
-        round:
+        aggregateUsage:
           type:
           - string
           - 'null'
+        interval:
+          type:
+          - string
+          - 'null'
+        intervalCount:
+          type: integer
+          format: int64
+        trialPeriodDays:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        usageType:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    StringStringIEnumerableKeyValuePair:
+      type: object
+      properties:
+        key:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        value:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+          readOnly: true
+      additionalProperties: false
+    PriceCurrencyOptionsTier:
+      type: object
+      properties:
+        rawJObject:
+          type:
+          - object
+          - 'null'
+          additionalProperties:
+            $ref: '#/components/schemas/JToken'
+          readOnly: true
+        stripeResponse:
+          $ref: '#/components/schemas/StripeResponse'
+        flatAmount:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        flatAmountDecimal:
+          type:
+          - number
+          - 'null'
+          format: double
+        unitAmount:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        unitAmountDecimal:
+          type:
+          - number
+          - 'null'
+          format: double
+        upTo:
+          type:
+          - integer
+          - 'null'
+          format: int64
       additionalProperties: false
   securitySchemes:
     oauth2:

@@ -75,63 +75,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    DB_Animal_Association:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        companyId:
-          type: string
-          format: uuid
-        animalId:
-          type: string
-          format: uuid
-        associationId:
-          type:
-          - string
-          - 'null'
-        registrationNumber:
-          type:
-          - string
-          - 'null'
-        disposalCodeId:
-          type:
-          - string
-          - 'null'
-        disposalCodeDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByUserId:
-          type: string
-          format: uuid
-        createdByDate:
-          type: string
-          format: date-time
-        lastUpdatedByUserId:
-          type: string
-          format: uuid
-        lastUpdatedByDate:
-          type: string
-          format: date-time
-        inActiveDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        deleteSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-      additionalProperties: false
     Animal_Association:
       type: object
       properties:
@@ -208,6 +151,63 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    DB_Animal_Association:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type: string
+          format: uuid
+        animalId:
+          type: string
+          format: uuid
+        associationId:
+          type:
+          - string
+          - 'null'
+        registrationNumber:
+          type:
+          - string
+          - 'null'
+        disposalCodeId:
+          type:
+          - string
+          - 'null'
+        disposalCodeDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type: string
+          format: uuid
+        createdByDate:
+          type: string
+          format: date-time
+        lastUpdatedByUserId:
+          type: string
+          format: uuid
+        lastUpdatedByDate:
+          type: string
+          format: date-time
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
       additionalProperties: false
   securitySchemes:
     oauth2:

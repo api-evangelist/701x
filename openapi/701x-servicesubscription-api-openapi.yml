@@ -439,87 +439,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Sub_Line_Item_Cancel_Body:
-      type: object
-      properties:
-        lineItemIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        companyId:
-          type: string
-          format: uuid
-      additionalProperties: false
-    Billing_Event_Ship_Info:
-      type: object
-      properties:
-        shipAddress1:
-          type:
-          - string
-          - 'null'
-        shipAddress2:
-          type:
-          - string
-          - 'null'
-        shipCity:
-          type:
-          - string
-          - 'null'
-        shipState:
-          type:
-          - string
-          - 'null'
-        shipCountry:
-          type:
-          - string
-          - 'null'
-        shipZip:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Service_Subscription_Billing_Event:
-      type: object
-      properties:
-        id:
-          type:
-          - string
-          - 'null'
-        subscriptionId:
-          type:
-          - string
-          - 'null'
-        type:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - string
-          - 'null'
-        paidDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        eventDate:
-          type: string
-          format: date-time
-        data:
-          $ref: '#/components/schemas/Billing_Event_Data'
-      additionalProperties: false
-    Billing_Event_Line_Item:
-      type: object
-      properties:
-        deviceId:
-          type: string
-          format: uuid
-        priceAmount:
-          type: number
-          format: float
-      additionalProperties: false
     Service_Subscription:
       type: object
       properties:
@@ -590,6 +509,68 @@ components:
           - 'null'
           format: date-time
       additionalProperties: false
+    Billing_Event_Line_Item:
+      type: object
+      properties:
+        deviceId:
+          type: string
+          format: uuid
+        priceAmount:
+          type: number
+          format: float
+      additionalProperties: false
+    Billing_Event_Data:
+      type: object
+      properties:
+        total:
+          type:
+          - number
+          - 'null'
+          format: float
+        tax:
+          type:
+          - number
+          - 'null'
+          format: float
+        shipInfo:
+          $ref: '#/components/schemas/Billing_Event_Ship_Info'
+        lineItems:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Billing_Event_Line_Item'
+      additionalProperties: false
+    Service_Subscription_Billing_Event:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        subscriptionId:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - string
+          - 'null'
+        paidDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        eventDate:
+          type: string
+          format: date-time
+        data:
+          $ref: '#/components/schemas/Billing_Event_Data'
+      additionalProperties: false
     Service_Subscription_Line_Item:
       type: object
       properties:
@@ -659,27 +640,46 @@ components:
           - 'null'
           format: date-time
       additionalProperties: false
-    Billing_Event_Data:
+    Sub_Line_Item_Cancel_Body:
       type: object
       properties:
-        total:
-          type:
-          - number
-          - 'null'
-          format: float
-        tax:
-          type:
-          - number
-          - 'null'
-          format: float
-        shipInfo:
-          $ref: '#/components/schemas/Billing_Event_Ship_Info'
-        lineItems:
+        lineItemIds:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/Billing_Event_Line_Item'
+            type: string
+        companyId:
+          type: string
+          format: uuid
+      additionalProperties: false
+    Billing_Event_Ship_Info:
+      type: object
+      properties:
+        shipAddress1:
+          type:
+          - string
+          - 'null'
+        shipAddress2:
+          type:
+          - string
+          - 'null'
+        shipCity:
+          type:
+          - string
+          - 'null'
+        shipState:
+          type:
+          - string
+          - 'null'
+        shipCountry:
+          type:
+          - string
+          - 'null'
+        shipZip:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
   securitySchemes:
     oauth2:
