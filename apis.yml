@@ -4315,6 +4315,8 @@ apis:
   humanURL: https://api.701x.com/
   baseURL: https://api.701x.com
   tags:
+  - Stripe Webhook
+  tags_raw:
   - StripeWebHook
   properties:
   - type: OpenAPI
@@ -5064,6 +5066,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/701x-capability-edges.yml
+  name: 701x Business Capability Map
 - type: Overlay
   url: overlays/701x-api-v1-overlay.yaml
 - type: Website
