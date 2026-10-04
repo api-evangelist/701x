@@ -491,16 +491,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Changes:
-      type: object
-      properties:
-        keyChanged:
-          type:
-          - string
-          - 'null'
-        oldValue: {}
-        newValue: {}
-      additionalProperties: false
     Tag_Master:
       type: object
       properties:
@@ -994,6 +984,16 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    Changes:
+      type: object
+      properties:
+        keyChanged:
+          type:
+          - string
+          - 'null'
+        oldValue: {}
+        newValue: {}
       additionalProperties: false
   securitySchemes:
     oauth2:

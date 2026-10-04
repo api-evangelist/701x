@@ -2226,858 +2226,15 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Animal_Log:
+    Changes:
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-        rowSequence:
+        keyChanged:
           type:
-          - integer
-          - 'null'
-          format: int64
-        logId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        companyId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        groupId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmVirtualFenceId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmPointOfInterestId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        animalCalvingId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        animalId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        cattleNumber:
-          type:
-          - string
-          - 'null'
-        registrationNumber:
-          type:
-          - string
-          - 'null'
-        animalCode:
-          type:
-          - string
-          - 'null'
-        animalDescription:
-          type:
-          - string
-          - 'null'
-        tagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        networkNumber:
-          type:
-          - string
-          - 'null'
-        event:
-          type:
-          - string
-          - 'null'
-        isConfirmed:
-          type:
-          - boolean
-          - 'null'
-        type:
-          type:
-          - string
-          - 'null'
-        logCategoryId:
-          type:
-          - string
-          - 'null'
-        logTypeId:
-          type:
-          - string
-          - 'null'
-        symptomTypeId:
-          type:
-          - string
-          - 'null'
-        symptoms:
-          type:
-          - string
-          - 'null'
-        conditionTypeId:
-          type:
-          - string
-          - 'null'
-        medicineTypeId:
-          type:
-          - string
-          - 'null'
-        medicationId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        medicationPurchaseId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        isEstimateMeasurements:
-          type:
-          - boolean
-          - 'null'
-        addToWatchList:
-          type:
-          - boolean
-          - 'null'
-        old_Value:
-          type:
-          - string
-          - 'null'
-        old_ValueId:
-          type:
-          - string
-          - 'null'
-        value:
-          type:
-          - string
-          - 'null'
-        valueId:
-          type:
-          - string
-          - 'null'
-        dosage:
-          type:
-          - number
-          - 'null'
-          format: double
-        weight:
-          type:
-          - number
-          - 'null'
-          format: double
-        height:
-          type:
-          - number
-          - 'null'
-          format: double
-        temperature:
-          type:
-          - number
-          - 'null'
-          format: double
-        adg:
-          type:
-          - number
-          - 'null'
-          format: double
-        measurement:
-          type:
-          - string
-          - 'null'
-        medicineRoute:
-          type:
-          - string
-          - 'null'
-        medicineLocation:
-          type:
-          - string
-          - 'null'
-        withdrawalDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        withdrawalDays:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        boosterDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        boosterDays:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        lotNumber:
-          type:
-          - string
-          - 'null'
-        serialNumber:
-          type:
-          - string
-          - 'null'
-        manufacturer:
-          type:
-          - string
-          - 'null'
-        expirationDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        comment:
-          type:
-          - string
-          - 'null'
-        logDateTime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        longitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        latitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        altitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        onBehalfMacAddress:
-          type:
-          - string
-          - 'null'
-        onBehalfAnimalId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        onBehalfCattleNumber:
-          type:
-          - string
-          - 'null'
-        onBehalfTagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        onBehalfNetworkNumber:
-          type:
-          - string
-          - 'null'
-        uploadedByTagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        uploadedByAnimalId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        uploadedByFarmPointOfInterestId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        companyDescription:
-          type:
-          - string
-          - 'null'
-        farmDescription:
-          type:
-          - string
-          - 'null'
-        createdByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        createdByName:
-          type:
-          - string
-          - 'null'
-        lastUpdatedByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastUpdatedByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        lastUpdatedByName:
-          type:
-          - string
-          - 'null'
-        inActiveDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        deleteSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        isShared:
-          type:
-          - boolean
-          - 'null'
-        isNew:
-          type: boolean
-        isUpdate:
-          type: boolean
-        isDelete:
-          type: boolean
-        error:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    DateOnly:
-      type: object
-      properties:
-        year:
-          type: integer
-          format: int32
-          readOnly: true
-        month:
-          type: integer
-          format: int32
-          readOnly: true
-        day:
-          type: integer
-          format: int32
-          readOnly: true
-        dayOfWeek:
-          $ref: '#/components/schemas/DayOfWeek'
-        dayOfYear:
-          type: integer
-          format: int32
-          readOnly: true
-        dayNumber:
-          type: integer
-          format: int32
-          readOnly: true
-      additionalProperties: false
-    Animal_Location:
-      type: object
-      properties:
-        companyId:
-          type: string
-          format: uuid
-        farmId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmVirtualFenceId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        animalId:
-          type: string
-          format: uuid
-        tagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        longitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        latitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        altitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        heading:
-          type:
-          - number
-          - 'null'
-          format: double
-        position_Uncertainty:
-          type:
-          - number
-          - 'null'
-          format: double
-        rssi:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        uploadedType:
-          type:
-          - string
-          - 'null'
-        time:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        createdByName:
-          type:
-          - string
-          - 'null'
-        lastUpdatedByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastUpdatedByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        lastUpdatedByName:
-          type:
-          - string
-          - 'null'
-        inActiveDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        isNew:
-          type: boolean
-        isUpdate:
-          type: boolean
-        isDelete:
-          type: boolean
-        error:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Log_Master:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        rowSequence:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        companyId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        groupId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmVirtualFenceId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmPointOfInterestId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        animalCalvingId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        tagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        networkNumber:
-          type:
-          - string
-          - 'null'
-        animalId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        cattleNumber:
-          type:
-          - string
-          - 'null'
-        registrationNumber:
-          type:
-          - string
-          - 'null'
-        cattleCode:
-          type:
-          - string
-          - 'null'
-        cattleDescription:
-          type:
-          - string
-          - 'null'
-        animalColor:
-          type:
-          - string
-          - 'null'
-        animalBreed:
-          type:
-          - string
-          - 'null'
-        animalType:
-          type:
-          - string
-          - 'null'
-        logDateTime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        event:
-          type:
-          - string
-          - 'null'
-        isConfirmed:
-          type:
-          - boolean
-          - 'null'
-        type:
-          type:
-          - string
-          - 'null'
-        logCategoryId:
-          type:
-          - string
-          - 'null'
-        logTypeId:
-          type:
-          - string
-          - 'null'
-        symptomTypeId:
-          type:
-          - string
-          - 'null'
-        symptoms:
-          type:
-          - string
-          - 'null'
-        conditionTypeId:
-          type:
-          - string
-          - 'null'
-        medicineTypeId:
-          type:
-          - string
-          - 'null'
-        medicationId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        medicationPurchaseId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        isEstimateMeasurements:
-          type:
-          - boolean
-          - 'null'
-        addToWatchList:
-          type:
-          - boolean
-          - 'null'
-        old_Value:
-          type:
-          - string
-          - 'null'
-        old_ValueId:
-          type:
-          - string
-          - 'null'
-        value:
-          type:
-          - string
-          - 'null'
-        valueId:
-          type:
           - string
-          - 'null'
-        dosage:
-          type:
-          - number
-          - 'null'
-          format: double
-        weight:
-          type:
-          - number
-          - 'null'
-          format: double
-        height:
-          type:
-          - number
-          - 'null'
-          format: double
-        temperature:
-          type:
-          - number
-          - 'null'
-          format: double
-        adg:
-          type:
-          - number
-          - 'null'
-          format: double
-        measurement:
-          type:
-          - string
-          - 'null'
-        medicineRoute:
-          type:
-          - string
-          - 'null'
-        medicineLocation:
-          type:
-          - string
-          - 'null'
-        withdrawalDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        withdrawalDays:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        boosterDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        boosterDays:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        lotNumber:
-          type:
-          - string
-          - 'null'
-        serialNumber:
-          type:
-          - string
-          - 'null'
-        manufacturer:
-          type:
-          - string
-          - 'null'
-        expirationDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        comment:
-          type:
-          - string
-          - 'null'
-        longitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        latitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        altitude:
-          type:
-          - number
-          - 'null'
-          format: double
-        onBehalfMacAddress:
-          type:
-          - string
-          - 'null'
-        onBehalfAnimalId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        onBehalfCattleNumber:
-          type:
-          - string
-          - 'null'
-        onBehalfTagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        onBehalfNetworkNumber:
-          type:
-          - string
-          - 'null'
-        uploadedByTagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        uploadedByAnimalId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        uploadedByFarmPointOfInterestId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        hasBeenSeen:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        seenByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        seenByUserName:
-          type:
-          - string
-          - 'null'
-        companyDescription:
-          type:
-          - string
-          - 'null'
-        farmDescription:
-          type:
-          - string
-          - 'null'
-        createdByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        createdByName:
-          type:
-          - string
-          - 'null'
-        lastUpdatedByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastUpdatedByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        lastUpdatedByName:
-          type:
-          - string
-          - 'null'
-        inActiveDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        deleteSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        isNew:
-          type: boolean
-        isUpdate:
-          type: boolean
-        isDelete:
-          type: boolean
-        error:
-          type:
-          - string
-          - 'null'
-        generateNotification:
-          type: boolean
-        animalList:
-          type:
-          - array
           - 'null'
-          items:
-            type: string
-            format: uuid
+        oldValue: {}
+        newValue: {}
       additionalProperties: false
     Animal_Attachment:
       type: object
@@ -3232,6 +2389,445 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    Animal_Location:
+      type: object
+      properties:
+        companyId:
+          type: string
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type: string
+          format: uuid
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        heading:
+          type:
+          - number
+          - 'null'
+          format: double
+        position_Uncertainty:
+          type:
+          - number
+          - 'null'
+          format: double
+        rssi:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        uploadedType:
+          type:
+          - string
+          - 'null'
+        time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Animal_Comment:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        commentId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        comment:
+          type:
+          - string
+          - 'null'
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        animalCode:
+          type:
+          - string
+          - 'null'
+        animalDescription:
+          type:
+          - string
+          - 'null'
+        animalType:
+          type:
+          - string
+          - 'null'
+        animalBreed:
+          type:
+          - string
+          - 'null'
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupCode:
+          type:
+          - string
+          - 'null'
+        groupDescription:
+          type:
+          - string
+          - 'null'
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Animal_Turn_Out:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        turnOutId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        seasonId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        sireAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        sireCattleNumber:
+          type:
+          - string
+          - 'null'
+        sireAssociationCode:
+          type:
+          - string
+          - 'null'
+        sireRegistrationNumber:
+          type:
+          - string
+          - 'null'
+        sireCode:
+          type:
+          - string
+          - 'null'
+        sireDescription:
+          type:
+          - string
+          - 'null'
+        steps:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        distance:
+          type:
+          - number
+          - 'null'
+          format: double
+        mounts:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        farmVirtualFenceDescription:
+          type:
+          - string
+          - 'null'
+        turnoutDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        turnInDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        seasonDescription:
+          type:
+          - string
+          - 'null'
+        calvingStartDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        calvingEndDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    DateOnly:
+      type: object
+      properties:
+        year:
+          type: integer
+          format: int32
+          readOnly: true
+        month:
+          type: integer
+          format: int32
+          readOnly: true
+        day:
+          type: integer
+          format: int32
+          readOnly: true
+        dayOfWeek:
+          $ref: '#/components/schemas/DayOfWeek'
+        dayOfYear:
+          type: integer
+          format: int32
+          readOnly: true
+        dayNumber:
+          type: integer
+          format: int32
+          readOnly: true
+      additionalProperties: false
+    DayOfWeek:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      type: integer
+      format: int32
     Tag_Master:
       type: object
       properties:
@@ -3726,6 +3322,726 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    Log_Master:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        rowSequence:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalCalvingId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        registrationNumber:
+          type:
+          - string
+          - 'null'
+        cattleCode:
+          type:
+          - string
+          - 'null'
+        cattleDescription:
+          type:
+          - string
+          - 'null'
+        animalColor:
+          type:
+          - string
+          - 'null'
+        animalBreed:
+          type:
+          - string
+          - 'null'
+        animalType:
+          type:
+          - string
+          - 'null'
+        logDateTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        event:
+          type:
+          - string
+          - 'null'
+        isConfirmed:
+          type:
+          - boolean
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        logCategoryId:
+          type:
+          - string
+          - 'null'
+        logTypeId:
+          type:
+          - string
+          - 'null'
+        symptomTypeId:
+          type:
+          - string
+          - 'null'
+        symptoms:
+          type:
+          - string
+          - 'null'
+        conditionTypeId:
+          type:
+          - string
+          - 'null'
+        medicineTypeId:
+          type:
+          - string
+          - 'null'
+        medicationId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        medicationPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        isEstimateMeasurements:
+          type:
+          - boolean
+          - 'null'
+        addToWatchList:
+          type:
+          - boolean
+          - 'null'
+        old_Value:
+          type:
+          - string
+          - 'null'
+        old_ValueId:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+        valueId:
+          type:
+          - string
+          - 'null'
+        dosage:
+          type:
+          - number
+          - 'null'
+          format: double
+        weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        height:
+          type:
+          - number
+          - 'null'
+          format: double
+        temperature:
+          type:
+          - number
+          - 'null'
+          format: double
+        adg:
+          type:
+          - number
+          - 'null'
+          format: double
+        measurement:
+          type:
+          - string
+          - 'null'
+        medicineRoute:
+          type:
+          - string
+          - 'null'
+        medicineLocation:
+          type:
+          - string
+          - 'null'
+        withdrawalDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        withdrawalDays:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        boosterDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        boosterDays:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        lotNumber:
+          type:
+          - string
+          - 'null'
+        serialNumber:
+          type:
+          - string
+          - 'null'
+        manufacturer:
+          type:
+          - string
+          - 'null'
+        expirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        comment:
+          type:
+          - string
+          - 'null'
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        onBehalfMacAddress:
+          type:
+          - string
+          - 'null'
+        onBehalfAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        onBehalfCattleNumber:
+          type:
+          - string
+          - 'null'
+        onBehalfTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        onBehalfNetworkNumber:
+          type:
+          - string
+          - 'null'
+        uploadedByTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByFarmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        hasBeenSeen:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        seenByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        seenByUserName:
+          type:
+          - string
+          - 'null'
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+        generateNotification:
+          type: boolean
+        animalList:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+      additionalProperties: false
+    Animal_Log:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        rowSequence:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        logId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        groupId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmVirtualFenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        farmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalCalvingId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        animalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        cattleNumber:
+          type:
+          - string
+          - 'null'
+        registrationNumber:
+          type:
+          - string
+          - 'null'
+        animalCode:
+          type:
+          - string
+          - 'null'
+        animalDescription:
+          type:
+          - string
+          - 'null'
+        tagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        networkNumber:
+          type:
+          - string
+          - 'null'
+        event:
+          type:
+          - string
+          - 'null'
+        isConfirmed:
+          type:
+          - boolean
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        logCategoryId:
+          type:
+          - string
+          - 'null'
+        logTypeId:
+          type:
+          - string
+          - 'null'
+        symptomTypeId:
+          type:
+          - string
+          - 'null'
+        symptoms:
+          type:
+          - string
+          - 'null'
+        conditionTypeId:
+          type:
+          - string
+          - 'null'
+        medicineTypeId:
+          type:
+          - string
+          - 'null'
+        medicationId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        medicationPurchaseId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        isEstimateMeasurements:
+          type:
+          - boolean
+          - 'null'
+        addToWatchList:
+          type:
+          - boolean
+          - 'null'
+        old_Value:
+          type:
+          - string
+          - 'null'
+        old_ValueId:
+          type:
+          - string
+          - 'null'
+        value:
+          type:
+          - string
+          - 'null'
+        valueId:
+          type:
+          - string
+          - 'null'
+        dosage:
+          type:
+          - number
+          - 'null'
+          format: double
+        weight:
+          type:
+          - number
+          - 'null'
+          format: double
+        height:
+          type:
+          - number
+          - 'null'
+          format: double
+        temperature:
+          type:
+          - number
+          - 'null'
+          format: double
+        adg:
+          type:
+          - number
+          - 'null'
+          format: double
+        measurement:
+          type:
+          - string
+          - 'null'
+        medicineRoute:
+          type:
+          - string
+          - 'null'
+        medicineLocation:
+          type:
+          - string
+          - 'null'
+        withdrawalDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        withdrawalDays:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        boosterDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        boosterDays:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        lotNumber:
+          type:
+          - string
+          - 'null'
+        serialNumber:
+          type:
+          - string
+          - 'null'
+        manufacturer:
+          type:
+          - string
+          - 'null'
+        expirationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        comment:
+          type:
+          - string
+          - 'null'
+        logDateTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        altitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        onBehalfMacAddress:
+          type:
+          - string
+          - 'null'
+        onBehalfAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        onBehalfCattleNumber:
+          type:
+          - string
+          - 'null'
+        onBehalfTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        onBehalfNetworkNumber:
+          type:
+          - string
+          - 'null'
+        uploadedByTagId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByAnimalId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        uploadedByFarmPointOfInterestId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        companyDescription:
+          type:
+          - string
+          - 'null'
+        farmDescription:
+          type:
+          - string
+          - 'null'
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        deleteSyncEpoch:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        isShared:
+          type:
+          - boolean
+          - 'null'
+        isNew:
+          type: boolean
+        isUpdate:
+          type: boolean
+        isDelete:
+          type: boolean
+        error:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     Animal_Calving:
       type: object
       properties:
@@ -4162,322 +4478,6 @@ components:
           - integer
           - 'null'
           format: int32
-      additionalProperties: false
-    DayOfWeek:
-      enum:
-      - 0
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      type: integer
-      format: int32
-    Animal_Comment:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        companyId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        animalId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        commentId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        comment:
-          type:
-          - string
-          - 'null'
-        cattleNumber:
-          type:
-          - string
-          - 'null'
-        animalCode:
-          type:
-          - string
-          - 'null'
-        animalDescription:
-          type:
-          - string
-          - 'null'
-        animalType:
-          type:
-          - string
-          - 'null'
-        animalBreed:
-          type:
-          - string
-          - 'null'
-        tagId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        networkNumber:
-          type:
-          - string
-          - 'null'
-        groupId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        groupCode:
-          type:
-          - string
-          - 'null'
-        groupDescription:
-          type:
-          - string
-          - 'null'
-        companyDescription:
-          type:
-          - string
-          - 'null'
-        farmDescription:
-          type:
-          - string
-          - 'null'
-        createdByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        createdByName:
-          type:
-          - string
-          - 'null'
-        lastUpdatedByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastUpdatedByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        lastUpdatedByName:
-          type:
-          - string
-          - 'null'
-        inActiveDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        deleteSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        isNew:
-          type: boolean
-        isUpdate:
-          type: boolean
-        isDelete:
-          type: boolean
-        error:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Animal_Turn_Out:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        companyId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        farmVirtualFenceId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        turnOutId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        seasonId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        sireAnimalId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        sireCattleNumber:
-          type:
-          - string
-          - 'null'
-        sireAssociationCode:
-          type:
-          - string
-          - 'null'
-        sireRegistrationNumber:
-          type:
-          - string
-          - 'null'
-        sireCode:
-          type:
-          - string
-          - 'null'
-        sireDescription:
-          type:
-          - string
-          - 'null'
-        steps:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        distance:
-          type:
-          - number
-          - 'null'
-          format: double
-        mounts:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        companyDescription:
-          type:
-          - string
-          - 'null'
-        farmDescription:
-          type:
-          - string
-          - 'null'
-        farmVirtualFenceDescription:
-          type:
-          - string
-          - 'null'
-        turnoutDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        turnInDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        seasonDescription:
-          type:
-          - string
-          - 'null'
-        calvingStartDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        calvingEndDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        createdByName:
-          type:
-          - string
-          - 'null'
-        lastUpdatedByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastUpdatedByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        lastUpdatedByName:
-          type:
-          - string
-          - 'null'
-        inActiveDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        deleteSyncEpoch:
-          type:
-          - integer
-          - 'null'
-          format: int64
-        isNew:
-          type: boolean
-        isUpdate:
-          type: boolean
-        isDelete:
-          type: boolean
-        error:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Changes:
-      type: object
-      properties:
-        keyChanged:
-          type:
-          - string
-          - 'null'
-        oldValue: {}
-        newValue: {}
       additionalProperties: false
   securitySchemes:
     oauth2:

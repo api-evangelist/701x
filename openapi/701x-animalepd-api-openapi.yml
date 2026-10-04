@@ -569,6 +569,16 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    SyncingRequestParams:
+      type: object
+      properties:
+        syncingTableRequestParams:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SyncingTableRequestParams'
+      additionalProperties: false
     EPDData:
       type: object
       properties:
@@ -590,25 +600,6 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/Animal_EPD'
-      additionalProperties: false
-    SyncingTableRequestParams:
-      type: object
-      properties:
-        tableName:
-          type:
-          - string
-          - 'null'
-        dateTimeOffset:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpochMs:
-          type:
-          - integer
-          - 'null'
-          format: int64
-          readOnly: true
       additionalProperties: false
     Animal_EPD:
       type: object
@@ -704,15 +695,24 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    SyncingRequestParams:
+    SyncingTableRequestParams:
       type: object
       properties:
-        syncingTableRequestParams:
+        tableName:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            $ref: '#/components/schemas/SyncingTableRequestParams'
+        dateTimeOffset:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpochMs:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          readOnly: true
       additionalProperties: false
   securitySchemes:
     oauth2:

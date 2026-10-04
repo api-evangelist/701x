@@ -950,15 +950,22 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    OrderProductType:
+    Sales_Stats:
+      type: object
+      properties:
+        productTypes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/SalesProductType'
+      additionalProperties: false
+    SalesProductType:
       type: object
       properties:
         quantity:
           type: integer
           format: int32
-        total:
-          type: number
-          format: double
         stripeProductId:
           type:
           - string
@@ -1357,22 +1364,15 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Sales_Stats:
-      type: object
-      properties:
-        productTypes:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/SalesProductType'
-      additionalProperties: false
-    SalesProductType:
+    OrderProductType:
       type: object
       properties:
         quantity:
           type: integer
           format: int32
+        total:
+          type: number
+          format: double
         stripeProductId:
           type:
           - string

@@ -523,31 +523,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    AutoGenSeasonsArgs:
-      type: object
-      properties:
-        companyId:
-          type: string
-          format: uuid
-        farmId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        minDateSpan:
-          type: integer
-          format: int32
-        yearsBack:
-          type: integer
-          format: int32
-        yearsAhead:
-          type: integer
-          format: int32
-        save:
-          type: boolean
-        adjustDates:
-          type: boolean
-      additionalProperties: false
     Season_Master:
       type: object
       properties:
@@ -649,6 +624,31 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    AutoGenSeasonsArgs:
+      type: object
+      properties:
+        companyId:
+          type: string
+          format: uuid
+        farmId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        minDateSpan:
+          type: integer
+          format: int32
+        yearsBack:
+          type: integer
+          format: int32
+        yearsAhead:
+          type: integer
+          format: int32
+        save:
+          type: boolean
+        adjustDates:
+          type: boolean
       additionalProperties: false
   securitySchemes:
     oauth2:

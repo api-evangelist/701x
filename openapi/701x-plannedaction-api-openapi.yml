@@ -152,85 +152,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    DB_Planned_Action:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        companyId:
-          type: string
-          format: uuid
-        animalId:
-          type: string
-          format: uuid
-        plannedDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        completedDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        workingCattleId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        targetTable:
-          type:
-          - string
-          - 'null'
-        targetId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        resultTable:
-          type:
-          - string
-          - 'null'
-        resultId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        createdByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        createdByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        createdByName:
-          type:
-          - string
-          - 'null'
-        lastUpdatedByDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastUpdatedByUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        lastUpdatedByName:
-          type:
-          - string
-          - 'null'
-        inActiveDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
     Planned_Action:
       type: object
       properties:
@@ -319,6 +240,85 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    DB_Planned_Action:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        companyId:
+          type: string
+          format: uuid
+        animalId:
+          type: string
+          format: uuid
+        plannedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        completedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        workingCattleId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        targetTable:
+          type:
+          - string
+          - 'null'
+        targetId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        resultTable:
+          type:
+          - string
+          - 'null'
+        resultId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        createdByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdByName:
+          type:
+          - string
+          - 'null'
+        lastUpdatedByDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastUpdatedByUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        lastUpdatedByName:
+          type:
+          - string
+          - 'null'
+        inActiveDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
       additionalProperties: false
   securitySchemes:
     oauth2:

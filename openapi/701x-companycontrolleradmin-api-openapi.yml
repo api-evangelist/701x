@@ -319,19 +319,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    PaginatedCompanies:
-      type: object
-      properties:
-        companies:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Company_Master'
-        total:
-          type: integer
-          format: int32
-      additionalProperties: false
     Company_Master:
       type: object
       properties:
@@ -527,6 +514,19 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    PaginatedCompanies:
+      type: object
+      properties:
+        companies:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Company_Master'
+        total:
+          type: integer
+          format: int32
       additionalProperties: false
   securitySchemes:
     oauth2:

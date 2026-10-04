@@ -366,25 +366,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    SyncingTableRequestParams:
-      type: object
-      properties:
-        tableName:
-          type:
-          - string
-          - 'null'
-        dateTimeOffset:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpochMs:
-          type:
-          - integer
-          - 'null'
-          format: int64
-          readOnly: true
-      additionalProperties: false
     SyncingRequestParams:
       type: object
       properties:
@@ -602,6 +583,25 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/Animal_Data_Wean'
+      additionalProperties: false
+    SyncingTableRequestParams:
+      type: object
+      properties:
+        tableName:
+          type:
+          - string
+          - 'null'
+        dateTimeOffset:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpochMs:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          readOnly: true
       additionalProperties: false
   securitySchemes:
     oauth2:

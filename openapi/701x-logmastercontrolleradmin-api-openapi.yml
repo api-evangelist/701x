@@ -693,6 +693,25 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Log_MasterPaginated_Response:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+        offset:
+          type: integer
+          format: int32
+        limit:
+          type: integer
+          format: int32
+        data:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Log_Master'
+      additionalProperties: false
     Log_Master:
       type: object
       properties:
@@ -1065,25 +1084,6 @@ components:
           items:
             type: string
             format: uuid
-      additionalProperties: false
-    Log_MasterPaginated_Response:
-      type: object
-      properties:
-        total:
-          type: integer
-          format: int32
-        offset:
-          type: integer
-          format: int32
-        limit:
-          type: integer
-          format: int32
-        data:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Log_Master'
       additionalProperties: false
   securitySchemes:
     oauth2:

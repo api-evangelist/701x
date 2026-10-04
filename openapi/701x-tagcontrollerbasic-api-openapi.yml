@@ -535,22 +535,10 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    MassDisableRequestBody:
-      type: object
-      properties:
-        tagIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-            format: uuid
-        disableDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
+    JToken:
+      type: array
+      items:
+        $ref: '#/components/schemas/JToken'
     Tag_Master:
       type: object
       properties:
@@ -1045,10 +1033,16 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    JToken:
-      type: array
-      items:
-        $ref: '#/components/schemas/JToken'
+    Changes:
+      type: object
+      properties:
+        keyChanged:
+          type:
+          - string
+          - 'null'
+        oldValue: {}
+        newValue: {}
+      additionalProperties: false
     PatchItem:
       type: object
       properties:
@@ -1062,15 +1056,21 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/JToken'
       additionalProperties: false
-    Changes:
+    MassDisableRequestBody:
       type: object
       properties:
-        keyChanged:
+        tagIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+            format: uuid
+        disableDate:
           type:
           - string
           - 'null'
-        oldValue: {}
-        newValue: {}
+          format: date-time
       additionalProperties: false
   securitySchemes:
     oauth2:

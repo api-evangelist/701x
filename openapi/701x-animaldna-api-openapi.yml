@@ -234,6 +234,17 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    BreedComp:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        pct:
+          type: number
+          format: double
+      additionalProperties: false
     BreedCompositionIngestItem:
       type: object
       properties:
@@ -335,17 +346,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    BreedComp:
-      type: object
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-        pct:
-          type: number
-          format: double
       additionalProperties: false
   securitySchemes:
     oauth2:

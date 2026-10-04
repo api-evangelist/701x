@@ -366,35 +366,17 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    SyncingTableRequestParams:
-      type: object
-      properties:
-        tableName:
-          type:
-          - string
-          - 'null'
-        dateTimeOffset:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpochMs:
-          type:
-          - integer
-          - 'null'
-          format: int64
-          readOnly: true
-      additionalProperties: false
-    SyncingRequestParams:
-      type: object
-      properties:
-        syncingTableRequestParams:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/SyncingTableRequestParams'
-      additionalProperties: false
+    DayOfWeek:
+      enum:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      type: integer
+      format: int32
     DateOnly:
       type: object
       properties:
@@ -421,39 +403,16 @@ components:
           format: int32
           readOnly: true
       additionalProperties: false
-    CarcassData:
+    SyncingRequestParams:
       type: object
       properties:
-        animalDataCarcassInserted:
+        syncingTableRequestParams:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/Animal_Data_Carcass'
-        animalDataCarcassUpdated:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Animal_Data_Carcass'
-        animalDataCarcassDeleted:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Animal_Data_Carcass'
+            $ref: '#/components/schemas/SyncingTableRequestParams'
       additionalProperties: false
-    DayOfWeek:
-      enum:
-      - 0
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      type: integer
-      format: int32
     Animal_Data_Carcass:
       type: object
       properties:
@@ -668,6 +627,47 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    CarcassData:
+      type: object
+      properties:
+        animalDataCarcassInserted:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Data_Carcass'
+        animalDataCarcassUpdated:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Data_Carcass'
+        animalDataCarcassDeleted:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Data_Carcass'
+      additionalProperties: false
+    SyncingTableRequestParams:
+      type: object
+      properties:
+        tableName:
+          type:
+          - string
+          - 'null'
+        dateTimeOffset:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpochMs:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          readOnly: true
       additionalProperties: false
   securitySchemes:
     oauth2:
