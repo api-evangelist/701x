@@ -1,0 +1,12 @@
+{
+ "url": "https://api.701x.com/swagger/v1/swagger.json",
+ "requested_url": "https://api.701x.com/swagger/v1/swagger.json",
+ "status": 200,
+ "content_type": "application/json;charset=utf-8",
+ "bytes": 3552282,
+ "sha256": "09fce9d86ed8cc572a0e740741473c7d6247b2fec168947f747453aca711a8d1",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 0.985), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
