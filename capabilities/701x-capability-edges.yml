@@ -1,0 +1,46 @@
+slug: 701x
+provider: 701x
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: ServiceSubscription
+  spec_file: 701x-servicesubscription-api-openapi.yml
+  capability_id: BC-4240
+  capability_id_l1: BC-4240
+  capability_name: Subscription Lifecycle Management
+  confidence: 0.85
+  evidence: POST /ServiceSubscription/Cancel/{id}, POST /ServiceSubscription/Resume/{id}, GET /ServiceSubscription/GenerateRenewalBillReceipt;
+    schemas Service_Subscription, Service_Subscription_Line_Item, Billing_Event_Data
+  reason: Operations manage subscription state (cancel, resume, line-item cancel/resume) and renewal/billing
+    events for the vendor's device service plans — squarely subscription lifecycle management; billing-event
+    endpoints straddle BC-4250 so no single L2 is asserted.
+- tag: PatchNote
+  spec_file: 701x-patchnote-api-openapi.yml
+  capability_id: BC-4210.30
+  capability_id_l1: BC-4210
+  capability_name: Release Engineering Management
+  confidence: 0.72
+  evidence: POST /PatchNote 'Create patch note' — schema Patch_Note; GET /PatchNote/PatchNoteDataByFilter
+  reason: Patch notes are release notes for the vendor's Autonomous Rancher software, and Release Engineering
+    Management explicitly covers 'release-note discipline'. Confidence held below 0.8 because the operations
+    are generic CRUD and give no direct statement that these notes accompany software releases.
+- tag: PatchNoteControllerAdmin
+  spec_file: 701x-patchnotecontrolleradmin-api-openapi.yml
+  capability_id: BC-4210.30
+  capability_id_l1: BC-4210
+  capability_name: Release Engineering Management
+  confidence: 0.72
+  evidence: POST /PatchNoteControllerAdmin 'Create patch note controller admin' — schema Patch_Note
+  reason: Admin-side authoring and bulk maintenance of the same Patch_Note records, i.e. release-note
+    publication for the product, which falls under release engineering. Same evidentiary caveat as the
+    user-facing PatchNote tag.
