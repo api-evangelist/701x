@@ -751,22 +751,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    AnimalAlertSummary:
-      type: object
-      properties:
-        animalId:
-          type: string
-          format: uuid
-        logTypeId:
-          type:
-          - string
-          - 'null'
-        latestLogDateTime:
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
     Animal_Log:
       type: object
       properties:
@@ -1113,6 +1097,22 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    AnimalAlertSummary:
+      type: object
+      properties:
+        animalId:
+          type: string
+          format: uuid
+        logTypeId:
+          type:
+          - string
+          - 'null'
+        latestLogDateTime:
+          type:
+          - string
+          - 'null'
+          format: date-time
       additionalProperties: false
   securitySchemes:
     oauth2:

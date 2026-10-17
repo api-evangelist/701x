@@ -366,15 +366,27 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    SyncingRequestParams:
+    WeanData:
       type: object
       properties:
-        syncingTableRequestParams:
+        animalDataWeanInserted:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/SyncingTableRequestParams'
+            $ref: '#/components/schemas/Animal_Data_Wean'
+        animalDataWeanUpdated:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Data_Wean'
+        animalDataWeanDeleted:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Animal_Data_Wean'
       additionalProperties: false
     Animal_Data_Wean:
       type: object
@@ -562,27 +574,15 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    WeanData:
+    SyncingRequestParams:
       type: object
       properties:
-        animalDataWeanInserted:
+        syncingTableRequestParams:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/Animal_Data_Wean'
-        animalDataWeanUpdated:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Animal_Data_Wean'
-        animalDataWeanDeleted:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Animal_Data_Wean'
+            $ref: '#/components/schemas/SyncingTableRequestParams'
       additionalProperties: false
     SyncingTableRequestParams:
       type: object

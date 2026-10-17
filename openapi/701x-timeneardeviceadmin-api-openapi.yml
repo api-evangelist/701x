@@ -108,6 +108,25 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    TimeNearDeviceImport:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        tagId:
+          type: string
+          format: uuid
+        companyId:
+          type: string
+          format: uuid
+        devicesNearby:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/DevicePresence'
+      additionalProperties: false
     DevicePresence:
       type: object
       properties:
@@ -142,25 +161,6 @@ components:
         timeNearDevice_SEC:
           type: integer
           format: int64
-      additionalProperties: false
-    TimeNearDeviceImport:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        tagId:
-          type: string
-          format: uuid
-        companyId:
-          type: string
-          format: uuid
-        devicesNearby:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/DevicePresence'
       additionalProperties: false
   securitySchemes:
     oauth2:

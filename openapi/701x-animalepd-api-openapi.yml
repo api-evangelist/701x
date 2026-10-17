@@ -569,6 +569,25 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    SyncingTableRequestParams:
+      type: object
+      properties:
+        tableName:
+          type:
+          - string
+          - 'null'
+        dateTimeOffset:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpochMs:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          readOnly: true
+      additionalProperties: false
     SyncingRequestParams:
       type: object
       properties:
@@ -578,28 +597,6 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/SyncingTableRequestParams'
-      additionalProperties: false
-    EPDData:
-      type: object
-      properties:
-        animalEPDInserted:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Animal_EPD'
-        animalEPDUpdated:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Animal_EPD'
-        animalEPDDeleted:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Animal_EPD'
       additionalProperties: false
     Animal_EPD:
       type: object
@@ -695,24 +692,27 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    SyncingTableRequestParams:
+    EPDData:
       type: object
       properties:
-        tableName:
+        animalEPDInserted:
           type:
-          - string
+          - array
           - 'null'
-        dateTimeOffset:
+          items:
+            $ref: '#/components/schemas/Animal_EPD'
+        animalEPDUpdated:
           type:
-          - string
+          - array
           - 'null'
-          format: date-time
-        lastSyncEpochMs:
+          items:
+            $ref: '#/components/schemas/Animal_EPD'
+        animalEPDDeleted:
           type:
-          - integer
+          - array
           - 'null'
-          format: int64
-          readOnly: true
+          items:
+            $ref: '#/components/schemas/Animal_EPD'
       additionalProperties: false
   securitySchemes:
     oauth2:

@@ -103,9 +103,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    ETag:
-      type: object
-      additionalProperties: false
     Tag_Data_High_Speed:
       type: object
       properties:
@@ -182,6 +179,9 @@ components:
           - number
           - 'null'
           format: double
+      additionalProperties: false
+    ETag:
+      type: object
       additionalProperties: false
   securitySchemes:
     oauth2:

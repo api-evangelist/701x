@@ -366,6 +366,25 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    SyncingTableRequestParams:
+      type: object
+      properties:
+        tableName:
+          type:
+          - string
+          - 'null'
+        dateTimeOffset:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSyncEpochMs:
+          type:
+          - integer
+          - 'null'
+          format: int64
+          readOnly: true
+      additionalProperties: false
     YearData:
       type: object
       properties:
@@ -612,25 +631,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    SyncingTableRequestParams:
-      type: object
-      properties:
-        tableName:
-          type:
-          - string
-          - 'null'
-        dateTimeOffset:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSyncEpochMs:
-          type:
-          - integer
-          - 'null'
-          format: int64
-          readOnly: true
       additionalProperties: false
   securitySchemes:
     oauth2:

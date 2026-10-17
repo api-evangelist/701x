@@ -2054,7 +2054,20 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Tag_Data_Research:
+    Tag_Heatmap_Point:
+      type: object
+      properties:
+        longitude:
+          type: number
+          format: double
+        latitude:
+          type: number
+          format: double
+        weight:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Tag_Data_Reduced:
       type: object
       properties:
         id:
@@ -2065,37 +2078,26 @@ components:
           - string
           - 'null'
           format: uuid
-        companyDescription:
-          type:
-          - string
-          - 'null'
         farmId:
           type:
           - string
           - 'null'
           format: uuid
-        farmDescription:
+        groupId:
           type:
           - string
           - 'null'
+          format: uuid
         farmVirtualFenceId:
           type:
           - string
           - 'null'
           format: uuid
-        fenceDescription:
-          type:
-          - string
-          - 'null'
         farmPointOfInterstId:
           type:
           - string
           - 'null'
           format: uuid
-        farmPointOfInterstDescription:
-          type:
-          - string
-          - 'null'
         tagId:
           type:
           - string
@@ -2111,6 +2113,15 @@ components:
           - 'null'
           format: uuid
         cattleNumber:
+          type:
+          - string
+          - 'null'
+        dob:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        animalType:
           type:
           - string
           - 'null'
@@ -2158,27 +2169,12 @@ components:
           - number
           - 'null'
           format: double
-        position_Uncertainty:
+        heading:
           type:
           - number
           - 'null'
           format: double
-        water_Pressure_Pa:
-          type:
-          - integer
-          - 'null'
-          format: int32
         water_Temperature_C:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        air_Pressure_Pa:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        air_Temperature_C:
           type:
           - integer
           - 'null'
@@ -2243,23 +2239,10 @@ components:
           - integer
           - 'null'
           format: int32
-        createdByDate:
+        cell_RSSI:
           type:
-          - string
+          - integer
           - 'null'
-          format: date-time
-      additionalProperties: false
-    Tag_Heatmap_Point:
-      type: object
-      properties:
-        longitude:
-          type: number
-          format: double
-        latitude:
-          type: number
-          format: double
-        weight:
-          type: integer
           format: int32
       additionalProperties: false
     Tag_Data:
@@ -2696,7 +2679,7 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Tag_Data_Reduced:
+    Tag_Data_Research:
       type: object
       properties:
         id:
@@ -2707,26 +2690,37 @@ components:
           - string
           - 'null'
           format: uuid
+        companyDescription:
+          type:
+          - string
+          - 'null'
         farmId:
           type:
           - string
           - 'null'
           format: uuid
-        groupId:
+        farmDescription:
           type:
           - string
           - 'null'
-          format: uuid
         farmVirtualFenceId:
           type:
           - string
           - 'null'
           format: uuid
+        fenceDescription:
+          type:
+          - string
+          - 'null'
         farmPointOfInterstId:
           type:
           - string
           - 'null'
           format: uuid
+        farmPointOfInterstDescription:
+          type:
+          - string
+          - 'null'
         tagId:
           type:
           - string
@@ -2742,15 +2736,6 @@ components:
           - 'null'
           format: uuid
         cattleNumber:
-          type:
-          - string
-          - 'null'
-        dob:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        animalType:
           type:
           - string
           - 'null'
@@ -2798,12 +2783,27 @@ components:
           - number
           - 'null'
           format: double
-        heading:
+        position_Uncertainty:
           type:
           - number
           - 'null'
           format: double
+        water_Pressure_Pa:
+          type:
+          - integer
+          - 'null'
+          format: int32
         water_Temperature_C:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        air_Pressure_Pa:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        air_Temperature_C:
           type:
           - integer
           - 'null'
@@ -2868,11 +2868,11 @@ components:
           - integer
           - 'null'
           format: int32
-        cell_RSSI:
+        createdByDate:
           type:
-          - integer
+          - string
           - 'null'
-          format: int32
+          format: date-time
       additionalProperties: false
   securitySchemes:
     oauth2:
