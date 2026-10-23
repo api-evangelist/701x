@@ -358,3 +358,9 @@ components:
           tokenUrl: https://login.701x.com/connect/token
           scopes:
             api1: Demo API - full access
+x-provenance:
+  method: harvested
+  publisher: 701x
+  source: https://api.701x.com/swagger/v1/swagger.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
